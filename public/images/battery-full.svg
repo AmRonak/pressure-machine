@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2019 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4.2259mm" height="4.2259mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1.5048 1.5048"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil2 {fill:none;fill-rule:nonzero}
+    .fil3 {fill:#4218EF}
+    .fil1 {fill:url(#id1);fill-rule:nonzero}
+    .fil0 {fill:url(#id2);fill-rule:nonzero}
+   ]]>
+  </style>
+    <clipPath id="id0">
+     <rect width="1.5048" height="1.5048"/>
+    </clipPath>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="0.7534" y1="1.2167" x2="0.7534" y2="1.2117">
+   <stop offset="0" style="stop-opacity:1; stop-color:#DFE3F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F8F9FD"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="0.7534" y1="1.2142" x2="0.7534" y2="0.1526">
+   <stop offset="0" style="stop-opacity:1; stop-color:#DFE3F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FEFEFE"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2455415255232">
+   <g style="clip-path:url(#id0)">
+    <image x="-0" y="0" width="1.5048" height="1.5048" xlink:href="Battery Icon_F_Images\Battery Icon_F_ImgID1.png"/>
+   </g>
+   <g>
+    <path class="fil0" d="M1.158 1.2142l-0.8091 0c-0.0698,0 -0.1263,-0.0565 -0.1263,-0.1263l0 -0.8091c0,-0.0697 0.0565,-0.1263 0.1263,-0.1263l0.8091 0c0.0697,0 0.1262,0.0565 0.1262,0.1263l0 0.8091c0,0.0697 -0.0565,0.1263 -0.1262,0.1263z"/>
+    <polygon class="fil1" points="0.3489,1.2167 1.158,1.2167 1.158,1.2117 "/>
+    <path class="fil2" d="M0.3489 1.2142c-0.0698,0 -0.1263,-0.0565 -0.1263,-0.1263"/>
+    <line class="fil2" x1="0.2226" y1="1.088" x2="0.2226" y2= "0.2789" />
+    <path class="fil2" d="M0.2226 0.2789c0,-0.0697 0.0565,-0.1263 0.1263,-0.1263"/>
+    <line class="fil2" x1="0.3489" y1="0.1526" x2="1.158" y2= "0.1526" />
+    <path class="fil2" d="M1.158 0.1526c0.0697,0 0.1262,0.0565 0.1262,0.1263"/>
+    <line class="fil2" x1="1.2842" y1="0.2789" x2="1.2842" y2= "1.088" />
+    <path class="fil2" d="M1.2842 1.088c0,0.0697 -0.0565,0.1263 -0.1262,0.1263"/>
+   </g>
+  </g>
+  <g id="_2455415260896">
+   <g>
+    <g>
+     <g>
+      <rect class="fil3" transform="matrix(2.30892E-16 -0.00871798 0.00871798 2.30892E-16 0.633867 0.96024)" width="44.1886" height="27.193"/>
+      <path class="fil3" d="M0.6931 0.3972l-0.0593 0c-0.0327,0 -0.0593,0.0265 -0.0593,0.0593l0 0.5038c0,0.0327 0.0265,0.0593 0.0593,0.0593l0.2371 0c0.0327,0 0.0593,-0.0265 0.0593,-0.0593l0 -0.5038c0,-0.0328 -0.0265,-0.0593 -0.0593,-0.0593l-0.0593 0c0,-0.0163 -0.0132,-0.0296 -0.0296,-0.0296l-0.0593 0c-0.0164,0 -0.0296,0.0133 -0.0296,0.0296zm0.0296 0.0296l0.1482 0c0.0163,0 0.0296,0.0133 0.0296,0.0297l0 0.5038c0,0.0163 -0.0133,0.0296 -0.0296,0.0296l-0.2371 0c-0.0163,0 -0.0296,-0.0133 -0.0296,-0.0296l0 -0.5038c0,-0.0164 0.0133,-0.0297 0.0296,-0.0297l0.0889 0 0 0z"/>
+     </g>
+    </g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+   <g>
+   </g>
+  </g>
+ </g>
+</svg>
