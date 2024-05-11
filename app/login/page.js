@@ -1,9 +1,10 @@
-'use client'
+'use client';
 import LoginButton from "@/components/buttons/LoginButton";
 import Input from "@/components/inputs/Input";
 import Labels from "@/components/inputs/Labels";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import { useForm } from "react-hook-form";
 
 const Login = () => {
@@ -13,11 +14,15 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
 
   const USERNAME = 'username';
   const PASSWORD = 'password';
 
-  const onSubmit = (data) => {console.log({data});}
+  const onSubmit = (data) => {
+    console.log({data});
+    router.push('/dashboard')
+  }
 
   return (
     <div className="grid-flow-col px-28 py-32">
@@ -34,11 +39,11 @@ const Login = () => {
           {...register("username", { required: true })}
           register={register}
           validationSchema={{
-            required: "Username is required",
-            minLength: {
-              value: 3,
-              message: "Please enter a minimum of 3 characters"
-            }
+            // required: "Username is required",
+            // minLength: {
+            //   value: 3,
+            //   message: "Please enter a minimum of 3 characters"
+            // }
           }}
           errors={errors}
         />
@@ -53,11 +58,11 @@ const Login = () => {
           {...register("username", { required: true })}
           register={register}
           validationSchema={{
-            required: "Password is required",
-            minLength: {
-              value: 3,
-              message: "Please enter a minimum of 3 characters"
-            }
+            // required: "Password is required",
+            // minLength: {
+            //   value: 3,
+            //   message: "Please enter a minimum of 3 characters"
+            // }
           }}
           errors={errors}
         />
