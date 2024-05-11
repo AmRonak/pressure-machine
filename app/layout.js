@@ -1,8 +1,8 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 import "./globals.css";
-import dayjs from "dayjs";
+import Navigation from "@/components/buttons/Navigation";
+import ShutDown from "@/components/buttons/ShutDown";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -12,48 +12,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const date = dayjs().format('DD - MM - YYYY') 
-  const time = dayjs().format('HH:mm');
 
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className="flex flex-col justify-center fixed top-20 right-20">
-          <div>
-            <p className="text-end pr-4">
-              {`${date} | ${time}`}
-            </p>
-          </div>
-          <div className="flex justify-end">
-            <Link href={'/'}>
-              <Image 
-                src={`/home_icon.svg`}
-                width={100}
-                height={100}
-                alt="home button"
-              />
-            </Link>
-            <Image 
-              src={`/images/user-icon.svg`}
-              width={100}
-              height={100}
-              alt="user profile icon image"
-              className="hover:cursor-pointer"
-            />
-            <Image 
-              src={`/images/battery-full.svg`}
-              width={100}
-              height={100}
-              alt="battery status"
-              className="hover:cursor-pointer"
-            />
-          </div>
-        </div>
-        
-        <button className="flex flex-col justify-center items-center fixed bottom-20 right-20">
-          <Image src={'/images/shutdown-icon.png'} width={60} height={60} alt="shut-down button" />
-          <p>SHUT DOWN</p>
-        </button>
+        <Navigation />
+        <ShutDown />
         <Image
           src='/images/bg.svg'
           alt="background image"

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2019 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4.864mm" height="4.864mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1.0837 1.0837"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil2 {fill:none;fill-rule:nonzero}
+    .fil3 {fill:#4218EF;fill-rule:nonzero}
+    .fil1 {fill:url(#id1);fill-rule:nonzero}
+    .fil0 {fill:url(#id2);fill-rule:nonzero}
+   ]]>
+  </style>
+     <clipPath id="id0">
+      <rect width="1.0837" height="1.0837"/>
+     </clipPath>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="0.5425" y1="0.8753" x2="0.5425" y2="0.8718">
+   <stop offset="0" style="stop-opacity:1; stop-color:#DFE3F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F8F9FD"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="0.5426" y1="0.8735" x2="0.5426" y2="0.109">
+   <stop offset="0" style="stop-opacity:1; stop-color:#DFE3F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FEFEFE"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2455326146576">
+   <g>
+    <g style="clip-path:url(#id0)">
+     <image x="-0" y="0" width="1.0837" height="1.0837" xlink:href="Back Button_F_Images\Back Button_F_ImgID1.png"/>
+    </g>
+    <g>
+     <path class="fil0" d="M0.8339 0.8735l-0.5827 0c-0.0502,0 -0.0909,-0.0407 -0.0909,-0.0909l0 -0.5827c0,-0.0502 0.0407,-0.0909 0.0909,-0.0909l0.5827 0c0.0502,0 0.0909,0.0407 0.0909,0.0909l0 0.5827c0,0.0502 -0.0407,0.0909 -0.0909,0.0909z"/>
+     <polygon class="fil1" points="0.2512,0.8753 0.8339,0.8753 0.8339,0.8718 "/>
+     <path class="fil2" d="M0.2512 0.8735c-0.0502,0 -0.0909,-0.0407 -0.0909,-0.0909"/>
+     <line class="fil2" x1="0.1603" y1="0.7826" x2="0.1603" y2= "0.1999" />
+     <path class="fil2" d="M0.1603 0.1999c0,-0.0502 0.0407,-0.0909 0.0909,-0.0909"/>
+     <line class="fil2" x1="0.2512" y1="0.109" x2="0.8339" y2= "0.109" />
+     <path class="fil2" d="M0.8339 0.109c0.0502,0 0.0909,0.0407 0.0909,0.0909"/>
+     <line class="fil2" x1="0.9248" y1="0.1999" x2="0.9248" y2= "0.7826" />
+     <path class="fil2" d="M0.9248 0.7826c0,0.0502 -0.0407,0.0909 -0.0909,0.0909"/>
+    </g>
+   </g>
+   <polygon class="fil3" points="0.4307,0.4914 0.611,0.6715 0.6544,0.6281 0.5177,0.4914 0.6544,0.3547 0.611,0.3111 "/>
+  </g>
+ </g>
+</svg>
