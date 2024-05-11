@@ -13,7 +13,7 @@ const MenuButton = ({urlPath, imagePath,buttonText, isLink=true, onClick}) => {
           height={250}
           alt={`${buttonText} button`}
         />
-        <p className="xs:text-xs md:text-xs lg:text-xl font-bold uppercase">
+        <p className="text-xs lg:text-base xl:text-xl font-bold uppercase mt-6">
           {buttonText}
         </p>
       </Link>
@@ -25,7 +25,7 @@ const MenuButton = ({urlPath, imagePath,buttonText, isLink=true, onClick}) => {
           height={250}
           alt={`${buttonText} button`}
         />
-        <p className="xs:text-xs md:text-xs lg:text-xl font-bold uppercase">
+        <p className="xs:text-xs lg:text-base xl:text-xl font-bold uppercase mt-6">
           {buttonText}
         </p>
       </button>
