@@ -2,25 +2,27 @@
 import LoginButton from "@/components/buttons/LoginButton";
 import Input from "@/components/inputs/Input";
 import Labels from "@/components/inputs/Labels";
+import { setAuth } from "@/redux/slices/authSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
+  const dispatch = useDispatch();
   const router = useRouter();
 
   const USERNAME = 'username';
   const PASSWORD = 'password';
 
   const onSubmit = (data) => {
-    console.log({data});
+    dispatch(setAuth())
     router.push('/dashboard')
   }
 
@@ -39,11 +41,11 @@ const Login = () => {
           {...register("username", { required: true })}
           register={register}
           validationSchema={{
-            // required: "Username is required",
-            // minLength: {
-            //   value: 3,
-            //   message: "Please enter a minimum of 3 characters"
-            // }
+            required: "Username is required",
+            minLength: {
+              value: 3,
+              message: "Please enter a minimum of 3 characters"
+            }
           }}
           errors={errors}
         />
@@ -58,11 +60,11 @@ const Login = () => {
           {...register("username", { required: true })}
           register={register}
           validationSchema={{
-            // required: "Password is required",
-            // minLength: {
-            //   value: 3,
-            //   message: "Please enter a minimum of 3 characters"
-            // }
+            required: "Password is required",
+            minLength: {
+              value: 3,
+              message: "Please enter a minimum of 3 characters"
+            }
           }}
           errors={errors}
         />

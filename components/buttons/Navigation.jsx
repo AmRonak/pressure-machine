@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
+
+const date = dayjs().format('DD - MM - YYYY') 
+const time = dayjs().format('HH:mm');
 
 const Navigation = () => {
-  
-  const date = dayjs().format('DD - MM - YYYY') 
-  const time = dayjs().format('HH:mm');
   const pathname = usePathname();
-  // console.log({ pathname })
+  const {isAuthenticated} = useSelector(state => state.auth);
 
   return (
     <div className="flex flex-col justify-center fixed top-20 right-20">
@@ -21,21 +22,26 @@ const Navigation = () => {
         </p>
       </div>
       <div className="flex justify-end">
-        <Link href={'/'}>
-          <Image 
-            src={`/images/home_icon.svg`}
-            width={100}
-            height={100}
-            alt="home button"
-          />
-        </Link>
-        <Image 
-          src={`/images/user-icon.svg`}
-          width={100}
-          height={100}
-          alt="user profile icon image"
-          className="hover:cursor-pointer"
-        />
+        {
+        isAuthenticated && (
+          <>
+            <Link href={'/'}>
+              <Image 
+                src={`/images/home_icon.svg`}
+                width={100}
+                height={100}
+                alt="home button"
+              />
+            </Link>
+            <Image 
+              src={`/images/user-icon.svg`}
+              width={100}
+              height={100}
+              alt="user profile icon image"
+              className="hover:cursor-pointer"
+            />
+          </>
+        )}
         <Image 
           src={`/images/battery-full.svg`}
           width={100}

@@ -1,11 +1,20 @@
 'use client';
+import AuthWrapper from "@/components/Auth/AuthWrapper";
 import MenuButton from "@/components/buttons/MenuButton";
-import React from "react";
+import useAuthentication from "@/hooks/useAuthentication";
+import { resetAuth } from "@/redux/slices/authSlice";
+import { redirect, useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const handleLogout = () => {
-    console.log('logout handle')
+    dispatch(resetAuth());
+    router.push('/login');
   }
+  
   return (
     <div className="grid-flow-col mx-auto px-28 py-32">
       <p className="sm:text-4xl md:text-4xl lg:text-6xl font-bold">
