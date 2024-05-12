@@ -13,8 +13,8 @@ const useAuthentication = () => {
   useLayoutEffect(() => {
     const auth = JSON.parse(localStorage.getItem('auth'));
     if(pathname === '/' || pathname === '/login') {
-      dispatch(setAuth());
       if(auth?.isAuthenticated){
+        dispatch(setAuth());
         redirect("/dashboard")
       }
     } else {
