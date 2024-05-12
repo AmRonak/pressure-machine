@@ -6,10 +6,6 @@ const LoginButton = ({
   isLinkButton=false,
   type='button'
 }) => {
-  console.log({
-    isLinkButton,
-    type
-  })
   return (
     isLinkButton ? (
       <Link href={'/login'} className={`login-btn-common ${btnStyle} ${textStyle}`}>

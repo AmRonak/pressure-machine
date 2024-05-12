@@ -7,7 +7,6 @@ const Input = ({
   errors,
   validationSchema
 }) => {
-  console.log({ errors })
   return (
     <>
       <input

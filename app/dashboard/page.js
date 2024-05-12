@@ -1,9 +1,7 @@
 'use client';
-import AuthWrapper from "@/components/Auth/AuthWrapper";
 import MenuButton from "@/components/buttons/MenuButton";
-import useAuthentication from "@/hooks/useAuthentication";
 import { resetAuth } from "@/redux/slices/authSlice";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 
 const Dashboard = () => {

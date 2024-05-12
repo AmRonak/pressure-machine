@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 const ShutDown = () => {
   const pathname = usePathname();
-  console.log({ pathname })
 
   if(pathname !== '/') return null;
 
