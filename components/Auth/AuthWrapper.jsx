@@ -15,7 +15,7 @@ const AuthWrapper = ({children}) => {
     );
   }
 
-  return <>{children}</>;
+  return <div className="relative">{children}</div>;
 };
 
 export default AuthWrapper;

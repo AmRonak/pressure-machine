@@ -2,18 +2,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
-import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 
 const date = dayjs().format('DD - MM - YYYY') 
 const time = dayjs().format('HH:mm');
 
 const Navigation = () => {
-  const pathname = usePathname();
   const {isAuthenticated} = useSelector(state => state.auth);
 
   return (
-    <div className="flex flex-col justify-center fixed top-20 right-20">
+    <div className="flex flex-col justify-center fixed top-10 right-10">
       <div>
         <p className="text-end pr-4">
           <span className="text-xl text-slate-400">{date}</span>
@@ -28,15 +26,15 @@ const Navigation = () => {
             <Link href={'/'}>
               <Image 
                 src={`/images/home_icon.svg`}
-                width={100}
-                height={100}
+                width={80}
+                height={80}
                 alt="home button"
               />
             </Link>
             <Image 
               src={`/images/user-icon.svg`}
-              width={100}
-              height={100}
+              width={80}
+              height={80}
               alt="user profile icon image"
               className="hover:cursor-pointer"
             />
@@ -44,8 +42,8 @@ const Navigation = () => {
         )}
         <Image 
           src={`/images/battery-full.svg`}
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           alt="battery status"
           className="hover:cursor-pointer"
         />

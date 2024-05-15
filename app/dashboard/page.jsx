@@ -14,11 +14,11 @@ const Dashboard = () => {
   }
   
   return (
-    <div className="grid-flow-col mx-auto px-28 py-32">
-      <p className="sm:text-4xl md:text-4xl lg:text-6xl font-bold">
+    <div className="grid-flow-col mx-auto px-16 pt-20 pb-10">
+      <p className="text-5xl lg:text-6xl font-bold">
         MAIN MENU
       </p>
-      <div className="grid grid-flow-row grid-cols-4 my-20 gap-20 gap-y-36">
+      <div className="grid grid-flow-row grid-cols-4 my-20 gap-10">
         <MenuButton
           urlPath={'/test-mode'}
           imagePath={'/images/test-mode-btn.svg'}
@@ -35,7 +35,7 @@ const Dashboard = () => {
           buttonText={'set parameter'}
         />
         <MenuButton
-          urlPath={'/user-creation'}
+          urlPath={'/user-profile'}
           imagePath={'/images/user-profile-btn.svg'}
           buttonText={'user profile'}
         />

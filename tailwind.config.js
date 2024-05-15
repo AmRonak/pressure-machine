@@ -15,6 +15,7 @@ module.exports = {
       backgroundColor:{
         'primary': '#4218EF',
         'primaryDark': '#393185',
+        'background-input': 'linear-gradient(to right, #ffffff, #f2f2f2, #e5e5e5, #d9d9d9, #cccccc)'
       },
       colors: {
         'inputBlack': '#2B2A29',

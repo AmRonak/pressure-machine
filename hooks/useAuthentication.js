@@ -12,7 +12,7 @@ const useAuthentication = () => {
 
   useLayoutEffect(() => {
     const auth = JSON.parse(localStorage.getItem('auth'));
-    console.log(auth);
+    
     if(pathname === '/' || pathname === '/login') {
       if(auth?.isAuthenticated){
         dispatch(setAuth());

@@ -27,9 +27,9 @@ const Login = () => {
   }
 
   return (
-    <div className="grid-flow-col px-28 py-32">
+    <div className="grid-flow-col px-16 py-20">
       <p className="text-6xl font-bold">LOGIN</p>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-28 mr-56">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-2 mt-28 max-w-[800px]">
         <Labels
           id = {USERNAME}
           labelStyles={"text-2xl font-bold text-primaryDark pl-10 pb-3"}

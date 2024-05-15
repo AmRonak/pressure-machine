@@ -18,7 +18,7 @@ const MenuButton = ({urlPath, imagePath,buttonText, isLink=true, onClick}) => {
         </p>
       </Link>
     ) : (
-      <button onClick={onClick} href={urlPath} className="flex flex-col items-center">
+      <button onClick={onClick} className="flex flex-col items-center">
         <Image
           src={imagePath}
           width={250}

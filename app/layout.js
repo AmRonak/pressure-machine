@@ -25,8 +25,10 @@ export default function RootLayout({ children }) {
             <Image
               src='/images/bg.svg'
               alt="background image"
-              fill={true}
-              className="object-cover -z-10"
+              className="fixed object-cover -z-10"
+              width={0}
+              height={0}
+              style={{ width: '100vw', height: '100vh' }}
             />
             {children}
           </AuthWrapper>
