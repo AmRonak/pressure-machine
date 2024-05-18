@@ -43,7 +43,7 @@ const MasterSetting = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="grid grid-cols-3 gap-10 py-10 my-20"
       >
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 flex-no-wrap">
           <RecipeInput
             id={GASKET_PRESSURE}
             labelText={"GASKET PRESSURE"}
@@ -52,31 +52,33 @@ const MasterSetting = () => {
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center'}
+            labelStyles={'self-center text-nowrap'}
           />
           <RecipeInput
             id={GASKET_PRESSURE_ALARM_TIME}
-            labelText={"GASKET PRESSURE ALARM TIME"}
+            labelText={"GASKET PRESSURE"}
+            LabelText2={"ALARM TIME"}
             register={register}
             validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center'}
+            labelStyles={'self-center text-nowrap'}
             textWrap={true}
           />
           <RecipeInput
             id={GLOVE_PRESSURE_ALARM_TIME}
-            labelText={"GLOVE PRESSURE ALARM TIME"}
+            labelText={"GLOVE PRESSURE"}
+            LabelText2={"ALARM TIME"}
             register={register}
             validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center'}
+            labelStyles={'self-center text-nowrap'}
           />
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 flex-no-wrap">
           <RecipeInput
             id={PRESSURE_PURSUING}
             labelText={"PRESSURE PURSUING"}
@@ -85,17 +87,18 @@ const MasterSetting = () => {
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center'}
+            labelStyles={'self-center text-nowrap'}
           />
           <RecipeInput
             id={PRESSURE_PURSUING_ALARM_TIME}
-            labelText={"PRESSURE PURSUING ALARM TIME"}
+            labelText={"PRESSURE PURSUING"}
+            LabelText2={"ALARM TIME"}
             register={register}
             validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center'}
+            labelStyles={'self-center text-nowrap'}
           />
           <div className="flex items-center justify-center gap-4 mt-14">
             <button
@@ -120,16 +123,17 @@ const MasterSetting = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 flex-no-wrap">
           <RecipeInput
             id={VALVE_PRESSURE_RELEASE}
-            labelText={"GLOVE PRESSURE RELEASE VALVE ON PRESSURE"}
+            labelText={"GLOVE PRESSURE RELEASE"}
+            LabelText2={"VALVE ON PRESSURE"}
             register={register}
             validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center -mt-8'}
+            labelStyles={'self-center -mt-8 text-nowrap'}
           />
           <RecipeInput
             id={VALVE_ON_TIME}
@@ -139,7 +143,7 @@ const MasterSetting = () => {
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center mt-8'}
+            labelStyles={'self-center mt-8 text-nowrap'}
           />
           <RecipeInput
             id={VALVE_OFF_TIME}
@@ -149,7 +153,7 @@ const MasterSetting = () => {
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-center mt-8'}
+            labelStyles={'self-center mt-8 text-nowrap'}
           />
         </div>
       </form>

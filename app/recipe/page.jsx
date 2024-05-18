@@ -31,7 +31,7 @@ const Recipe = () => {
       <p className="text-5xl lg:text-6xl font-bold uppercase">
         Recipe
       </p>
-      <div className="grid grid-cols-2 gap-48 p-3">
+      <div className="grid grid-cols-2 gap-48 p-3 my-4">
         <Image
           src={`/images/home_icon.svg`}
           width={120}
@@ -46,64 +46,69 @@ const Recipe = () => {
           alt="time icon"
         />
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-10">
-        <div className="flex justify-between items-center">
-          <RecipeInput
-            id={STABILIZATION_TIME}
-            labelText={"STABILIZATION TIME"}
-            register={register}
-            validationSchema={{}}
-            errors={errors}
-            containerStyles={'w-48 lg:w-72'}
-            inputStyle={'w-48 lg:w-72'}
-          />
-          <RecipeInput
-            id={INITIAL_PRESSURE}
-            labelText={"INITIAL PRESSURE"}
-            register={register}
-            validationSchema={{}}
-            errors={errors}
-            containerStyles={'w-48 lg:w-72'}
-            inputStyle={'w-48 lg:w-72'}
-          />
-          <RecipeInput
-            id={SET_PRESSURE}
-            labelText={"SET PRESSURE"}
-            register={register}
-            validationSchema={{}}
-            errors={errors}
-            containerStyles={'w-48 lg:w-72'}
-            inputStyle={'w-48 lg:w-72'}
-          />
-        </div>
-        <div className="flex justify-between items-center">
-          <RecipeInput
-            id={TEST_TIME}
-            labelText={"TEST TIME"}
-            register={register}
-            validationSchema={{}}
-            errors={errors}
-            containerStyles={'w-48 lg:w-72'}
-            inputStyle={'w-48 lg:w-72 mt-8'}
-          />
-          <RecipeInput
-            id={LEAK_PRESSURE}
-            labelText={"LEAK TEST LIMIT TIME PRESSURE"}
-            register={register}
-            validationSchema={{}}
-            errors={errors}
-            containerStyles={'w-48 lg:w-72'}
-            inputStyle={'w-48 lg:w-72'}
-          />
-          <RecipeInput
-            id={LOWER_PRESSURE}
-            labelText={"LOWER TEST LIMIT PRESSURE"}
-            register={register}
-            validationSchema={{}}
-            errors={errors}
-            containerStyles={'w-48 lg:w-72'}
-            inputStyle={'w-48 lg:w-72'}
-          />
+      <form onSubmit={handleSubmit(onSubmit)} className="grid grid-flow-row gap-y-20 my-10">
+        <div className="grid grid-flow-col grid-cols-3 gap-28 gap-y-10">
+          <div className="grid grid-flow-row col-span-1 gap-20">
+            <RecipeInput
+              id={STABILIZATION_TIME}
+              labelText={"STABILIZATION TIME"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={''}
+              inputStyle={'w-full'}
+            />
+            <RecipeInput
+              id={TEST_TIME}
+              labelText={"TEST TIME"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={''}
+              inputStyle={'w-full mt-8'}
+            />
+          </div>
+          <div className="grid grid-flow-row col-span-1 gap-20">
+            <RecipeInput
+              id={INITIAL_PRESSURE}
+              labelText={"INITIAL PRESSURE"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={''}
+              inputStyle={'w-full'}
+            />
+            <RecipeInput
+              id={LEAK_PRESSURE}
+              labelText={"LEAK TEST LIMIT TIME PRESSURE"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={''}
+              inputStyle={'w-full'}
+              labelStyles={''}
+            />
+          </div>
+          <div className="grid grid-flow-row col-span-1 gap-20">
+            <RecipeInput
+              id={SET_PRESSURE}
+              labelText={"SET PRESSURE"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={''}
+              inputStyle={'w-full'}
+            />
+            <RecipeInput
+              id={LOWER_PRESSURE}
+              labelText={"LOWER TEST LIMIT PRESSURE"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              labelStyles={''}
+              inputStyle={'w-full'}
+            />
+          </div>
         </div>
         <div className="grid grid-cols-2 items-center xl:gap-48">
           <RecipeInput

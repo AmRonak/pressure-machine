@@ -5,6 +5,7 @@ import Input from "./Input";
 const RecipeInput = ({
   id,
   labelText,
+  LabelText2,
   register,
   inputStyle,
   validationSchema,
@@ -20,6 +21,7 @@ const RecipeInput = ({
         id = {id}
         labelStyles={`text-base lg:text-2xl font-bold text-primary mb-2 text-center ${textWrap && 'text-wrap'} ${labelStyles}`}
         labelText={labelText}
+        LabelText2={LabelText2}
       />
       <Input
         id={id}
