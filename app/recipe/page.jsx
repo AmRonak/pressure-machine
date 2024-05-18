@@ -77,13 +77,14 @@ const Recipe = () => {
             />
             <RecipeInput
               id={LEAK_PRESSURE}
-              labelText={"LEAK TEST LIMIT TIME PRESSURE"}
+              labelText={"LEAK TEST"}
+              labelText2={"LIMIT PRESSURE"}
               register={register}
               validationSchema={{}}
               errors={errors}
               containerStyles={''}
               inputStyle={'w-full'}
-              labelStyles={''}
+              labelStyles={'text-nowrap'}
             />
           </div>
           <div className="grid grid-flow-row col-span-1 gap-20">
@@ -98,11 +99,12 @@ const Recipe = () => {
             />
             <RecipeInput
               id={LOWER_PRESSURE}
-              labelText={"LOWER TEST LIMIT PRESSURE"}
+              labelText={"LOWER TEST"}
+              labelText2={"LIMIT PRESSURE"}
               register={register}
               validationSchema={{}}
               errors={errors}
-              labelStyles={''}
+              labelStyles={'text-nowrap'}
               inputStyle={'w-full'}
             />
           </div>

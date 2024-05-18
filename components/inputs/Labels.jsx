@@ -1,10 +1,10 @@
 'use client';
 
-const Labels = ({id, labelStyles, labelText, LabelText2}) => {
+const Labels = ({id, labelStyles, labelText, labelText2}) => {
   return (
     <label htmlFor={id} className={`${labelStyles}`}>
       <p>{labelText}</p>
-      {LabelText2 && <p>{LabelText2}</p>}
+      {labelText2 && <p>{labelText2}</p>}
     </label>
   );
 };

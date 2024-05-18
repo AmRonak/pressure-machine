@@ -53,7 +53,7 @@ const MasterSetting = () => {
           <RecipeInput
             id={GASKET_PRESSURE_ALARM_TIME}
             labelText={"GASKET PRESSURE"}
-            LabelText2={"ALARM TIME"}
+            labelText2={"ALARM TIME"}
             register={register}
             validationSchema={{}}
             errors={errors}
@@ -65,7 +65,7 @@ const MasterSetting = () => {
           <RecipeInput
             id={GLOVE_PRESSURE_ALARM_TIME}
             labelText={"GLOVE PRESSURE"}
-            LabelText2={"ALARM TIME"}
+            labelText2={"ALARM TIME"}
             register={register}
             validationSchema={{}}
             errors={errors}
@@ -88,7 +88,7 @@ const MasterSetting = () => {
           <RecipeInput
             id={PRESSURE_PURSUING_ALARM_TIME}
             labelText={"PRESSURE PURSUING"}
-            LabelText2={"ALARM TIME"}
+            labelText2={"ALARM TIME"}
             register={register}
             validationSchema={{}}
             errors={errors}
@@ -123,7 +123,7 @@ const MasterSetting = () => {
           <RecipeInput
             id={VALVE_PRESSURE_RELEASE}
             labelText={"GLOVE PRESSURE RELEASE"}
-            LabelText2={"VALVE ON PRESSURE"}
+            labelText2={"VALVE ON PRESSURE"}
             register={register}
             validationSchema={{}}
             errors={errors}
