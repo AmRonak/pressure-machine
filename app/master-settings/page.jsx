@@ -5,10 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-const OLD_PASSWORD = "gasket_pressure";
-const NEW_PASSWORD = "new_password";
-const CONFIRM_PASSWORD = "confirm_password";
-
 const GASKET_PRESSURE = "gasket_pressure";
 const GASKET_PRESSURE_ALARM_TIME = 'gasket_pressure_alarm_time';
 const GLOVE_PRESSURE_ALARM_TIME = 'glove_pressure_alarm_time';

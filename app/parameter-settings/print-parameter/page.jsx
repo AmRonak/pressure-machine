@@ -5,11 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-const COMPANY_NAME = "company_name";
-const DEPARTMENT_NAME = "department_name";
-const EQUIPMENT_NAME = "equipment_name";
-const EQUIPMENT_NUMBER = "equipment_serial_number";
-
 const AREA_NAME = "area_name";
 const BATCH_NAME = "batch_name";
 const BATCH_NO = "batch_no";
@@ -23,7 +18,6 @@ const ParameterSetting = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
   }
 
   return (
