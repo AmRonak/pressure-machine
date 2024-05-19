@@ -22,6 +22,7 @@ const Login = () => {
   const PASSWORD = 'password';
 
   const onSubmit = (data) => {
+    console.log(data);
     dispatch(setAuth())
     router.push('/dashboard')
   }

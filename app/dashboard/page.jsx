@@ -14,7 +14,7 @@ const Dashboard = () => {
   }
   
   return (
-    <div className="grid-flow-col mx-auto px-16 pt-20 pb-10">
+    <div className="grid-flow-col mx-auto px-16 pt-20">
       <p className="text-5xl lg:text-6xl font-bold">
         MAIN MENU
       </p>

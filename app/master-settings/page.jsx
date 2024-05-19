@@ -99,7 +99,6 @@ const MasterSetting = () => {
           <div className="flex items-center justify-center gap-4 mt-14">
             <button
               type="submit"
-              onClick={handleSubmit(onSubmit)}
               className="flex flex-col items-center"
             >
               <Image

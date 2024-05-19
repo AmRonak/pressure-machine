@@ -26,7 +26,6 @@ const RecipeInput = ({
       <Input
         id={id}
         inputStyles={`login-input rounded-2xl ${inputStyle}`}
-        {...register("stabilization_time", { required: true })}
         register={register}
         validationSchema={validationSchema}
         errors={errors}

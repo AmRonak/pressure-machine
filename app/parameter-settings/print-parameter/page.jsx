@@ -18,6 +18,7 @@ const ParameterSetting = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
   }
 
   return (
@@ -89,7 +90,7 @@ const ParameterSetting = () => {
                 alt="back button"
               />
             </Link>
-          <button type="submit" onClick={handleSubmit(onSubmit)} className="flex flex-col items-center">
+          <button type="submit" className="flex flex-col items-center">
             <Image
               src={'/images/block-btn.svg'}
               width={130}
