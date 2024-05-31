@@ -64,22 +64,23 @@ const TestMode = () => {
                 width={0}
                 height={0}
                 alt="pressure white"
-                className={`min-w-80 min-h-8min-w-80 lg:min-w-[30rem] lg:min-h-[30rem] p-2`}
+                className={`min-w-80 min-h-8min-w-80 lg:min-w-[30rem] lg:min-h-[30rem] p-2 mb-6`}
               />
               <Labels
                 id = {ACTUAL_PRESSURE}
                 labelStyles={`text-base lg:text-2xl font-bold text-primary my-2 text-center`}
                 labelText={"ACTUAL PRESSURE"}
               />
-          </div>
-          <TestInput
+            </div>
+            <TestInput
               id={END_PRESSURE}
               labelText={"END PRESSURE"}
               register={register}
               validationSchema={{}}
               errors={errors}
-              containerStyles={'w-full mt-8'}
-              inputStyle={'w-full'}
+              inputStyle={'w-full mt-8'}
+              placeholder="Pa"
+              containerStyles={'flex flex-col items-center justify-between'}
             />
           </div>
           <div className="grid grid-flow-row col-span-1 gap-10 place-items-center">

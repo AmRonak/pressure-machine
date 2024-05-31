@@ -167,7 +167,7 @@ const UserCreation = () => {
         <div className="flex items-center gap-28 mb-8">
           <button type="submit" className="flex flex-col items-center">
             <Image
-              src={'/images/save-btn.svg'}
+              src={'/images/create-btn.svg'}
               width={130}
               height={130}
               alt={`save recipe button`}

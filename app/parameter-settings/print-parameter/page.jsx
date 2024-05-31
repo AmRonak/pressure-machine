@@ -59,7 +59,7 @@ const ParameterSetting = () => {
             <div className="flex justify-between items-center gap-36">
               <RecipeInput
                 id={BATCH_NO}
-                labelText={"Batch Name"}
+                labelText={"Batch No"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}

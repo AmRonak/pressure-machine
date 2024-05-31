@@ -19,7 +19,7 @@ const MaintenanceMode = () => {
       <div className="flex justify-around my-28 mx-auto px-4">
         <div className="border-solid border-slate-900 w-44 lg:w-60 xl:w-80 h-36 border-4 border-opacity-25 border-b-0">
           <p
-            className="relative bg-white text-inputBlack p-2 -top-4 left-[44px] lg:left-[60px] xl:left-[100px] inline lg:text-2xl font-semibold tracking-widest"
+            className="relative bg-[url('/images/bg.svg')] text-inputBlack p-2 -top-4 left-[44px] lg:left-[60px] xl:left-[100px] inline lg:text-2xl font-semibold tracking-widest"
           >
             VALVE
           </p>
@@ -45,7 +45,7 @@ const MaintenanceMode = () => {
         <div className="flex items-center">
           <div className="border-solid border-slate-900 w-36 lg:w-60 xl:w-80 h-36 border-4 border-opacity-25 border-r-0 border-b-0">
             <p
-              className="relative bg-white text-inputBlack p-2 inline font-semibold tracking-widest -top-4 left-[95px] lg:left-[175px] xl:left-[254px] lg:text-2xl"
+              className="relative bg-[url('/images/bg.svg')] text-inputBlack p-2 inline font-semibold tracking-widest -top-4 left-[95px] lg:left-[175px] xl:left-[254px] lg:text-2xl"
             >
               MOTOR
             </p>
