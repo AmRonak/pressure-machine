@@ -92,7 +92,7 @@ const ParameterSetting = () => {
           </Link>
           <button type="submit" className="flex flex-col items-center">
             <Image
-              src={'/images/block-btn.svg'}
+              src={'/images/save-btn.svg'}
               width={130}
               height={130}
               alt={`save recipe button`}

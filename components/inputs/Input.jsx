@@ -6,7 +6,8 @@ const Input = ({
   register,
   errors,
   validationSchema,
-  placeholder=true
+  placeholder=true,
+  type="text"
 }) => {
   const placeholderValue = (placeholder && typeof placeholder === 'boolean') ? "ABC123" : placeholder
   return (
@@ -15,6 +16,7 @@ const Input = ({
         placeholder={placeholderValue}
         id={id}
         className={`bg-background-input ${inputStyles}`}
+        type={type}
         {...register(id, validationSchema)}
       />
       {errors && (

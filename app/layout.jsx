@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
               className="fixed object-cover -z-10"
               width={0}
               height={0}
+              quality={80}
               style={{ width: '100vw', height: '100vh' }}
             />
             {children}
