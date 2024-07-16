@@ -1,21 +1,43 @@
 'use client';
 
 import RecipeInput from "@/components/inputs/RecipeInput";
+import { toatsConfig } from "@/constants/toast";
+import { passwordChangeSchema } from "@/schema/userManagementSchema.yup";
+import handleAxiosRequest from "@/util/handleRequest";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
-const OLD_PASSWORD = "old_password";
-const NEW_PASSWORD = "new_password";
-const CONFIRM_PASSWORD = "confirm_password";
+const CURRENT_PASSWORD = "currentPassword";
+const NEW_PASSWORD = "newPassword";
+const CONFIRM_PASSWORD = "confirmPassword";
 
 const UserProfile = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(passwordChangeSchema),
+    mode: "onChange"
+  });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (payloadData) => {
+    try {
+      await handleAxiosRequest({
+        api: 'users/changePassword',
+        method: 'patch',
+        payloadData: {
+          ...payloadData,
+          confirmPassword: 'Ronak@AB+9'
+        },
+      });
+      toast.success("Password changed successfully", toatsConfig);
+    } catch (error) {
+      toast.error(error.message, toatsConfig);
+    }
   }
 
   return (
@@ -34,10 +56,9 @@ const UserProfile = () => {
       >
         <div className="flex flex-col gap-10 col-span-3">
           <RecipeInput
-            id={OLD_PASSWORD}
+            id={CURRENT_PASSWORD}
             labelText={"OLD PASSWORD"}
             register={register}
-            validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
@@ -48,7 +69,6 @@ const UserProfile = () => {
             id={NEW_PASSWORD}
             labelText={"NEW PASSWORD"}
             register={register}
-            validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
@@ -59,7 +79,6 @@ const UserProfile = () => {
             id={CONFIRM_PASSWORD}
             labelText={"CONFIRM PASSWORD"}
             register={register}
-            validationSchema={{}}
             errors={errors}
             containerStyles={'w-full'}
             inputStyle={'w-full rounded-3xl p-5'}
