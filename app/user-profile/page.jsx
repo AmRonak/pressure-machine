@@ -30,10 +30,7 @@ const UserProfile = () => {
       await handleAxiosRequest({
         api: 'users/changePassword',
         method: 'patch',
-        payloadData: {
-          ...payloadData,
-          confirmPassword: 'ronakData@08'
-        },
+        payloadData,
       });
       toast.success("Password changed successfully", toatsConfig);
       reset();
