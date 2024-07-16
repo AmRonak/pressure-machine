@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const MaintenanceMode = () => {
   const handleImageClick = (d) => {
-    console.log(d.target.id)
   }
   return (
     <div className="pt-20">

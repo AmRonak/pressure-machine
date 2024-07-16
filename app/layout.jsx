@@ -5,6 +5,8 @@ import Navigation from "@/components/buttons/Navigation";
 import ShutDown from "@/components/buttons/ShutDown";
 import Providers from "@/redux/Providers";
 import AuthWrapper from "@/components/Auth/AuthWrapper";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -14,7 +16,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
   return (
     <html lang="en">
       <body className={montserrat.className}>
@@ -32,6 +33,18 @@ export default function RootLayout({ children }) {
               style={{ width: '100vw', height: '100vh' }}
             />
             {children}
+            <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
           </AuthWrapper>
         </Providers>
       </body>

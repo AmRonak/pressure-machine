@@ -2,7 +2,9 @@
 import LoginButton from "@/components/buttons/LoginButton";
 import Input from "@/components/inputs/Input";
 import Labels from "@/components/inputs/Labels";
+import { JWT_TOKEN_NAME, PASSWORD_ERROR_MESSAGE } from "@/constants/constants";
 import { setAuth } from "@/redux/slices/authSlice";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
@@ -13,6 +15,7 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
@@ -21,10 +24,26 @@ const Login = () => {
   const USERNAME = 'username';
   const PASSWORD = 'password';
 
-  const onSubmit = (data) => {
-    console.log(data);
-    dispatch(setAuth())
-    router.push('/dashboard')
+  const onSubmit = async(data) => {
+    let config = {
+      method: 'post',
+      url: 'http://localhost:5000/api/users/login',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data
+    };
+    axios.request(config)
+    .then(({data}) => {
+      dispatch(setAuth(data.token));
+      router.push('/dashboard')
+    })
+    .catch((error) => {
+      setError('root.serverError', {
+        type: error.message,
+        message: error.response.data.message
+      })
+    });
   }
 
   return (
@@ -45,8 +64,12 @@ const Login = () => {
             required: "Username is required",
             minLength: {
               value: 3,
-              message: "Please enter a minimum of 3 characters"
-            }
+              message: "Username must be 3-30 characters long"
+            },
+            maxLength: {
+              value: 30,
+              message: "Username must be 3-30 characters long"
+            },
           }}
           errors={errors}
         />
@@ -57,18 +80,27 @@ const Login = () => {
         />
         <Input
           id={PASSWORD}
-          inputStyles={"login-input mb-8"}
+          inputStyles={"login-input"}
           {...register("username", { required: true })}
           register={register}
           validationSchema={{
             required: "Password is required",
             minLength: {
-              value: 3,
-              message: "Please enter a minimum of 3 characters"
-            }
+              value: 8,
+              message: PASSWORD_ERROR_MESSAGE
+            },
+            maxLength: {
+              value: 16,
+              message: PASSWORD_ERROR_MESSAGE
+            },
+            pattern: {
+              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
+              message: PASSWORD_ERROR_MESSAGE,
+            },
           }}
           errors={errors}
         />
+        {errors?.root?.serverError && <p className="pt-3 mt-5 text-center text-red-600">{errors.root.serverError.message}</p>}
         <div className="flex justify-center items-center gap-20 mt-8">
           <LoginButton
             btnStyle='w-60 h-14'

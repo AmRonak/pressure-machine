@@ -14,6 +14,7 @@ const RecipeInput = ({
   containerStyles,
   textWrap=true,
   placeholder=false,
+  type,
 }) => {
   return (
     <div className={`flex flex-col items-center justify-between ${containerStyles}`}>
@@ -30,6 +31,7 @@ const RecipeInput = ({
         validationSchema={validationSchema}
         errors={errors}
         placeholder={placeholder}
+        type={type}
       />
     </div>
   );

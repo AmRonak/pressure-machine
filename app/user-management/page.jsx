@@ -1,9 +1,15 @@
 'use client';
-
+import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
+import { ADMINISTRATOR, MANAGER, OPERATOR, SUPERVISOR } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup"
+import { userManagementSchema } from "@/schema/userManagementSchema.yup";
+import { toastError, toastSuccess, toatsConfig } from "@/constants/toast";
+import handleAxiosRequest from "@/util/handleRequest";
+import { toast } from "react-toastify";
 
 const USERNAME = "username";
 const PASSWORD = "password";
@@ -12,21 +18,63 @@ const PIN = "pin";
 const CONFIRM_PIN = "confirmPin";
 const USER_LEVEL = "userLevel";
 const AUTO_UNBLOCK_TIME = "autoUnblockTime";
-const NO_OF_ATTEMPTS = "noOfAttempts";
+const NO_OF_ATTEMPTS = "attempts";
 const AUTO_LOGOUT_TIME = "autoLogoutTime";
 const PASSWORD_EXPIRY = "passwordExpiry";
 const EXPIRY_DAYS_NOTIFICATION = "expiryDaysNotification";
 
+const defaultValues = {
+  username: '',
+  password: '',
+  pin: '',
+  confirmPassword: '',
+  confirmPin: '',
+  userLevel: OPERATOR,
+  autoUnblockTime: 300,
+  attempts: 4,
+  autoLogoutTime: 300,
+  passwordExpiry: 90,
+  expiryDaysNotification: 3,
+}
+
+const userLevels = [
+  {value: 'choose', text: 'Select Role'},
+  {value: ADMINISTRATOR, text: 'Administrator'},
+  {value: SUPERVISOR, text: 'Supervisor'},
+  {value: MANAGER, text: 'Manager'},
+  {value: OPERATOR, text: 'Operator'},
+];
 
 const UserCreation = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+    setError,
+    reset
+  } = useForm({
+    defaultValues,
+    resolver: yupResolver(userManagementSchema),
+    mode: "onChange"
+  });
 
-  const onSubmit = (data) => {
-    console.log({data})
+  const onSubmit = async (payloadData) => {
+    try {
+      const { data } = await handleAxiosRequest({
+        api: 'users/register',
+        method: 'post',
+        payloadData,
+      });
+      const successMessage = `${data.username} is created successfully`;
+      toast.success(successMessage, toatsConfig);
+      reset();
+    } catch (error) {
+      setError('root.serverError', {
+        type: error.message,
+        message: error.response.data.message
+      })
+      toast.error(error.response.data.message);
+    }
   }
 
   return (
@@ -41,7 +89,6 @@ const UserCreation = () => {
               id={USERNAME}
               labelText={"USER NAME"}
               register={register}
-              validationSchema={{}}
               errors={errors}
               containerStyles={''}
               inputStyle={'w-full rounded-4xl p-5'}
@@ -54,7 +101,6 @@ const UserCreation = () => {
                 labelText={"PASSWORD"}
                 placeholder="********"
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-2'}
                 inputStyle={'w-full rounded-4xl p-5'}
@@ -65,10 +111,10 @@ const UserCreation = () => {
                 labelText={"PIN"}
                 placeholder="****"
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-1'}
                 inputStyle={'w-full rounded-4xl p-5'}
+                type={'Number'}
               />
             </div>
             <div className="grid grid-cols-3 gap-14">
@@ -77,7 +123,6 @@ const UserCreation = () => {
                 labelText={"CONFIRM PASSWORD"}
                 placeholder="********"
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-2'}
                 inputStyle={'w-full rounded-4xl p-5'}
@@ -88,7 +133,6 @@ const UserCreation = () => {
                 labelText={"CONFIRM PIN"}
                 placeholder="****"
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-1'}
                 inputStyle={'w-full rounded-4xl p-5'}
@@ -98,25 +142,25 @@ const UserCreation = () => {
           </div>
           <div className="grid grid-flow-row col-span-1 gap-20">
             <div className="grid grid-cols-3 gap-14">
-              <RecipeInput
+              <Dropdown
                 id={USER_LEVEL}
                 labelText={"USER LEVEL"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-2'}
                 inputStyle={'w-full rounded-4xl p-5'}
+                options={userLevels}
               />
               <RecipeInput
                 id={AUTO_UNBLOCK_TIME}
                 labelText={"AUTO"}
                 labelText2={"UNBLOCK TIME"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-1'}
                 inputStyle={'w-full rounded-4xl p-5'}
                 labelStyles={"text-nowrap -mt-4"}
+                type={'Number'}
               />
             </div>
             <div className="grid grid-cols-2 gap-14">
@@ -125,20 +169,20 @@ const UserCreation = () => {
                 labelText={"No. Of"}
                 labelText2={"Attempts"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 inputStyle={'w-full rounded-4xl p-5'}
+                type={'Number'}
               />
               <RecipeInput
                 id={AUTO_LOGOUT_TIME}
                 labelText={"AUTO"}
                 labelText2={"LOGOUT TIME"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'col-span-1'}
                 inputStyle={'w-full rounded-4xl p-5'}
                 labelStyles={"text-nowrap"}
+                type={'Number'}
               />
             </div>
             <div className="grid grid-cols-2 gap-14">
@@ -147,19 +191,19 @@ const UserCreation = () => {
                 labelText={"PASSWORD"}
                 labelText2={"EXPIRY"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 inputStyle={'w-full rounded-4xl p-5'}
+                type={'Number'}
               />
               <RecipeInput
                 id={EXPIRY_DAYS_NOTIFICATION}
                 labelText={"EXPIRY"}
                 labelText2={"DAYS NOTIFICATION"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 inputStyle={'w-full rounded-4xl p-5'}
                 labelStyles={"text-nowrap"}
+                type={'Number'}
               />
             </div>
           </div>

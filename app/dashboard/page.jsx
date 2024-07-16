@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     dispatch(resetAuth());
-    router.push('/login');
+    router.push('/');
   }
   
   return (

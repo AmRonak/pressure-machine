@@ -1,8 +1,12 @@
 'use client';
 
 import RecipeInput from "@/components/inputs/RecipeInput";
+import { MANAGER, OPERATOR } from "@/constants/constants";
+import { useAuthSelector } from "@/redux/slices/authSlice";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 const COMPANY_NAME = "company_name";
@@ -10,15 +14,25 @@ const DEPARTMENT_NAME = "department_name";
 const EQUIPMENT_NAME = "equipment_name";
 const EQUIPMENT_NUMBER = "equipment_serial_number";
 
+const PRINT_PARAMETER_PATH = '/parameter-settings/print-parameter';
+
 const ParameterSetting = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const {userDetail} = useAuthSelector();
+  const router = useRouter(PRINT_PARAMETER_PATH);
+
+  useEffect(() => {
+    const { userLevel } = userDetail;
+    if(userLevel === MANAGER || userLevel === OPERATOR) {
+      router.push('/')
+    }
+  }, [userDetail])
 
   const onSubmit = (data) => {
-    console.log(data)
   }
 
   return (
@@ -82,7 +96,7 @@ const ParameterSetting = () => {
           </div>
         </div>
         <div className="flex flex-col items-center self-end gap-4">
-          <Link href={'/parameter-settings/print-parameter'}>
+          <Link href={PRINT_PARAMETER_PATH}>
             <Image
               src={"/images/back_button.svg"}
               width={100}

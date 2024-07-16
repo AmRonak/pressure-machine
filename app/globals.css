@@ -7,6 +7,12 @@
   color: #4218EF;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @layer components {
   .login-input {
     @apply placeholder-inputBlack text-inputBlack text-center outline-none bg-zinc-50 text-xl p-4 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-full mb-2
@@ -14,4 +20,5 @@
   .login-btn-common {
     @apply bg-primary rounded-full text-white font-bold capitalize text-center
   }
+  
 }

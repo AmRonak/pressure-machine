@@ -1,66 +1,92 @@
 'use client';
+import Loading from "@/components/Loading";
+import { toatsConfig } from "@/constants/toast";
+import handleAxiosRequest from "@/util/handleRequest";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-
-const usersProp = [
-  { userName: "Alice123", userType: "ADMIN" },
-  { userName: "Bob456", userType: "MANAGER" },
-  { userName: "Charlie7", userType: "ADMIN" },
-  { userName: "David890", userType: "MANAGER" },
-  { userName: "Eve12345", userType: "ADMIN" },
-  { userName: "Frank6789", userType: "MANAGER" },
-  { userName: "Grace1234", userType: "ADMIN" },
-  { userName: "Hank567", userType: "MANAGER" },
-  { userName: "Ivy6789", userType: "ADMIN" },
-  { userName: "Jack1234", userType: "MANAGER" },
-  { userName: "Kara5678", userType: "ADMIN" },
-  { userName: "Liam1234", userType: "MANAGER" },
-  { userName: "Mia56789", userType: "ADMIN" },
-  { userName: "Nina1234", userType: "MANAGER" },
-  { userName: "Paul5678", userType: "MANAGER" },
-  { userName: "Quinn1234", userType: "ADMIN" },
-  { userName: "Rose5678", userType: "MANAGER" },
-  { userName: "Sam12345", userType: "ADMIN" },
-  { userName: "Tina6789", userType: "MANAGER" },
-  { userName: "Uma123456", userType: "ADMIN" },
-  { userName: "Vera6789", userType: "MANAGER" },
-  { userName: "Will12345", userType: "ADMIN" },
-  { userName: "Xena5678", userType: "MANAGER" },
-  { userName: "Yara1234", userType: "ADMIN" },
-  { userName: "Zane5678", userType: "MANAGER" },
-  { userName: "Abby12345", userType: "ADMIN" },
-  { userName: "Ben56789", userType: "MANAGER" },
-  { userName: "Cara1234", userType: "ADMIN" },
-  { userName: "Drew5678", userType: "MANAGER" }
-];
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const UserList = () => {
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [users, setUsers] = useState([]);
   const [selectedUsers, setSelectedUsers] = useState([]);
   const router = useRouter();
 
+  useEffect(() => {
+    const fetchAllUsers = async () => {
+      try {
+        const { data } = await handleAxiosRequest({
+          api: 'users',
+          payloadData: null
+        });
+        setUsers(data)
+      } catch (error) {
+        setIsError(error.message);
+      }
+    }
+    fetchAllUsers();
+    setIsLoading(false);
+  }, [])
+
   const checkboxHandle = (user) => {
     setSelectedUsers((oldSelectedUsers) => (
-      oldSelectedUsers.find(oldSelectedUser => oldSelectedUser.userName === user.userName)
-      ? oldSelectedUsers.filter(oldSelectedUser => oldSelectedUser.userName !== user.userName )
-      : oldSelectedUsers.concat(user)
+      oldSelectedUsers.includes(user.id)
+      ? oldSelectedUsers.filter(id => id !== user.id)
+      : oldSelectedUsers.concat(user.id)
     ))
   };
-
-  console.log(selectedUsers);
   
-  const handleBlockClick = () => {
-    // /user-management/user-modification/${encodeURIComponent(selectedUsers[0].userName)}
+  const handleBlockClick = async () => {
+    try {
+      const { data } = await handleAxiosRequest({
+        api: 'users/block',
+        method: 'post',
+        payloadData: {
+          ids: selectedUsers,
+          action: 'block'
+        }
+      });
+      toast.success('users blocked successfully', toatsConfig);
+      setUsers((oldUsesrList) => oldUsesrList.map((user) => {
+        if(data.ids.includes(user.id)) {
+          user.active = false;
+        }
+        return user;
+      }));
+      setSelectedUsers([]);
+    } catch (error) {
+      toast.error('failed to block users, please try sometimes later.', toatsConfig)
+    }
   }
 
-  const handleUnblockClick = () => {
-    // /user-management/user-modification/${encodeURIComponent(selectedUsers[0].userName)}
+  const handleUnblockClick = async () => {
+    try {
+      const { data } = await handleAxiosRequest({
+        api: 'users/block',
+        method: 'post',
+        payloadData: {
+          ids: selectedUsers,
+          action: 'unblock'
+        }
+      });
+      toast.success('users unblocked successfully', toatsConfig);
+      setUsers((oldUsesrList) => oldUsesrList.map((user) => {
+        if(data.ids.includes(user.id)) {
+          user.active = true;
+        }
+        return user;
+      }));
+      setSelectedUsers([]);
+    } catch (error) {
+      toast.error('failed to unblock users, please try sometimes later.', toatsConfig)
+    }
   }
 
   const handleEditClick = () => {
-    router.push(`/user-management/${encodeURIComponent(selectedUsers[0].userName)}`)
-    // /user-management/user-modification/${encodeURIComponent(selectedUsers[0].userName)}
+    router.push(`/user-management/${encodeURIComponent(selectedUsers[0])}`)
     
   }
 
@@ -109,34 +135,44 @@ const UserList = () => {
           />
         </button>
       </div>
-      <table className="my-10 w-full p-4">
-        <thead className="p-4">
-          <tr className="grid grid-flow-col grid-cols-12 w-full gap-1">
-            <th className="p-1"></th>
-            <th className="text-start text-xl uppercase col-span-5 col-start-2">user name</th>
-            <th className="text-start text-xl uppercase col-span-5 col-start-7">user type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <div className="bg-white overflow-y-scroll" style={{height: "50vh"}}>
-            {usersProp.map((user) => (
-              <tr key={`user-${user.userName}`} className="grid grid-flow-col grid-cols-12 gap-1">
-                <th>
-                  <input
-                    id={user.userName}
-                    type="checkbox"
-                    checked={user.selected}
-                    onChange={() => checkboxHandle(user)}
-                    className="bg-gray-600 border-green-500"
-                  />
-                </th>
-                <td className="col-span-5 col-start-2">{user.userName}</td>
-                <td className="col-span-5 col-start-7">{user.userType}</td>
+      { isLoading && <Loading /> }
+      {
+        isError && (
+          <p className="p-5 m-5 text-center text-red-500">failed to load users list, please try sometimes later.</p>
+        )
+      }
+      {
+        !isError && !isLoading && (
+          <table className="my-10 w-full p-4">
+            <thead className="p-4">
+              <tr className="grid grid-flow-col grid-cols-12 w-full gap-1">
+                <th className="p-1"></th>
+                <th className="text-start text-xl uppercase col-span-3 col-start-2">user name</th>
+                <th className="text-start text-xl uppercase col-span-3 col-start-6">status</th>
+                <th className="text-start text-xl uppercase col-span-3 col-start-9">user type</th>
               </tr>
-            ))}
-          </div>
-        </tbody>
-      </table>
+            </thead>
+            <tbody className="bg-white overflow-y-scroll" style={{height: "50vh"}}>
+                {users.map((user) => (
+                  <tr key={`user-${user.username}`} className="grid grid-flow-col grid-cols-12 gap-1">
+                    <th>
+                      <input
+                        id={user.username}
+                        type="checkbox"
+                        checked={selectedUsers.includes(user.id)}
+                        onChange={() => checkboxHandle(user)}
+                        className="bg-gray-600 border-green-500"
+                      />
+                    </th>
+                    <td className="col-span-3 col-start-2">{user.username}</td>
+                    <td className="col-span-3 col-start-6 ml-2">{user.active ? 'Active' : 'Blocked'}</td>
+                    <td className="col-span-3 col-start-9 ml-3">{user.userLevel}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        )
+      }
       <Link href={'/user-management/'}>
         <Image
           src={"/images/back_button.svg"}

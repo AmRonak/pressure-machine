@@ -1,48 +1,42 @@
-import React, { useState } from "react";
+import Labels from './Labels';
+import styles from './dropdown.module.scss';
 
-const Dropdown = () => {
-  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsDropDownOpen(!isDropDownOpen);
-  }
-
+const Dropdown = ({
+  id,
+  labelStyles,
+  labelText,
+  containerStyles,
+  register,
+  validationSchema,
+  errors,
+  options,
+  inputStyle
+}) => {
   return (
-    <div>
-      <button
-        id="dropdownDefaultButton"
-        data-dropdown-toggle="dropdown"
-        className="text-white bg-primary p-4 rounded-3xl"
-        type="button"
-        onClick={handleClick}
+    <div className={`flex flex-col items-center justify-between ${containerStyles} relative ${styles.selectDiv}`}>
+      <Labels
+        id = {id}
+        labelStyles={`text-base lg:text-2xl font-bold text-primary mb-2 text-center${labelStyles}`}
+        labelText={labelText}
+      />
+      <select
+        id={id}
+        className={`bg-background-input login-input rounded-2xl ${inputStyle} ${styles.select}`}
+        {...register(id, validationSchema)}
       >
-        Dropdown button
-      </button>
-      {
-        isDropDownOpen && (
-          <div
-            id="dropdown"
-            className="z-10 relative bg-white divide-y  rounded-lg shadow w-44"
-          >
-            <ul className="py-2" aria-labelledby="dropdownDefaultButton">
-              <li>
-                <a className="block px-4 py-2">Dashboard</a>
-              </li>
-              <li>
-                <a className="block px-4 py-2">Settings</a>
-              </li>
-              <li>
-                <a className="block px-4 py-2">Earnings</a>
-              </li>
-              <li>
-                <a className="block px-4 py-2">Sign out</a>
-              </li>
-            </ul>
-          </div>
-        )
-      }
-
-    </div>);
-};
+        {
+          options.map(({value, text}) => (
+            <option key={value} value={value} className='text-primary mt-2' >
+              {text}
+            </option>
+          ))
+        }
+      </select>
+      {errors && (
+        <span className="text-red-600">{errors[id]?.message}</span>
+      )}
+    </div>
+  )
+}
 
 export default Dropdown;

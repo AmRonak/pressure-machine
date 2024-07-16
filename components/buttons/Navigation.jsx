@@ -23,7 +23,7 @@ const Navigation = () => {
         {
         isAuthenticated && (
           <>
-            <Link href={'/'}>
+            <Link href={'/dashboard'}>
               <Image 
                 src={`/images/home_icon.svg`}
                 width={80}

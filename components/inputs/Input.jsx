@@ -17,6 +17,7 @@ const Input = ({
         id={id}
         className={`bg-background-input ${inputStyles}`}
         type={type}
+        // autocomplete="off"
         {...register(id, validationSchema)}
       />
       {errors && (

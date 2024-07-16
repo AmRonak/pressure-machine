@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <LoginButton
         btnStyle="w-60 h-12 w-80 h-16 xl:w-96 xl:h-20 text-2xl tracking-[.4rem] xl:text-3xl xl:tracking-[.5rem]"
-        textStyle="py-2 py-4"
+        textStyle="py-5"
         isLinkButton={true}
       />
     </main>

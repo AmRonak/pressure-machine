@@ -22,7 +22,6 @@ const MasterSetting = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
   }
 
   return (
