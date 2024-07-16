@@ -18,6 +18,7 @@ const UserProfile = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(passwordChangeSchema),
@@ -31,12 +32,13 @@ const UserProfile = () => {
         method: 'patch',
         payloadData: {
           ...payloadData,
-          confirmPassword: 'Ronak@AB+9'
+          confirmPassword: 'ronakData@08'
         },
       });
       toast.success("Password changed successfully", toatsConfig);
+      reset();
     } catch (error) {
-      toast.error(error.message, toatsConfig);
+      toast.error('Failed to update password, please try sometimes later.', toatsConfig);
     }
   }
 
