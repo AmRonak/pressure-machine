@@ -3,25 +3,32 @@
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { MANAGER, OPERATOR } from "@/constants/constants";
 import { useAuthSelector } from "@/redux/slices/authSlice";
+import { defaultParameterSchema } from "@/schema/parameterSettingSchema.yup";
+import handleAxiosRequest from "@/util/handleRequest";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-const COMPANY_NAME = "company_name";
-const DEPARTMENT_NAME = "department_name";
-const EQUIPMENT_NAME = "equipment_name";
-const EQUIPMENT_NUMBER = "equipment_serial_number";
+const COMPANY_NAME = "companyName";
+const DEPARTMENT_NAME = "departmentName";
+const EQUIPMENT_NAME = "equipmentName";
+const EQUIPMENT_NUMBER = "equipmentSerialNo";
 
-const PRINT_PARAMETER_PATH = '/parameter-settings/print-parameter';
+export const PRINT_PARAMETER_PATH = '/parameter-settings/print-parameter';
 
 const ParameterSetting = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(defaultParameterSchema),
+    mode: "onChange"
+  });
+
   const {userDetail} = useAuthSelector();
   const router = useRouter(PRINT_PARAMETER_PATH);
 
@@ -30,9 +37,14 @@ const ParameterSetting = () => {
     if(userLevel === MANAGER || userLevel === OPERATOR) {
       router.push('/')
     }
-  }, [userDetail])
+  }, [router, userDetail])
 
-  const onSubmit = (data) => {
+  const onSubmit = async (payloadData) => {
+    await handleAxiosRequest({
+      api: 'parameterSetting',
+      method: 'put',
+      payloadData,
+    })
   }
 
   return (
@@ -90,7 +102,7 @@ const ParameterSetting = () => {
                 containerStyles={''}
                 inputStyle={'w-48 lg:w-72 p-5'}
                 textWrap={false}
-                placeholder={'0'}
+                placeholder={true}
               />
             </div>
           </div>

@@ -7,8 +7,10 @@ import {
   CONFIRM_PIN_REQUIRED,
   EXPIRY_DAYS_POSITIVE,
   EXPIRY_DAYS_REQUIRED,
+  NEW_PASSWORD_REQUIRED,
   NO_OF_ATTEMPT_POSITIVE,
   NO_OF_ATTEMPT_REQUIRED,
+  OLD_PASSWORD_REQUIRED,
   PASSWORD_ERROR_MESSAGE,
   PASSWORD_EXPIRY_POSITIVE,
   PASSWORD_EXPIRY_REQUIRED,
@@ -43,7 +45,7 @@ export const userManagementSchema = yup.object({
 });
 
 export const passwordChangeSchema = yup.object({
-  currentPassword: yup.string().required(PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
-  newPassword: yup.string().required(PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
+  currentPassword: yup.string().required(OLD_PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
+  newPassword: yup.string().required(NEW_PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
   confirmPassword: yup.string().required(CONFIRM_PASSWORD_REQUIRED).oneOf([yup.ref('newPassword')], PASSWORD_MATCH),
 })

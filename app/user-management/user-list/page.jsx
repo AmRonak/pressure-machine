@@ -19,8 +19,7 @@ const UserList = () => {
     const fetchAllUsers = async () => {
       try {
         const { data } = await handleAxiosRequest({
-          api: 'users',
-          payloadData: null
+          api: 'users'
         });
         setUsers(data)
       } catch (error) {

@@ -1,21 +1,42 @@
 'use client';
 
+import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
+import { useAuthSelector } from "@/redux/slices/authSlice";
+import { leakTestStatusOptions, printParameterSchema } from "@/schema/parameterSettingSchema.yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { PRINT_PARAMETER_PATH } from "../page";
+import { MANAGER, OPERATOR } from "@/constants/constants";
+import { useEffect } from "react";
 
-const AREA_NAME = "area_name";
-const BATCH_NAME = "batch_name";
-const BATCH_NO = "batch_no";
-const LEAK_TEST_STATUS = "leak_test_status";
+const AREA_NAME = "areaName";
+const BATCH_NAME = "batchName";
+const BATCH_NO = "batchNo";
+const LEAK_TEST_STATUS = "leakTestStatus";
 
 const ParameterSetting = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(printParameterSchema),
+    mode: 'onChange',
+  });
+
+  const {userDetail} = useAuthSelector();
+  const router = useRouter(PRINT_PARAMETER_PATH);
+
+  useEffect(() => {
+    const { userLevel } = userDetail;
+    if(userLevel === MANAGER || userLevel === OPERATOR) {
+      router.push('/')
+    }
+  }, [router, userDetail])
 
   const onSubmit = (data) => {
   }
@@ -60,22 +81,19 @@ const ParameterSetting = () => {
                 id={BATCH_NO}
                 labelText={"Batch No"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
                 containerStyles={'w-48 lg:w-72'}
                 inputStyle={'w-48 lg:w-72 p-5'}
                 placeholder={true}
               />
-              <RecipeInput
+              <Dropdown
                 id={LEAK_TEST_STATUS}
                 labelText={"Leak Test Status"}
                 register={register}
-                validationSchema={{}}
                 errors={errors}
-                containerStyles={''}
+                containerStyles={'col-span-2'}
                 inputStyle={'w-48 lg:w-72 p-5'}
-                textWrap={false}
-                placeholder={'0'}
+                options={leakTestStatusOptions}
               />
             </div>
           </div>

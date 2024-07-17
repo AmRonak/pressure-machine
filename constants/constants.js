@@ -7,8 +7,10 @@ export const OEM = 'OEM';
 export const userLevels = [ADMINISTRATOR, SUPERVISOR, MANAGER, OPERATOR];
 
 // ERROR MESSAGES CONSTANTS
-export const USERNAME_REQUIRED = 'Username is required'
-export const PASSWORD_REQUIRED = 'Password is required'
+export const USERNAME_REQUIRED = 'Username is required';
+export const PASSWORD_REQUIRED = 'Password is required';
+export const OLD_PASSWORD_REQUIRED = 'Old password is required';
+export const NEW_PASSWORD_REQUIRED = 'New password is required';
 export const PASSWORD_ERROR_MESSAGE = 'Password must be at least 8 characters long and contain one uppercase letter, one lowercase letter, one number, and one special character';
 export const USERNAME_ERROR_MESSAGE = 'Username must be 3-30 characters long';
 export const PIN_REQUIRED = 'Pin is required';

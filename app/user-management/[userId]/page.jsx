@@ -59,7 +59,6 @@ const UserModification = () => {
         const { data } = await handleAxiosRequest({
           api,
           method: 'get',
-          payloadData: null,
         });
         const {
           username,

@@ -1,8 +1,53 @@
 'use client'
+import handleAxiosRequest from "@/util/handleRequest";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const MOTOR1 = 'motor1';
+const MOTOR2 = 'motor2';
+const MOTOR3 = 'motor3';
+const VALVE1 = 'valve1';
+const VALVE2 = 'valve2';
 
 const MaintenanceMode = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const [masterSetting, setMasterSetting] = useState({})
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      try {
+        const { data } = await handleAxiosRequest({
+          api: 'masterParameter',
+        });
+        delete data.createdAt;
+        delete data.updatedAt;
+        delete data.macId;
+        delete data.id;
+        setMasterSetting(data);
+        setIsLoading(false);
+      } catch (error) {
+        setIsError(true);
+        setIsLoading(false);
+      }
+    }
+    fetchData();
+  }, [setIsError]);
+
+  const onSubmit = async (payloadData) => {
+    try {
+      await handleAxiosRequest({
+        api: 'masterParameter',
+        method: 'put',
+        payloadData,
+      });
+      toast.success('master parameter saved successfully', toatsConfig);
+    } catch (error) {
+      toast.error(error.response.data.message, toatsConfig);
+    }
+  }
   const handleImageClick = (d) => {
   }
   return (
@@ -23,7 +68,7 @@ const MaintenanceMode = () => {
             VALVE
           </p>
           <Image
-            id="sv1"
+            id={VALVE1}
             src={"/images/SV1.svg"}
             width={0}
             height={0}
@@ -32,7 +77,7 @@ const MaintenanceMode = () => {
             onClick={handleImageClick}
           />
           <Image
-            id="sv2"
+            id={VALVE2}
             src={"/images/SV2.svg"}
             width={0}
             height={0}
@@ -49,7 +94,7 @@ const MaintenanceMode = () => {
               MOTOR
             </p>
             <Image
-              id="m1"
+              id={MOTOR1}
               src={"/images/M1.svg"}
               width={0}
               height={0}
@@ -58,7 +103,7 @@ const MaintenanceMode = () => {
               onClick={handleImageClick}
             />
             <Image
-              id="m2"
+              id={MOTOR2}
               src={"/images/M2.svg"}
               width={0}
               height={0}
@@ -69,7 +114,7 @@ const MaintenanceMode = () => {
           </div>
           <div className="border-solid border-slate-900 w-36 lg:w-60 xl:w-80 h-36 border-4 border-opacity-25  border-b-0">
             <Image
-              id="m3"
+              id={MOTOR3}
               src={"/images/M3.svg"}
               width={0}
               height={0}
