@@ -1,4 +1,4 @@
-const { Zoom, toast, Bounce } = require("react-toastify");
+const { Bounce } = require("react-toastify");
 
 export const toatsConfig = {
   position: "bottom-center",

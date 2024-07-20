@@ -7,7 +7,7 @@ import Providers from "@/redux/Providers";
 import AuthWrapper from "@/components/Auth/AuthWrapper";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+        
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {

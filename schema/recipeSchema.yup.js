@@ -29,7 +29,7 @@ export const TEST_CUSTOM = 'The number must be a multiple of 30 like ( 30 sec, 6
 
 
 export const recipeSchema = object({
-  initialPressure: number().typeError(INITIAL_PRESSURE_NUMBER).required(INITIAL_PRESSURE_NUMBER_REQUIRED).min(0, INITIAL_PRESSURE_MIN).max(INITIAL_PRESSURE_MAX),
+  initialPressure: number().typeError(INITIAL_PRESSURE_NUMBER).required(INITIAL_PRESSURE_NUMBER_REQUIRED).min(0, INITIAL_PRESSURE_MIN).max(1500, INITIAL_PRESSURE_MAX),
   setPressure: number().typeError(SET_PRESSURE_NUMBER).required(SET_PRESSURE_NUMBER_REQUIRED).min(0, SET_PRESSURE_MIN).max(1500, SET_PRESSURE_MAX),
   leakTestPressure: number().typeError(LEAK_TEST_PRESSURE_NUMBER).required(LEAK_TEST_PRESSURE_NUMBER_REQUIRED).min(0, LEAK_TEST_PRESSURE_MIN).max(1000, LEAK_TEST_PRESSURE_MAX),
   lowerTestPressure: number().typeError(LOWER_TEST_PRESSURE_NUMBER).required(LOWER_TEST_PRESSURE_NUMBER_REQUIRED).min(0, LOWER_TEST_PRESSURE_MIN).max(1000, LOWER_TEST_PRESSURE_MAX),

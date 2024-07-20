@@ -1,5 +1,4 @@
 'use client'
-import handleAxiosRequest from "@/util/handleRequest";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,46 +9,30 @@ const MOTOR3 = 'motor3';
 const VALVE1 = 'valve1';
 const VALVE2 = 'valve2';
 
+const defaultValues = {
+  valve1: false,
+  valve2: false,
+  motor1: false,
+  motor2: false,
+  motor3: false,
+}
+
 const MaintenanceMode = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [masterSetting, setMasterSetting] = useState({})
+  const [valveMotorValue, setValveMotorValue] = useState(defaultValues)
 
   useEffect(() => {
-    setIsLoading(true);
-    const fetchData = async () => {
-      try {
-        const { data } = await handleAxiosRequest({
-          api: 'masterParameter',
-        });
-        delete data.createdAt;
-        delete data.updatedAt;
-        delete data.macId;
-        delete data.id;
-        setMasterSetting(data);
-        setIsLoading(false);
-      } catch (error) {
-        setIsError(true);
-        setIsLoading(false);
-      }
-    }
-    fetchData();
-  }, [setIsError]);
+    setValveMotorValue(defaultValues)
+  }, [])
 
-  const onSubmit = async (payloadData) => {
-    try {
-      await handleAxiosRequest({
-        api: 'masterParameter',
-        method: 'put',
-        payloadData,
-      });
-      toast.success('master parameter saved successfully', toatsConfig);
-    } catch (error) {
-      toast.error(error.response.data.message, toatsConfig);
-    }
+  const handleImageClick = (event) => {
+    const btn = event.target.id;
+    setValveMotorValue(oldValue => {
+      const newValue = { ...oldValue }
+      newValue[btn] = !newValue[btn];
+      return newValue;
+    })
   }
-  const handleImageClick = (d) => {
-  }
+
   return (
     <div className="pt-20">
       <div className="px-16">
@@ -69,7 +52,7 @@ const MaintenanceMode = () => {
           </p>
           <Image
             id={VALVE1}
-            src={"/images/SV1.svg"}
+            src={`/images/${valveMotorValue[VALVE1] ? 'SV1-green' : 'SV1'}.svg`}
             width={0}
             height={0}
             alt="back button"
@@ -78,7 +61,7 @@ const MaintenanceMode = () => {
           />
           <Image
             id={VALVE2}
-            src={"/images/SV2.svg"}
+            src={`/images/${valveMotorValue[VALVE2] ? 'SV2-green' : 'SV2'}.svg`}
             width={0}
             height={0}
             alt="back button"
@@ -95,7 +78,7 @@ const MaintenanceMode = () => {
             </p>
             <Image
               id={MOTOR1}
-              src={"/images/M1.svg"}
+              src={`/images/${valveMotorValue[MOTOR1] ? 'M1-green' : 'M1'}.svg`}
               width={0}
               height={0}
               alt="back button"
@@ -104,7 +87,7 @@ const MaintenanceMode = () => {
             />
             <Image
               id={MOTOR2}
-              src={"/images/M2.svg"}
+              src={`/images/${valveMotorValue[MOTOR2] ? 'M2-green' : 'M2'}.svg`}
               width={0}
               height={0}
               alt="back button"
@@ -115,7 +98,7 @@ const MaintenanceMode = () => {
           <div className="border-solid border-slate-900 w-36 lg:w-60 xl:w-80 h-36 border-4 border-opacity-25  border-b-0">
             <Image
               id={MOTOR3}
-              src={"/images/M3.svg"}
+              src={`/images/${valveMotorValue[MOTOR3] ? 'M3-green' : 'M3'}.svg`}
               width={0}
               height={0}
               alt="back button"

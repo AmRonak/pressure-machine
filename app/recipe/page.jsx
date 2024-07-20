@@ -73,14 +73,14 @@ const Recipe = () => {
       </p>
       <div className="grid grid-cols-2 gap-48 p-3 my-4">
         <Image
-          src={`/images/home_icon.svg`}
+          src={`/images/fast-time.svg`}
           width={120}
           height={120}
           alt="stabilization icon"
           className="ml-10"
         />
         <Image 
-          src={`/images/home_icon.svg`}
+          src={`/images/pressure-gauge.svg`}
           width={120}
           height={120}
           alt="time icon"

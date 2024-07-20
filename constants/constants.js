@@ -3,7 +3,7 @@ export const ADMINISTRATOR = 'Administrator';
 export const SUPERVISOR = 'Supervisor';
 export const MANAGER = 'Manager';
 export const OPERATOR = 'Operator';
-export const OEM = 'OEM';
+export const SUPER_ADMIN = 'SuperAdmin';
 export const userLevels = [ADMINISTRATOR, SUPERVISOR, MANAGER, OPERATOR];
 
 // ERROR MESSAGES CONSTANTS

@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
-export const BEFORE = 'before';
-export const AFTER = 'after';
+export const BEFORE = 'Before';
+export const AFTER = 'After';
 
 export const leakTestStatusOptions = [
   {value: BEFORE, text: 'Before'},

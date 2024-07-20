@@ -91,6 +91,7 @@ const UserList = () => {
 
   const disableEdit = selectedUsers.length === 1
 
+  
   return (
     <div className="grid-flow-col mx-auto px-16 pt-20">
       <p className="text-5xl lg:text-6xl font-bold uppercase mb-20 text-wrap max-w-[500px] lg:max-w-[800px]">
@@ -172,14 +173,16 @@ const UserList = () => {
           </table>
         )
       }
-      <Link href={'/user-management/'}>
-        <Image
-          src={"/images/back_button.svg"}
-          width={100}
-          height={100}
-          alt="back button"
-        />
-      </Link>
+      <div className="flex">
+        <Link href={'/user-management/permission'}>
+          <Image
+            src={"/images/back_button.svg"}
+            width={100}
+            height={100}
+            alt="back button"
+          />
+        </Link>
+      </div>
     </div>
   );
 };

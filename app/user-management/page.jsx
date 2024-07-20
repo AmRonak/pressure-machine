@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import { userManagementSchema } from "@/schema/userManagementSchema.yup";
-import { toastError, toastSuccess, toatsConfig } from "@/constants/toast";
+import { toatsConfig } from "@/constants/toast";
 import handleAxiosRequest from "@/util/handleRequest";
 import { toast } from "react-toastify";
 

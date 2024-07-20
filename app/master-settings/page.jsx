@@ -59,7 +59,7 @@ const MasterSetting = () => {
     try {
       await handleAxiosRequest({
         api: 'masterParameter',
-        method: 'put',
+        method: 'patch',
         payloadData,
       });
       toast.success('master parameter saved successfully', toatsConfig);
