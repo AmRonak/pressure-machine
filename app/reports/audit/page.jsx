@@ -292,8 +292,8 @@ const AuditReports = () => {
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.username}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{category}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{log}</td>
-                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{newValue || '-'}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{oldValue || '-'}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{newValue || '-'}</td>
                   </tr>
                 ))}
               </tbody>

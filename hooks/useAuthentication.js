@@ -1,4 +1,4 @@
-import { JWT_TOKEN_NAME } from "@/constants/constants";
+import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
 import { setAuth, setUserDetail } from "@/redux/slices/authSlice";
 import axios from "axios";
@@ -31,7 +31,7 @@ const useAuthentication = () => {
         if(pathname === '/' || pathname === '/login') {
           router.push("/dashboard");
         } else {
-          if(pathname !== '/dashboard') {
+          if(pathname !== '/dashboard' && response.data.user.userLevel !== SUPER_ADMIN) {
             const permissions = response.data.user.permissions;
             const menu = allMenu.find(({urlPath}) => pathname.includes((urlPath)))
             if(!permissions.includes(menu.id))

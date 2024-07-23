@@ -2,7 +2,6 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import "./globals.css";
 import Navigation from "@/components/buttons/Navigation";
-import ShutDown from "@/components/buttons/ShutDown";
 import Providers from "@/redux/Providers";
 import AuthWrapper from "@/components/Auth/AuthWrapper";
 import { ToastContainer } from 'react-toastify';
@@ -22,7 +21,6 @@ export default function RootLayout({ children }) {
         <Providers>
           <AuthWrapper>
             <Navigation />
-            <ShutDown />
             <Image
               src='/images/bg.svg'
               alt="background image"
