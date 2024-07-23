@@ -12,7 +12,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const user = useAuthSelector();
-  const [displayMenu, setDisplayMenu] = useState([])
+  const [displayMenu, setDisplayMenu] = useState(allMenu)
 
   const handleLogout = () => {
     dispatch(resetAuth());
