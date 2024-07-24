@@ -13,7 +13,9 @@ import { PRINT_PARAMETER_PATH } from "../page";
 import { MANAGER, OPERATOR } from "@/constants/constants";
 import { useEffect, useState } from "react";
 import handleAxiosRequest from "@/util/handleRequest";
-import Loading from "@/components/Loading";
+import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
+import { toast } from "react-toastify";
+import { toatsConfig } from "@/constants/toast";
 
 const AREA_NAME = "areaName";
 const BATCH_NAME = "batchName";
@@ -32,6 +34,7 @@ const ParameterSetting = () => {
   });
 
   const [isLoading, setIsLoading] = useState();
+  const [isError, setIsError] = useState(false);
   const {userDetail} = useAuthSelector();
   const router = useRouter(PRINT_PARAMETER_PATH);
 
@@ -43,6 +46,7 @@ const ParameterSetting = () => {
   }, [router, userDetail])
 
   useEffect(() => {
+    setIsError(false);
     setIsLoading(true);
     const fetchUserData = async () => {
       try {
@@ -56,6 +60,7 @@ const ParameterSetting = () => {
         });
         setIsLoading(false);
       } catch (error) {
+        setIsError(true);
         setIsLoading(false);
       }
     }
@@ -63,11 +68,16 @@ const ParameterSetting = () => {
   }, [reset]);
 
   const onSubmit = async (payloadData) => {
-    await handleAxiosRequest({
-      api: 'parameterSetting',
-      method: 'put',
-      payloadData,
-    })
+    try {
+      await handleAxiosRequest({
+        api: 'parameterSetting',
+        method: 'put',
+        payloadData,
+      })
+      toast.success('Print parameters saved successfully', toatsConfig);
+    } catch (error) {
+      toast.error(error.response.data.message, toatsConfig);
+    }
   }
 
   return (
@@ -80,8 +90,7 @@ const ParameterSetting = () => {
           print parameter
         </h2>
       </div>
-      { isLoading && <Loading /> }
-      { !isLoading && (
+      <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
         <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-20 my-10">
           <div className="flex flex-col gap-20">
             <RecipeInput
@@ -148,7 +157,7 @@ const ParameterSetting = () => {
             </button>
           </div>
         </form>
-      )}
+      </AxiosHCO>
     </div>
   );
 };

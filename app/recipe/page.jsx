@@ -1,7 +1,7 @@
 'use client';
 
+import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import Loading from "@/components/Loading";
 import { toatsConfig } from "@/constants/toast";
 import { recipeSchema } from "@/schema/recipeSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
@@ -33,6 +33,7 @@ const Recipe = () => {
   });
 
   useEffect(() => {
+    setIsError(false);
     setIsLoading(true);
     const fetchUserData = async () => {
       try {
@@ -56,7 +57,7 @@ const Recipe = () => {
   const onSubmit = async (payloadData) => {
     try {
       await handleAxiosRequest({
-        api: 'recipeSetting',
+        api: 'recipeSettings',
         method: 'put',
         payloadData,
       });
@@ -71,37 +72,27 @@ const Recipe = () => {
       <p className="text-5xl lg:text-6xl font-bold uppercase">
         Recipe
       </p>
-      <div className="grid grid-cols-3 gap-48 p-3 my-4">
+      <div className="grid grid-cols-3 p-3 my-4">
         <div className="col-span-1 flex justify-center">
           <Image
             src={`/images/fast-time.svg`}
-            width={120}
-            height={120}
+            width={0}
+            height={0}
             alt="stabilization icon"
-            className=""
+            className="w-24 lg:w-32 xl:w-36 -ml-20"
           />
         </div>
         <div className="col-span-2 flex justify-center">
           <Image 
             src={`/images/pressure-gauge.svg`}
-            width={120}
-            height={120}
+            width={0}
+            height={0}
             alt="time icon"
+            className="w-24 lg:w-32 xl:w-36"
           />
         </div>
         </div>
-      {
-        isLoading && <Loading />
-      }
-      {
-        isError && (
-          <div className="flex justify-center items-center">
-            <p className="text-center text-red-500">Failed to load recipe data, please try sometimes later.</p>
-          </div>
-        )
-      }
-      {
-        !isLoading && !isError && (
+        <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
           <form onSubmit={handleSubmit(onSubmit)} className="grid grid-flow-row gap-y-20 my-10">
             <div className="grid grid-flow-col grid-cols-3 gap-28 gap-y-10">
               <div className="grid grid-flow-row col-span-1 gap-20">
@@ -196,8 +187,7 @@ const Recipe = () => {
               </div>
             </div>
           </form>
-        )
-      }
+        </AxiosHCO>
     </div>
   );
 };

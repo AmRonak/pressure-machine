@@ -1,18 +1,19 @@
 'use client';
 
+import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import Loading from "@/components/Loading";
 import { MANAGER, OPERATOR } from "@/constants/constants";
+import { toatsConfig } from "@/constants/toast";
 import { useAuthSelector } from "@/redux/slices/authSlice";
 import { defaultParameterSchema } from "@/schema/parameterSettingSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
-import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const COMPANY_NAME = "companyName";
 const DEPARTMENT_NAME = "departmentName";
@@ -32,6 +33,7 @@ const ParameterSetting = () => {
     mode: "onChange"
   });
   const [isLoading, setIsLoading] = useState();
+  const [isError, setIsError] = useState(false);
   const {userDetail} = useAuthSelector();
   const router = useRouter(PRINT_PARAMETER_PATH);
 
@@ -43,6 +45,7 @@ const ParameterSetting = () => {
   }, [router, userDetail])
 
   useEffect(() => {
+    setIsError(false);
     setIsLoading(true);
     const fetchUserData = async () => {
       try {
@@ -53,6 +56,7 @@ const ParameterSetting = () => {
         reset(data.defaultParameter);
         setIsLoading(false);
       } catch (error) {
+        setIsError(true);
         setIsLoading(false);
       }
     }
@@ -60,11 +64,16 @@ const ParameterSetting = () => {
   }, [reset]);
 
   const onSubmit = async (payloadData) => {
-    await handleAxiosRequest({
-      api: 'parameterSetting',
-      method: 'put',
-      payloadData,
-    })
+    try {
+      await handleAxiosRequest({
+        api: 'parameterSetting',
+        method: 'put',
+        payloadData,
+      });
+      toast.success('Default parameters saved successfully', toatsConfig);
+    } catch (error) {
+      toast.error(error.response.data.message, toatsConfig);
+    }
   }
 
   return (
@@ -77,8 +86,7 @@ const ParameterSetting = () => {
           default parameter
         </h2>
       </div>
-      { isLoading && <Loading /> }
-      { !isLoading && (
+      <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
         <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-20 my-10">
           <div className="flex flex-col gap-20">
             <RecipeInput
@@ -148,7 +156,7 @@ const ParameterSetting = () => {
             </button>
           </div>
         </form>
-      )}
+      </AxiosHCO>
     </div>
   );
 };

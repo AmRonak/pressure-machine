@@ -174,7 +174,7 @@ const UserList = () => {
         )
       }
       <div className="flex">
-        <Link href={'/user-management/permission'}>
+        <Link href={'/user-management'}>
           <Image
             src={"/images/back_button.svg"}
             width={100}

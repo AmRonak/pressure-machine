@@ -214,8 +214,18 @@ const UserCreation = () => {
               src={'/images/create-btn.svg'}
               width={130}
               height={130}
-              alt={`save recipe button`}
+              alt={`create user button`}
             />
+          </button>
+          <button>
+            <Link href={'/user-management/permission'}>
+              <Image
+                src={"/images/permissions-btn.svg"}
+                width={130}
+                height={130}
+                alt="permissions page link"
+              />
+            </Link>
           </button>
           <button>
             <Link href={'/user-management/user-list'}>
