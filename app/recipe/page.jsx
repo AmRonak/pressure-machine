@@ -43,7 +43,7 @@ const Recipe = () => {
         delete data.updatedAt;
         delete data.macId;
         delete data.id;
-        reset(data);
+        reset({...data, comment: ''});
         setIsLoading(false);
       } catch (error) {
         setIsError(true);
@@ -71,21 +71,25 @@ const Recipe = () => {
       <p className="text-5xl lg:text-6xl font-bold uppercase">
         Recipe
       </p>
-      <div className="grid grid-cols-2 gap-48 p-3 my-4">
-        <Image
-          src={`/images/fast-time.svg`}
-          width={120}
-          height={120}
-          alt="stabilization icon"
-          className="ml-10"
-        />
-        <Image 
-          src={`/images/pressure-gauge.svg`}
-          width={120}
-          height={120}
-          alt="time icon"
-        />
-      </div>
+      <div className="grid grid-cols-3 gap-48 p-3 my-4">
+        <div className="col-span-1 flex justify-center">
+          <Image
+            src={`/images/fast-time.svg`}
+            width={120}
+            height={120}
+            alt="stabilization icon"
+            className=""
+          />
+        </div>
+        <div className="col-span-2 flex justify-center">
+          <Image 
+            src={`/images/pressure-gauge.svg`}
+            width={120}
+            height={120}
+            alt="time icon"
+          />
+        </div>
+        </div>
       {
         isLoading && <Loading />
       }
