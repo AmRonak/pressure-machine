@@ -209,7 +209,7 @@ const UserCreation = () => {
           </div>
         </div>
         <div className="flex items-center gap-28 mb-8">
-          <button type="submit" className="flex flex-col items-center">
+          <button type="submit" className="block h-14">
             <Image
               src={'/images/create-btn.svg'}
               width={130}
@@ -217,7 +217,7 @@ const UserCreation = () => {
               alt={`create user button`}
             />
           </button>
-          <button>
+          <button className="block h-14 scale-125">
             <Link href={'/user-management/permission'}>
               <Image
                 src={"/images/permissions-btn.svg"}

@@ -60,7 +60,9 @@ const AuditReports = () => {
         <Text style={styles.header}>Audit Report</Text>
         <View style={styles.table}>
           <View style={styles.tableRow}>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>Time</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Username</Text></View>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>Updated User</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Category</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Log</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Old Value</Text></View>
@@ -73,9 +75,12 @@ const AuditReports = () => {
             log,
             newValue,
             oldValue,
+            updatedAt
           }) => (
             <View style={styles.tableRow} key={`test-${id}`}>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{moment(updatedAt).format('DD-MM-YYYY HH:mm')}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.username}</Text></View>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.UpdatedUser?.username}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{category}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{log}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{oldValue || '-'}</Text></View>
@@ -272,7 +277,9 @@ const AuditReports = () => {
             <table className="font-thin w-full p-4 border-collapse border border-slate-500 text-primaryDark">
               <thead className="">
                 <tr className="">
+                  <th className="border border-slate-600 p-2">Time</th>
                   <th className="border border-slate-600 p-2">Username</th>
+                  <th className="border border-slate-600 p-2">Updated User</th>
                   <th className="border border-slate-600 p-2">Category</th>
                   <th className="border border-slate-600 p-2">Log</th>
                   <th className="border border-slate-600 p-2">Old Value</th>
@@ -283,13 +290,17 @@ const AuditReports = () => {
                 {searchData.map(({
                   id,
                   User,
+                  UpdatedUser,
                   category,
                   log,
                   newValue,
                   oldValue,
+                  updatedAt
                 }) => (
                   <tr key={`test-${id}`} className="text-primaryDark">
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{moment(updatedAt).format('DD-MM-YYYY HH:mm')}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.username}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{UpdatedUser?.username || '-'}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{category}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{log}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{oldValue || '-'}</td>
