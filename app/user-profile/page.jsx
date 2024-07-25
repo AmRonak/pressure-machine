@@ -51,7 +51,7 @@ const UserProfile = () => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-4 gap-10 py-20 my-20"
+        className="grid grid-cols-4 gap-10 py-10 my-10"
       >
         <div className="flex flex-col gap-10 col-span-3">
           <RecipeInput
@@ -63,6 +63,7 @@ const UserProfile = () => {
             inputStyle={'w-full rounded-3xl p-5'}
             labelStyles={'self-start ml-8'}
             placeholder={true}
+            type={'password'}
           />
           <RecipeInput
             id={NEW_PASSWORD}
@@ -73,6 +74,7 @@ const UserProfile = () => {
             inputStyle={'w-full rounded-3xl p-5'}
             labelStyles={'self-start ml-8'}
             placeholder={true}
+            type={'password'}
           />
           <RecipeInput
             id={CONFIRM_PASSWORD}
@@ -83,6 +85,7 @@ const UserProfile = () => {
             inputStyle={'w-full rounded-3xl p-5'}
             labelStyles={'self-start ml-8'}
             placeholder={true}
+            type={'password'}
           />
         </div>
         <div className="flex flex-col items-center self-end gap-4">

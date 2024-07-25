@@ -49,3 +49,8 @@ export const passwordChangeSchema = yup.object({
   newPassword: yup.string().required(NEW_PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
   confirmPassword: yup.string().required(CONFIRM_PASSWORD_REQUIRED).oneOf([yup.ref('newPassword')], PASSWORD_MATCH),
 })
+
+export const loginSchema = yup.object({
+  username: yup.string().required(USERNAME_REQUIRED).min(3, USERNAME_ERROR_MESSAGE).max(30, USERNAME_ERROR_MESSAGE),
+  password: yup.string().required(PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
+})

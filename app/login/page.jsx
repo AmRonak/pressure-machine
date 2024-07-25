@@ -2,8 +2,11 @@
 import LoginButton from "@/components/buttons/LoginButton";
 import Input from "@/components/inputs/Input";
 import Labels from "@/components/inputs/Labels";
+import RecipeInput from "@/components/inputs/RecipeInput";
 import { JWT_TOKEN_NAME, PASSWORD_ERROR_MESSAGE } from "@/constants/constants";
 import { setAuth } from "@/redux/slices/authSlice";
+import { loginSchema } from "@/schema/userManagementSchema.yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +20,10 @@ const Login = () => {
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(loginSchema),
+    mode: 'onChange'
+  });
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -49,56 +55,26 @@ const Login = () => {
   return (
     <div className="grid-flow-col px-16 py-20">
       <p className="text-6xl font-bold">LOGIN</p>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-2 mt-28 max-w-[800px]">
-        <Labels
-          id = {USERNAME}
-          labelStyles={"text-2xl font-bold text-primaryDark pl-10 pb-3"}
-          labelText="User Name"
-        />
-        <Input
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-2 mt-28 max-w-[800px] gap-16">
+        <RecipeInput
           id={USERNAME}
-          inputStyles={"login-input"}
-          {...register("username", { required: true })}
+          labelText={"USER NAME"}
           register={register}
-          validationSchema={{
-            required: "Username is required",
-            minLength: {
-              value: 3,
-              message: "Username must be 3-30 characters long"
-            },
-            maxLength: {
-              value: 30,
-              message: "Username must be 3-30 characters long"
-            },
-          }}
           errors={errors}
+          containerStyles={''}
+          inputStyle={'w-full rounded-4xl p-5'}
+          placeholder="DUMMY DUMMY"
+          labelStyles={'self-start ml-8'}
         />
-        <Labels
-          id = {PASSWORD}
-          labelStyles={"text-2xl font-bold text-primaryDark pl-10 pb-3 mt-8"}
-          labelText="Password"
-        />
-        <Input
+        <RecipeInput
           id={PASSWORD}
-          inputStyles={"login-input"}
-          {...register("username", { required: true })}
+          labelText={"PASSWORD"}
+          placeholder="********"
           register={register}
-          validationSchema={{
-            required: "Password is required",
-            minLength: {
-              value: 8,
-              message: PASSWORD_ERROR_MESSAGE
-            },
-            maxLength: {
-              value: 16,
-              message: PASSWORD_ERROR_MESSAGE
-            },
-            pattern: {
-              value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
-              message: PASSWORD_ERROR_MESSAGE,
-            },
-          }}
           errors={errors}
+          inputStyle={'w-full rounded-4xl p-5'}
+          labelStyles={'self-start ml-8'}
+          type={'password'}
         />
         {errors?.root?.serverError && <p className="pt-3 mt-5 text-center text-red-600">{errors.root.serverError.message}</p>}
         <div className="flex justify-center items-center gap-20 mt-8">
