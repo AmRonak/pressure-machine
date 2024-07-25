@@ -157,6 +157,7 @@ const UserModification = () => {
                     containerStyles={'col-span-2'}
                     inputStyle={'w-full rounded-4xl p-5'}
                     labelStyles={'self-start ml-8'}
+                    type={"password"}
                   />
                   <RecipeInput
                     id={PIN}
@@ -179,6 +180,7 @@ const UserModification = () => {
                     containerStyles={'col-span-2'}
                     inputStyle={'w-full rounded-4xl p-5'}
                     labelStyles={'self-start ml-8'}
+                    type={"password"}
                   />
                   <RecipeInput
                     id={CONFIRM_PIN}

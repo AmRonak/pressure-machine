@@ -75,12 +75,13 @@ const AuditReports = () => {
             log,
             newValue,
             oldValue,
-            updatedAt
+            updatedAt,
+            UpdatedUser
           }) => (
             <View style={styles.tableRow} key={`test-${id}`}>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{moment(updatedAt).format('DD-MM-YYYY HH:mm')}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.username}</Text></View>
-              <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.UpdatedUser?.username}</Text></View>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{UpdatedUser?.username || '-'}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{category}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{log}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{oldValue || '-'}</Text></View>
