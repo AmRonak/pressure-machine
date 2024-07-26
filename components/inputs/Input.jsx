@@ -37,7 +37,7 @@ const Input = ({
             placeholder={placeholderValue}
             id={id}
             className={`bg-background-input ${inputStyles} col`}
-            type={passwordType ? 'password': type}
+            type={passwordType ? 'password': 'text'}
             autocomplete="off"
             {...register(id, validationSchema)}
           />
