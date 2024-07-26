@@ -57,7 +57,7 @@ const Recipe = () => {
   const onSubmit = async (payloadData) => {
     try {
       await handleAxiosRequest({
-        api: 'recipeSettings',
+        api: 'recipeSetting',
         method: 'put',
         payloadData,
       });
