@@ -102,7 +102,8 @@ const AuditReports = () => {
       const toDateData = `${moment(payloadData.toDate).format('YYYY-MM-DD')} ${payloadData.toTime}`;
       const queryData = `fromDate=${fromDateTime}&toDate=${toDateData}&username=${payloadData.username}&category=${payloadData.category}`
       const { data } = await handleAxiosRequest({api: `auditLog/filter?${queryData}`});
-      setSearchData(data);
+      const sortedLogs = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+      setSearchData(sortedLogs);
       setStatus({
         status: SUCCESS,
         error: data.length === 0 ? 'No logs found for the given search criteria' : null
@@ -125,7 +126,8 @@ const AuditReports = () => {
       const toDateData = `${moment(payloadData.toDate).format('YYYY-MM-DD')} ${payloadData.toTime}`;
       const queryData = `fromDate=${fromDateTime}&toDate=${toDateData}&username=${payloadData.username}&category=${payloadData.category}`
       const { data } = await handleAxiosRequest({api: `auditLog/filter?${queryData}`});
-      setSearchData(data);
+      const sortedLogs = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+      setSearchData(sortedLogs);
       const pdfDoc = generatePdfDocument(data);
       const pdfBlob = await pdf(pdfDoc).toBlob();
       const url = URL.createObjectURL(pdfBlob);
