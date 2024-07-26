@@ -15,6 +15,7 @@ const RecipeInput = ({
   textWrap=true,
   placeholder=false,
   type,
+  isPin,
 }) => {
   return (
     <div className={`flex flex-col items-center justify-between ${containerStyles}`}>
@@ -32,6 +33,7 @@ const RecipeInput = ({
         errors={errors}
         placeholder={placeholder}
         type={type}
+        isPin={isPin}
       />
     </div>
   );

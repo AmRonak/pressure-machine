@@ -55,7 +55,8 @@ const UserCreation = () => {
   } = useForm({
     defaultValues,
     resolver: yupResolver(userManagementSchema),
-    mode: "onChange"
+    mode: "onChange",
+    reValidateMode: 'onSubmit'
   });
 
   const onSubmit = async (payloadData) => {
@@ -116,6 +117,7 @@ const UserCreation = () => {
                 containerStyles={'col-span-1'}
                 inputStyle={'w-full rounded-4xl p-5'}
                 type={'Number'}
+                isPin={true}
               />
             </div>
             <div className="grid grid-cols-3 gap-14">
@@ -139,6 +141,8 @@ const UserCreation = () => {
                 containerStyles={'col-span-1'}
                 inputStyle={'w-full rounded-4xl p-5'}
                 labelStyles={"text-nowrap"}
+                type={'Number'}
+                isPin={true}
               />
             </div>
           </div>

@@ -44,7 +44,8 @@ const UserModification = () => {
     formState: { errors, setError }
   } = useForm({
     resolver: yupResolver(userManagementSchema),
-    mode: "onChange"
+    mode: "onChange",
+    reValidateMode: 'onSubmit'
   });
   const { userId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -168,6 +169,7 @@ const UserModification = () => {
                     errors={errors}
                     containerStyles={'col-span-1'}
                     inputStyle={'w-full rounded-4xl p-5'}
+                    isPin={true}
                   />
                 </div>
                 <div className="grid grid-cols-3 gap-14">
@@ -191,6 +193,7 @@ const UserModification = () => {
                     containerStyles={'col-span-1'}
                     inputStyle={'w-full rounded-4xl p-5'}
                     labelStyles={"text-nowrap"}
+                    isPin={true}
                   />
                 </div>
               </div>

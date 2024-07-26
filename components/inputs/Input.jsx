@@ -10,13 +10,14 @@ const Input = ({
   errors,
   validationSchema,
   placeholder=true,
-  type="text"
+  type="text",
+  isPin=false
 }) => {
   const placeholderValue = (placeholder && typeof placeholder === 'boolean') ? "ABC123" : placeholder;
   const [passwordType, setPasswordType] = useState(true);
   return (
     <>
-      { type !== 'password' && (
+      { type !== 'password' && !isPin && (
         <input
           placeholder={placeholderValue}
           id={id}
@@ -26,7 +27,7 @@ const Input = ({
           {...register(id, validationSchema)}
         />
       )}
-      { type === 'password' && (
+      { (type === 'password' || isPin) && (
         <div className="relative w-full">
           <div className="absolute inset-y-0 right-2 bottom-2 flex items-center px-2">
             <input className="hidden js-password-toggle" id={`${id}ShowPassword`} type="checkbox" onChange={() => {setPasswordType(!passwordType)}} />
@@ -36,7 +37,7 @@ const Input = ({
             placeholder={placeholderValue}
             id={id}
             className={`bg-background-input ${inputStyles} col`}
-            type={passwordType ? 'password': 'text'}
+            type={passwordType ? 'password': type}
             autocomplete="off"
             {...register(id, validationSchema)}
           />

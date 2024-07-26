@@ -15,6 +15,7 @@ export const PASSWORD_ERROR_MESSAGE = 'Password must be at least 8 characters lo
 export const USERNAME_ERROR_MESSAGE = 'Username must be 3-30 characters long';
 export const PIN_REQUIRED = 'Pin is required';
 export const CONFIRM_PIN_REQUIRED = 'Confirm pin is required';
+export const PIN_NUMBER = "Pin must be a number";
 export const PIN_LENGTH_ERROR_MESSAGE = 'Pin must be length of 4';
 export const CONFIRM_PASSWORD_REQUIRED = 'Confirm Password is required';
 export const PASSWORD_MATCH = 'Passwords must match';
