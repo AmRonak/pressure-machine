@@ -4,7 +4,7 @@ import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { MANAGER, OPERATOR } from "@/constants/constants";
 import { toatsConfig } from "@/constants/toast";
-import { useAuthSelector } from "@/redux/slices/authSlice";
+import { setCompanyName, useAuthSelector } from "@/redux/slices/authSlice";
 import { defaultParameterSchema } from "@/schema/parameterSettingSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,6 +13,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 const COMPANY_NAME = "companyName";
@@ -35,6 +36,7 @@ const ParameterSetting = () => {
   const [isLoading, setIsLoading] = useState();
   const [isError, setIsError] = useState(false);
   const {userDetail} = useAuthSelector();
+  const dispatch = useDispatch();
   const router = useRouter(PRINT_PARAMETER_PATH);
 
   useEffect(() => {
@@ -70,6 +72,7 @@ const ParameterSetting = () => {
         method: 'put',
         payloadData,
       });
+      dispatch(setCompanyName(payloadData.companyName));
       toast.success('Default parameters saved successfully', toatsConfig);
     } catch (error) {
       toast.error(error.response.data.message, toatsConfig);

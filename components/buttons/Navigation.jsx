@@ -1,14 +1,35 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import { useAuthSelector } from "@/redux/slices/authSlice";
+import { setCompanyName, useAuthSelector } from "@/redux/slices/authSlice";
 import Clock from 'react-live-clock';
+import handleAxiosRequest from "@/util/handleRequest";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const Navigation = () => {
-  const {isAuthenticated, userDetail} = useAuthSelector();
-
+  const {isAuthenticated, userDetail, companyName} = useAuthSelector();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const fetchCompanyName = async () => {
+      try {
+        const { data } = await handleAxiosRequest({api: 'parameterSetting/getCompanyname'});
+        dispatch(setCompanyName(data.companyName))
+      } catch (error) {
+        // 
+      }
+    };
+    fetchCompanyName();
+  }, [dispatch])
+  
   return (
     <div className="flex flex-col justify-center fixed top-10 right-10">
+      {
+        companyName && <div>
+          {/* <span className="text-xl">Company Name:</span> */}
+          <span className="capitalize text-2xl font-bold ml-1">{companyName}</span>
+        </div>
+      }
       <div>
         <p className="text-end pr-4">
           <span>

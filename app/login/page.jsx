@@ -1,13 +1,10 @@
 'use client';
 import LoginButton from "@/components/buttons/LoginButton";
-import Input from "@/components/inputs/Input";
-import Labels from "@/components/inputs/Labels";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import { JWT_TOKEN_NAME, PASSWORD_ERROR_MESSAGE } from "@/constants/constants";
 import { setAuth } from "@/redux/slices/authSlice";
 import { loginSchema } from "@/schema/userManagementSchema.yup";
+import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
@@ -30,26 +27,21 @@ const Login = () => {
   const USERNAME = 'username';
   const PASSWORD = 'password';
 
-  const onSubmit = async(data) => {
-    let config = {
-      method: 'post',
-      url: 'http://localhost:5000/api/users/login',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data
-    };
-    axios.request(config)
-    .then(({data}) => {
-      dispatch(setAuth(data.token));
+  const onSubmit = async(payloadData) => {
+    try {
+      const { data: dataToken } = await handleAxiosRequest({
+        api: 'users/login',
+        method: 'post',
+        payloadData,
+      });
+      dispatch(setAuth(dataToken.token));
       router.push('/dashboard')
-    })
-    .catch((error) => {
+    } catch (error) {
       setError('root.serverError', {
         type: error.message,
         message: error.response.data.message
       })
-    });
+    }
   }
 
   return (
