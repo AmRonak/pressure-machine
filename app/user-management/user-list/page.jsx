@@ -50,7 +50,7 @@ const UserList = () => {
           action: 'block'
         }
       });
-      toast.success('users blocked successfully', toatsConfig);
+      toast.success(data.message, toatsConfig);
       setUsers((oldUsesrList) => oldUsesrList.map((user) => {
         if(data.ids.includes(user.id)) {
           user.active = false;
@@ -59,7 +59,7 @@ const UserList = () => {
       }));
       setSelectedUsers([]);
     } catch (error) {
-      toast.error('failed to block users, please try sometimes later.', toatsConfig)
+      toast.error(error.response.data.message, toatsConfig)
     }
   }
 
@@ -73,7 +73,7 @@ const UserList = () => {
           action: 'unblock'
         }
       });
-      toast.success('users unblocked successfully', toatsConfig);
+      toast.success(data.message, toatsConfig);
       setUsers((oldUsesrList) => oldUsesrList.map((user) => {
         if(data.ids.includes(user.id)) {
           user.active = true;
@@ -82,7 +82,7 @@ const UserList = () => {
       }));
       setSelectedUsers([]);
     } catch (error) {
-      toast.error('failed to unblock users, please try sometimes later.', toatsConfig)
+      toast.error(error.response.data.message, toatsConfig)
     }
   }
 
