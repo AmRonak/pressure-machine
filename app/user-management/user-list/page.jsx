@@ -1,6 +1,7 @@
 'use client';
 import Loading from "@/components/Loading";
 import { toatsConfig } from "@/constants/toast";
+import { useAuthSelector } from "@/redux/slices/authSlice";
 import handleAxiosRequest from "@/util/handleRequest";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +14,7 @@ const UserList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState([]);
   const [selectedUsers, setSelectedUsers] = useState([]);
+  const user = useAuthSelector();
   const router = useRouter();
 
   useEffect(() => {
@@ -89,8 +91,7 @@ const UserList = () => {
     
   }
 
-  const disableEdit = selectedUsers.length === 1
-
+  const disableEdit = selectedUsers.length === 0 || selectedUsers.includes(user.userDetail.id);
   
   return (
     <div className="grid-flow-col mx-auto px-16 pt-20">
@@ -113,7 +114,7 @@ const UserList = () => {
         <button
           className="flex flex-col items-center disabled:opacity-60"
           onClick={handleBlockClick}
-          disabled={selectedUsers.length === 0}
+          disabled={disableEdit}
         >
           <Image
             src={'/images/block-btn.svg'}
@@ -125,7 +126,7 @@ const UserList = () => {
         <button
           className="flex flex-col items-center disabled:opacity-60"
           onClick={handleUnblockClick}
-          disabled={selectedUsers.length === 0}
+          disabled={disableEdit}
         >
           <Image
             src={'/images/unblock-btn.svg'}
