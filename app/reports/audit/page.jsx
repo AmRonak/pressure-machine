@@ -3,7 +3,7 @@
 import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import { auditReportSchema, categoryOptions, selectUser } from "@/schema/reportSchema.yup";
+import { allUsers, auditReportSchema, categoryOptions, selectUser } from "@/schema/reportSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
 import moment from "moment";
@@ -45,6 +45,7 @@ const AuditReports = () => {
       try {
         const { data } = await handleAxiosRequest({api: 'users/usernames'})
         const userOptions = data.map(user => ({value: user, text: user}))
+        userOptions.unshift(allUsers);
         userOptions.unshift(selectUser);
         setUsers(userOptions);
       } catch (error) {

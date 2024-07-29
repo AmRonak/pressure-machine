@@ -3,7 +3,7 @@
 import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import Loading from "@/components/Loading";
-import { ADMINISTRATOR, MANAGER, OPERATOR, SUPERVISOR } from "@/constants/constants";
+import { ADMINISTRATOR, MANAGER, OPERATOR, SUPER_ADMIN, SUPERVISOR } from "@/constants/constants";
 import { toatsConfig } from "@/constants/toast";
 import { userManagementSchema } from "@/schema/userManagementSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
@@ -36,12 +36,17 @@ const userLevels = [
   {value: OPERATOR, text: 'Operator'},
 ];
 
+const superAdminUserLevel = [
+  {value: SUPER_ADMIN, text: 'Super Admin'},
+];
+
 const UserModification = () => {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, setError }
+    formState: { errors, setError },
+    watch,
   } = useForm({
     resolver: yupResolver(userManagementSchema),
     mode: "onChange",
@@ -96,6 +101,10 @@ const UserModification = () => {
     }
     fetchUserData();
   }, [reset, setError, api]);
+
+  const userLevel = watch('userLevel');
+
+  const updatedUserLevels = userLevel !== SUPER_ADMIN ? userLevels : superAdminUserLevel;
 
   const onSubmit = async (payloadData) => {
     try {
@@ -206,7 +215,7 @@ const UserModification = () => {
                     errors={errors}
                     containerStyles={'col-span-2'}
                     inputStyle={'w-full rounded-4xl p-5'}
-                    options={userLevels}
+                    options={updatedUserLevels}
                   />
                   <RecipeInput
                     id={AUTO_UNBLOCK_TIME}

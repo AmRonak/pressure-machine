@@ -8,6 +8,7 @@ export const categoryOptions = [
 ]
 
 export const selectUser = {value: 'selectUser', text: 'Select A User'};
+export const allUsers = {value: '', text: 'All Users'};
 
 const DATE_REQUIRED = 'Date is required';
 const DATE_MIN = 'Date must be after than year 2000';
@@ -29,5 +30,5 @@ export const auditReportSchema = object({
   fromTime: string().required(TIME_REQUIRED),
   toDate: date().typeError(DATE_REQUIRED).required(DATE_REQUIRED).min(new Date(2000, 1, 1), DATE_MIN).max(new Date(), DATE_MAX),
   toTime: string().required(TIME_REQUIRED),
-  username: string().required(USERNAME_REQUIRED).notOneOf([selectUser], USERNAME_REQUIRED)
+  username: string().notOneOf([selectUser], USERNAME_REQUIRED)
 })

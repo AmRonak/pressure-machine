@@ -1,6 +1,7 @@
 import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
-import { setAuth, setUserDetail } from "@/redux/slices/authSlice";
+import { resetAuth, setAuth, setUserDetail } from "@/redux/slices/authSlice";
+import { jwtTokenValidate } from "@/util/isValidToken";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -14,7 +15,13 @@ const useAuthentication = () => {
   
   useEffect(() => {
     const token = window.localStorage.getItem(JWT_TOKEN_NAME);
+    
     if(token) {
+      if(!jwtTokenValidate(token)) {
+        dispatch(resetAuth());
+        router.push('/');
+        return;
+      }
       let config = {
         method: 'get',
         url: 'http://localhost:5000/api/users/profile',

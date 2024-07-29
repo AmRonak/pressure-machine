@@ -29,18 +29,20 @@ const Input = ({
       )}
       { (type === 'password' || isPin) && (
         <div className="relative w-full">
-          <div className="absolute inset-y-0 right-2 bottom-2 flex items-center px-2">
-            <input className="hidden js-password-toggle" id={`${id}ShowPassword`} type="checkbox" onChange={() => {setPasswordType(!passwordType)}} />
-            <label className="rounded px-2 text-sm font-mono cursor-pointer js-password-label" for={`${id}ShowPassword`}>show</label>
-          </div>
           <input
             placeholder={placeholderValue}
             id={id}
-            className={`bg-background-input ${inputStyles} col`}
+            className={`bg-background-input ${inputStyles} ${isPin && 'pl-0 -ml-2'}`}
             type={passwordType ? 'password': 'text'}
             autocomplete="off"
             {...register(id, validationSchema)}
           />
+          <div className="absolute inset-y-0 right-2 px-4 bottom-3 flex items-center">
+            <input className="hidden js-password-toggle" id={`${id}ShowPassword`} type="checkbox" onChange={() => {setPasswordType(!passwordType)}} />
+            <label className={`rounded text-sm font-mono cursor-pointer js-password-label `} for={`${id}ShowPassword`}>
+              { passwordType ? 'show' : 'hide' }
+            </label>
+          </div>
         </div>
       )}
       {errors && (
