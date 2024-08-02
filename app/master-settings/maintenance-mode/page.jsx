@@ -1,4 +1,5 @@
 'use client'
+import Navigation from "@/components/buttons/Navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -34,16 +35,19 @@ const MaintenanceMode = () => {
   }
 
   return (
-    <div className="pt-20">
-      <div className="px-16">
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
-          master setting
-        </h1>
-        <h2 className="mt-4 text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-          maintenance mode
-        </h2>
+    <div className="p-10">
+      <div className="flex justify-between items-center mb-36">
+        <div>
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
+            master setting
+          </h1>
+          <h2 className="mt-4 text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
+            maintenance mode
+          </h2>
+        </div>
+        <Navigation />
       </div>
-      <div className="flex justify-around my-28 mx-auto px-4">
+      <div className="flex justify-around my-18 mx-auto px-4">
         <div className="border-solid border-slate-900 w-44 lg:w-60 xl:w-80 h-36 border-4 border-opacity-25 border-b-0">
           <p
             className="relative bg-[url('/images/bg.svg')] text-inputBlack p-2 -top-4 left-[44px] lg:left-[60px] xl:left-[100px] inline lg:text-2xl font-semibold tracking-widest"
@@ -108,7 +112,7 @@ const MaintenanceMode = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row-reverse px-40 mt-72">
+      <div className="flex flex-row-reverse px-40 mt-36">
         <Link href={'/master-settings'}>
           <Image
             src={"/images/back_button.svg"}

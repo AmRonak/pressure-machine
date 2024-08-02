@@ -1,6 +1,7 @@
 'use client';
 
 import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
+import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { toatsConfig } from "@/constants/toast";
 import { recipeSchema } from "@/schema/recipeSchema.yup";
@@ -68,11 +69,14 @@ const Recipe = () => {
   }
 
   return (
-    <div className="grid-flow-col mx-auto px-16 py-20">
-      <p className="text-5xl lg:text-6xl font-bold uppercase">
-        Recipe
-      </p>
-      <div className="grid grid-cols-3 p-3 my-4">
+    <div className="grid-flow-col mx-auto px-16 py-10">
+      <div className="flex justify-between items-center">
+        <p className="text-5xl lg:text-6xl font-bold">
+          Recipe
+        </p>
+        <Navigation />
+      </div>
+      <div className="grid grid-cols-3">
         <div className="col-span-1 flex justify-center">
           <Image
             src={`/images/fast-time.svg`}
@@ -88,7 +92,7 @@ const Recipe = () => {
             width={0}
             height={0}
             alt="time icon"
-            className="w-24 lg:w-32 xl:w-36"
+            className="w-20 lg:w-28 xl:w-32"
           />
         </div>
         </div>

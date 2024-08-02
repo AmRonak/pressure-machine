@@ -1,11 +1,13 @@
 import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
+import { toatsConfig } from "@/constants/toast";
 import { resetAuth, setAuth, setUserDetail } from "@/redux/slices/authSlice";
 import { jwtTokenValidate } from "@/util/isValidToken";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 const useAuthentication = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +37,9 @@ const useAuthentication = () => {
       .then((response) => {
         dispatch(setUserDetail(response.data.user))
         dispatch(setAuth(token));
+        if(response.data.user.tokenExpirationInfo) {
+          toast.warn(response.data.use.tokenExpirationInfo, toatsConfig);
+        }
         if(pathname === '/' || pathname === '/login') {
           router.push("/dashboard");
         } else {

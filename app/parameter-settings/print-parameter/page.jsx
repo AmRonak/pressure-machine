@@ -16,6 +16,7 @@ import handleAxiosRequest from "@/util/handleRequest";
 import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import { toast } from "react-toastify";
 import { toatsConfig } from "@/constants/toast";
+import Navigation from "@/components/buttons/Navigation";
 
 const AREA_NAME = "areaName";
 const BATCH_NAME = "batchName";
@@ -81,17 +82,20 @@ const ParameterSetting = () => {
   }
 
   return (
-    <div className="grid-flow-col px-16 py-20">
-      <div>
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
-          parameter setting
-        </h1>
-        <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-          print parameter
-        </h2>
+    <div className="grid-flow-col px-16 py-10">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
+            parameter setting
+          </h1>
+          <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
+            print parameter
+          </h2>
+        </div>
+        <Navigation />
       </div>
       <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-20 my-10">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-10">
           <div className="flex flex-col gap-20">
             <RecipeInput
               id={AREA_NAME}

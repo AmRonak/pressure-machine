@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body className={montserrat.className}>
         <Providers>
           <AuthWrapper>
-            <Navigation />
+            {/* <Navigation /> */}
             <Image
               src='/images/bg.svg'
               alt="background image"

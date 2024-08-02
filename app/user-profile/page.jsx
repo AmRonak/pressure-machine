@@ -1,5 +1,6 @@
 'use client';
 
+import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { toatsConfig } from "@/constants/toast";
 import { passwordChangeSchema } from "@/schema/userManagementSchema.yup";
@@ -40,18 +41,21 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="grid-flow-col px-16 py-20">
-      <div>
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
-          user profile
-        </h1>
-        <h2 className="mt-4 text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-          password change
-        </h2>
+    <div className="grid-flow-col px-16 py-10">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
+            user profile
+          </h1>
+          <h2 className="mt-4 text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
+            password change
+          </h2>
+        </div>
+        <Navigation />
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-4 gap-10 py-10 my-10"
+        className="grid grid-cols-4 gap-10 py-5 my-5"
       >
         <div className="flex flex-col gap-10 col-span-3">
           <RecipeInput

@@ -10,6 +10,7 @@ import { userManagementSchema } from "@/schema/userManagementSchema.yup";
 import { toatsConfig } from "@/constants/toast";
 import handleAxiosRequest from "@/util/handleRequest";
 import { toast } from "react-toastify";
+import Navigation from "@/components/buttons/Navigation";
 
 const USERNAME = "username";
 const PASSWORD = "password";
@@ -79,10 +80,13 @@ const UserCreation = () => {
   }
 
   return (
-    <div className="grid-flow-col mx-auto px-16 pt-20">
-      <p className="text-5xl lg:text-6xl font-bold uppercase mb-20 text-wrap max-w-[500px] lg:max-w-[800px]">
-        user creation
-      </p>
+    <div className="grid-flow-col mx-auto px-16 pt-10">
+      <div className="flex justify-between items-center">
+        <p className="text-5xl lg:text-6xl font-bold uppercase text-wrap max-w-[500px] lg:max-w-[800px]">
+          user creation
+        </p>
+        <Navigation />
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className="grid grid-flow-row gap-y-10 mt-10">
         <div className="grid grid-flow-col grid-cols-2 gap-28 gap-y-10">
           <div className="grid grid-flow-row col-span-1 gap-20">

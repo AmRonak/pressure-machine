@@ -1,4 +1,5 @@
 'use client';
+import Navigation from "@/components/buttons/Navigation";
 import Loading from "@/components/Loading";
 import { toatsConfig } from "@/constants/toast";
 import { useAuthSelector } from "@/redux/slices/authSlice";
@@ -94,10 +95,13 @@ const UserList = () => {
   const disableEdit = selectedUsers.length === 0 || selectedUsers.includes(user.userDetail.id);
   
   return (
-    <div className="grid-flow-col mx-auto px-16 pt-20">
-      <p className="text-5xl lg:text-6xl font-bold uppercase mb-20 text-wrap max-w-[500px] lg:max-w-[800px]">
-        user list
-      </p>
+    <div className="grid-flow-col mx-auto px-16 pt-10">
+      <div className="flex justify-between items-center">
+        <p className="text-5xl lg:text-6xl font-bold uppercase text-wrap max-w-[500px] lg:max-w-[800px]">
+          user list
+        </p>
+        <Navigation />
+      </div>
       <div className="flex gap-10 mt-10 p-4 bg-gradient-to-r from-slate-200 to-blue-100">
         <button
           className="flex flex-col items-center disabled:opacity-60"

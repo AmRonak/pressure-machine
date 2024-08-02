@@ -1,6 +1,7 @@
 'use client';
 
 import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
+import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { MANAGER, OPERATOR } from "@/constants/constants";
 import { toatsConfig } from "@/constants/toast";
@@ -80,17 +81,20 @@ const ParameterSetting = () => {
   }
 
   return (
-    <div className="grid-flow-col px-16 py-20">
-      <div>
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
-          parameter setting
-        </h1>
-        <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-          default parameter
-        </h2>
+    <div className="grid-flow-col px-16 py-10">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
+            parameter setting
+          </h1>
+          <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
+            default parameter
+          </h2>
+        </div>
+        <Navigation />
       </div>
       <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-20 my-10">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-10">
           <div className="flex flex-col gap-20">
             <RecipeInput
               id={COMPANY_NAME}

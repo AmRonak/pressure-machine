@@ -1,5 +1,6 @@
 'use client';
 
+import Navigation from "@/components/buttons/Navigation";
 import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import Loading from "@/components/Loading";
@@ -126,10 +127,13 @@ const UserModification = () => {
   }
 
   return (
-    <div className="grid-flow-col mx-auto px-16 pt-20">
-      <p className="text-5xl lg:text-6xl font-bold uppercase mb-20 text-wrap max-w-[500px] lg:max-w-[800px]">
-        user modification
-      </p>
+    <div className="grid-flow-col mx-auto px-16 pt-10">
+      <div className="flex justify-between items-center">
+        <p className="text-5xl lg:text-6xl font-bold uppercase text-wrap max-w-[500px] lg:max-w-[800px]">
+          user modification
+        </p>
+        <Navigation />
+      </div>
       {
         isLoading && <Loading />
       }

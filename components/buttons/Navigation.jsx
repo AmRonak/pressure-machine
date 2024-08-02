@@ -23,7 +23,7 @@ const Navigation = () => {
   }, [dispatch])
   
   return (
-    <div className="flex flex-col justify-center fixed top-10 right-10">
+    <div className="flex flex-col justify-center">
       {
         companyName && <div>
           {/* <span className="text-xl">Company Name:</span> */}

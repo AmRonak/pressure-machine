@@ -1,4 +1,5 @@
 'use client';
+import Navigation from "@/components/buttons/Navigation";
 import Labels from "@/components/inputs/Labels";
 import TestInput from "@/components/testInput/TestInput";
 import Image from "next/image";
@@ -21,10 +22,13 @@ const TestMode = () => {
   } = useForm();
 
   return (
-    <div className="grid-flow-col mx-auto px-16 pt-20 pb-5">
-      <p className="text-5xl lg:text-6xl font-bold uppercase mb-10 text-wrap max-w-[500px] lg:max-w-[800px]">
-        Test Mode
-      </p>
+    <div className="grid-flow-col mx-auto px-16 pt-10 pb-5">
+      <div className="flex justify-between items-center">
+        <p className="text-5xl lg:text-6xl font-bold uppercase mb-10 text-wrap max-w-[500px] lg:max-w-[800px]">
+          Test Mode
+        </p>
+        <Navigation />
+      </div>
       <form className="grid grid-flow-row gap-y-10 py-5 mx-10">
         <div className="grid grid-flow-col grid-cols-3 gap-28 gap-y-10 place-items-center">
           <div className="grid grid-flow-row col-span-1 gap-10 place-items-center">

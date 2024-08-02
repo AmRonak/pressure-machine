@@ -1,5 +1,6 @@
 'use client';
 
+import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import Loading from "@/components/Loading";
 import { toatsConfig } from "@/constants/toast";
@@ -69,14 +70,20 @@ const MasterSetting = () => {
   }
 
   return (
-    <div className="grid-flow-col px-16 py-20">
+    <div className="grid-flow-col px-16 py-10">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
+            master setting
+          </h1>
+          <h2 className="mt-4 text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
+            master parameters
+          </h2>
+        </div>
+        <Navigation />
+      </div>
       <div>
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
-          master setting
-        </h1>
-        <h2 className="mt-4 text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-          master parameters
-        </h2>
+        
       </div>
       {
         isLoading && <Loading />
@@ -92,7 +99,7 @@ const MasterSetting = () => {
         !isLoading && !isError && (
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="grid grid-cols-3 gap-10 py-10 my-20"
+            className="grid grid-cols-3 gap-10 pt-10 mt-10"
           >
             <div className="flex flex-col gap-10 flex-no-wrap">
               <RecipeInput

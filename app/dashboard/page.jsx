@@ -7,6 +7,7 @@ import { useAuthSelector } from "@/redux/slices/authSlice";
 import { useEffect, useState } from "react";
 import { SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
+import Navigation from "@/components/buttons/Navigation";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -27,11 +28,14 @@ const Dashboard = () => {
   
 
   return (
-    <div className="grid-flow-col mx-auto px-16 pt-20">
-      <p className="text-5xl lg:text-6xl font-bold">
-        MAIN MENU
-      </p>
-      <div className="grid grid-flow-row grid-cols-4 my-20 gap-10">
+    <div className="grid-flow-col mx-auto px-16 pt-10">
+      <div className="flex justify-between items-center">
+        <p className="text-5xl lg:text-6xl font-bold">
+          MAIN MENU
+        </p>
+        <Navigation />
+      </div>
+      <div className="grid grid-flow-row grid-cols-4 mb-10 mt-5 gap-10">
         { displayMenu.map(({id, urlPath, imagePath, buttonText}) => (
             <MenuButton
               key={id}
