@@ -31,3 +31,6 @@ export const NO_OF_ATTEMPT_POSITIVE = 'No of attempts must be positive';
 export const AUTO_LOGOUT_TIME_POSITIVE = 'Auto logout time must be positive';
 export const PASSWORD_EXPIRY_POSITIVE = 'Password expiry must be positive and greater than Expiry Days Notification';
 export const EXPIRY_DAYS_POSITIVE = 'Expiry days notification must be positive and less than Expiry Days Notification';
+
+// common field Name
+export const COMMENT = 'comment';

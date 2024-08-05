@@ -24,12 +24,14 @@ const BATCH_NO_REQUIRED = 'Batch No. is required';
 const BATCH_NO_MIN = 'Batch No. must be at least 3 characters';
 const LEAT_TEST_STATUS_REQUIRED = 'Leak test status is required';
 const LEAT_TEST_STATUS_ONE_OF = 'Leak test status must be one of the following values: Before, After';
+const COMMENT_MIN = 'Comment must be at least 3 characters';
 
 export const defaultParameterSchema = yup.object({
   companyName: yup.string().min(3, COMPANY_NAME_MIN).required(COMPANY_NAME_REQUIRED),
   departmentName: yup.string().min(3, DEPARTMENT_NAME_MIN).required(DEPARTMENT_NAME_REQUIRED),
   equipmentName: yup.string().min(3, EQUIPMENT_NAME_MIN).required(EQUIPMENT_NAME_REQUIRED),
   equipmentSerialNo: yup.string().min(3, EQUIPMENT_SERIAL_NO_MIN).required(EQUIPMENT_SERIAL_NO_REQUIRED),
+  defaultComment: yup.string()
 });
 
 export const printParameterSchema = yup.object({
@@ -37,4 +39,5 @@ export const printParameterSchema = yup.object({
   batchName: yup.string().min(3, BATCH_NAME_MIN).required(BATCH_NAME_REQUIRED),
   batchNo: yup.string().min(3, BATCH_NO_MIN).required(BATCH_NO_REQUIRED),
   leakTestStatus: yup.string().required(LEAT_TEST_STATUS_REQUIRED).oneOf([BEFORE, AFTER], LEAT_TEST_STATUS_ONE_OF),
+  printComment: yup.string()
 })

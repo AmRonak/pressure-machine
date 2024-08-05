@@ -22,33 +22,33 @@ export const defaultStatus = {
 
 export const styles = StyleSheet.create({
   page: {
-    padding: 30,
+    padding: 10,
   },
   header: {
-    fontSize: 20,
-    marginBottom: 10,
+    fontSize: 10,
+    marginBottom: 5,
     textAlign: 'center',
     textTransform: 'uppercase',
-    fontWeight: 'bold'
+    fontWeight: 'extrabold'
   },
   table: {
     display: "table",
     width: "auto",
     borderStyle: "solid",
-    borderWidth: 1,
-    borderColor: '#bfbfbf',
+    borderWidth: .5,
+    borderColor: 'black',
   },
   tableRow: {
     flexDirection: "row",
   },
   tableCol: {
     borderStyle: "solid",
-    borderWidth: 1,
-    borderColor: '#bfbfbf',
-    padding: 5,
+    borderWidth: .5,
+    borderColor: 'black',
+    padding: 2,
     flex: 1,
   },
   tableCell: {
-    fontSize: 10,
+    fontSize: 8,
   },
 });

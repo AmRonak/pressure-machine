@@ -1,7 +1,7 @@
 'use client';
 import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import { ADMINISTRATOR, MANAGER, OPERATOR, SUPERVISOR } from "@/constants/constants";
+import { ADMINISTRATOR, COMMENT, MANAGER, OPERATOR, SUPERVISOR } from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -36,6 +36,7 @@ const defaultValues = {
   autoLogoutTime: 300,
   passwordExpiry: 90,
   expiryDaysNotification: 3,
+  comments: ''
 }
 
 const userLevels = [
@@ -218,35 +219,48 @@ const UserCreation = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-28 mb-8">
-          <button type="submit" className="block h-14">
-            <Image
-              src={'/images/create-btn.svg'}
-              width={130}
-              height={130}
-              alt={`create user button`}
+        <div className="grid grid-flow-col gap-28 mb-8">
+          <div className="">
+            <RecipeInput
+              id="comments"
+              labelText={"COMMENT"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              inputStyle={'w-full'}
+              containerStyles={'w-full'}
             />
-          </button>
-          <button className="block h-14 scale-125">
-            <Link href={'/user-management/permission'}>
+          </div>
+          <div className="flex items-center justify-around gap-28 mb-8" >
+            <button type="submit" className="block h-14">
               <Image
-                src={"/images/permissions-btn.svg"}
+                src={'/images/create-btn.svg'}
                 width={130}
                 height={130}
-                alt="permissions page link"
+                alt={`create user button`}
               />
-            </Link>
-          </button>
-          <button>
-            <Link href={'/user-management/user-list'}>
-              <Image
-                src={"/images/back_button.svg"}
-                width={100}
-                height={100}
-                alt="back button"
-              />
-            </Link>
-          </button>
+            </button>
+            <button className="block h-14 scale-125">
+              <Link href={'/user-management/permission'}>
+                <Image
+                  src={"/images/permissions-btn.svg"}
+                  width={130}
+                  height={130}
+                  alt="permissions page link"
+                />
+              </Link>
+            </button>
+            <button>
+              <Link href={'/user-management/user-list'}>
+                <Image
+                  src={"/images/back_button.svg"}
+                  width={100}
+                  height={100}
+                  alt="back button"
+                />
+              </Link>
+            </button>
+          </div>
         </div>
       </form>
     </div>

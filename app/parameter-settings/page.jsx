@@ -3,7 +3,7 @@
 import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import { MANAGER, OPERATOR } from "@/constants/constants";
+import { COMMENT, MANAGER, OPERATOR } from "@/constants/constants";
 import { toatsConfig } from "@/constants/toast";
 import { setCompanyName, useAuthSelector } from "@/redux/slices/authSlice";
 import { defaultParameterSchema } from "@/schema/parameterSettingSchema.yup";
@@ -29,6 +29,7 @@ const ParameterSetting = () => {
     register,
     handleSubmit,
     reset,
+    resetField,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(defaultParameterSchema),
@@ -37,7 +38,6 @@ const ParameterSetting = () => {
   const [isLoading, setIsLoading] = useState();
   const [isError, setIsError] = useState(false);
   const {userDetail} = useAuthSelector();
-  const dispatch = useDispatch();
   const router = useRouter(PRINT_PARAMETER_PATH);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const ParameterSetting = () => {
           api: 'parameterSetting',
           method: 'get',
         });
-        reset(data.defaultParameter);
+        reset({...data.defaultParameter, defaultComment: ''});
         setIsLoading(false);
       } catch (error) {
         setIsError(true);
@@ -73,7 +73,7 @@ const ParameterSetting = () => {
         method: 'put',
         payloadData,
       });
-      dispatch(setCompanyName(payloadData.companyName));
+      resetField('defaultComment', '');
       toast.success('Default parameters saved successfully', toatsConfig);
     } catch (error) {
       toast.error(error.response.data.message, toatsConfig);
@@ -143,6 +143,15 @@ const ParameterSetting = () => {
                 />
               </div>
             </div>
+            <RecipeInput
+              id='defaultComment'
+              labelText={"COMMENT"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              inputStyle={'w-full'}
+              containerStyles={'w-full'}
+            />
           </div>
           <div className="flex flex-col items-center self-end gap-4">
             <Link href={PRINT_PARAMETER_PATH}>

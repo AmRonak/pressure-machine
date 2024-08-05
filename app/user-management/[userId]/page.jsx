@@ -4,7 +4,7 @@ import Navigation from "@/components/buttons/Navigation";
 import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import Loading from "@/components/Loading";
-import { ADMINISTRATOR, MANAGER, OPERATOR, SUPER_ADMIN, SUPERVISOR } from "@/constants/constants";
+import { ADMINISTRATOR, COMMENT, MANAGER, OPERATOR, SUPER_ADMIN, SUPERVISOR } from "@/constants/constants";
 import { toatsConfig } from "@/constants/toast";
 import { userManagementSchema } from "@/schema/userManagementSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
@@ -90,7 +90,8 @@ const UserModification = () => {
           password,
           pin,
           confirmPassword: password,
-          confirmPin: pin
+          confirmPin: pin,
+          comments: ''
         };
         reset(userData);
         setIsLoading(false);
@@ -278,15 +279,28 @@ const UserModification = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-28 mb-8">
-              <button type="submit" className="flex flex-col items-center">
-                <Image
-                  src={'/images/save-btn.svg'}
-                  width={130}
-                  height={130}
-                  alt={`save button`}
-                />
-              </button>
+            <div className="grid grid-flow-col gap-28 mb-8">
+          <div className="">
+            <RecipeInput
+              id="comments"
+              labelText={"COMMENT"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              inputStyle={'w-full'}
+              containerStyles={'w-full'}
+            />
+          </div>
+          <div className="flex items-center justify-around gap-28 mb-8" >
+            <button type="submit" className="block h-14">
+              <Image
+                src={'/images/update-btn.svg'}
+                width={130}
+                height={130}
+                alt={`update user button`}
+              />
+            </button>
+            <button>
               <Link href={'/user-management/user-list'}>
                 <Image
                   src={"/images/back_button.svg"}
@@ -295,7 +309,9 @@ const UserModification = () => {
                   alt="back button"
                 />
               </Link>
-            </div>
+            </button>
+          </div>
+        </div>
         </form>
       )}
     </div>

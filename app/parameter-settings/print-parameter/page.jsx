@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { PRINT_PARAMETER_PATH } from "../page";
-import { MANAGER, OPERATOR } from "@/constants/constants";
+import { COMMENT, MANAGER, OPERATOR } from "@/constants/constants";
 import { useEffect, useState } from "react";
 import handleAxiosRequest from "@/util/handleRequest";
 import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
@@ -28,6 +28,7 @@ const ParameterSetting = () => {
     register,
     handleSubmit,
     reset,
+    resetField,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(printParameterSchema),
@@ -57,7 +58,8 @@ const ParameterSetting = () => {
         });
         reset({
           ...data.printParameter,
-          leakTestStatus: data.printParameter.leakTestStatus
+          leakTestStatus: data.printParameter.leakTestStatus,
+          printComment: ''
         });
         setIsLoading(false);
       } catch (error) {
@@ -76,6 +78,7 @@ const ParameterSetting = () => {
         payloadData,
       })
       toast.success('Print parameters saved successfully', toatsConfig);
+      resetField('printComment', '');
     } catch (error) {
       toast.error(error.response.data.message, toatsConfig);
     }
@@ -141,6 +144,15 @@ const ParameterSetting = () => {
                 />
               </div>
             </div>
+            <RecipeInput
+              id="printComment"
+              labelText={"COMMENT"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              inputStyle={'w-full'}
+              containerStyles={'w-full'}
+            />
           </div>
           <div className="flex flex-col items-center self-end gap-4">
             <Link href={'/parameter-settings'}>

@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { pdf, Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import { pdf, Page, Text, View, Document } from "@react-pdf/renderer";
 import {
   defaultStatus,
   ERROR,
@@ -25,6 +25,7 @@ import {
   styles
 } from "@/constants/reportsConstants";
 import Navigation from "@/components/buttons/Navigation";
+import { useAuthSelector } from "@/redux/slices/authSlice";
 
 const AuditReports = () => {
   const [users, setUsers] = useState([]);
@@ -40,12 +41,13 @@ const AuditReports = () => {
     resolver: yupResolver(auditReportSchema),
     mode: 'onChange'
   });
+  const { companyName } = useAuthSelector();
 
   useEffect(() => {
     const fetchAllUsers = async () => {
       try {
-        const { data } = await handleAxiosRequest({api: 'users/usernames'})
-        const userOptions = data.map(user => ({value: user, text: user}))
+        const { data } = await handleAxiosRequest({ api: 'users/usernames' })
+        const userOptions = data.map(user => ({ value: user, text: user }))
         userOptions.unshift(allUsers);
         userOptions.unshift(selectUser);
         setUsers(userOptions);
@@ -59,16 +61,19 @@ const AuditReports = () => {
   const generatePdfDocument = (data) => (
     <Document>
       <Page style={styles.page}>
+        <Text style={styles.header}>{companyName}</Text>
         <Text style={styles.header}>Audit Report</Text>
         <View style={styles.table}>
           <View style={styles.tableRow}>
-            <View style={styles.tableCol}><Text style={styles.tableCell}>Time</Text></View>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>Date & Time</Text></View>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>Category</Text></View>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>Description</Text></View>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>User Level</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Username</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Updated User</Text></View>
-            <View style={styles.tableCol}><Text style={styles.tableCell}>Category</Text></View>
-            <View style={styles.tableCol}><Text style={styles.tableCell}>Log</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>Old Value</Text></View>
             <View style={styles.tableCol}><Text style={styles.tableCell}>New Value</Text></View>
+            <View style={styles.tableCol}><Text style={styles.tableCell}>Comment</Text></View>
           </View>
           {data.map(({
             id,
@@ -78,16 +83,19 @@ const AuditReports = () => {
             newValue,
             oldValue,
             updatedAt,
-            UpdatedUser
+            UpdatedUser,
+            comment
           }) => (
             <View style={styles.tableRow} key={`test-${id}`}>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{moment(updatedAt).format('DD-MM-YYYY HH:mm')}</Text></View>
-              <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.username}</Text></View>
-              <View style={styles.tableCol}><Text style={styles.tableCell}>{UpdatedUser?.username || '-'}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{category}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{log}</Text></View>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.userLevel}</Text></View>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{User?.username}</Text></View>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{UpdatedUser?.username || '-'}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{oldValue || '-'}</Text></View>
               <View style={styles.tableCol}><Text style={styles.tableCell}>{newValue || '-'}</Text></View>
+              <View style={styles.tableCol}><Text style={styles.tableCell}>{comment || '-'}</Text></View>
             </View>
           ))}
         </View>
@@ -103,7 +111,7 @@ const AuditReports = () => {
       const fromDateTime = `${moment(payloadData.fromDate).format('YYYY-MM-DD')} ${payloadData.fromTime}`;
       const toDateData = `${moment(payloadData.toDate).format('YYYY-MM-DD')} ${payloadData.toTime}`;
       const queryData = `fromDate=${fromDateTime}&toDate=${toDateData}&username=${payloadData.username}&category=${payloadData.category}`
-      const { data } = await handleAxiosRequest({api: `auditLog/filter?${queryData}`});
+      const { data } = await handleAxiosRequest({ api: `auditLog/filter?${queryData}` });
       const sortedLogs = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
       setSearchData(sortedLogs);
       setStatus({
@@ -119,7 +127,7 @@ const AuditReports = () => {
     setIsLoading(false)
   }
 
-  const onDownload = async(payloadData) => {
+  const onDownload = async (payloadData) => {
     setIsLoading(true)
     setSearchData([]);
     setStatus(defaultStatus)
@@ -127,7 +135,7 @@ const AuditReports = () => {
       const fromDateTime = `${moment(payloadData.fromDate).format('YYYY-MM-DD')} ${payloadData.fromTime}`;
       const toDateData = `${moment(payloadData.toDate).format('YYYY-MM-DD')} ${payloadData.toTime}`;
       const queryData = `fromDate=${fromDateTime}&toDate=${toDateData}&username=${payloadData.username}&category=${payloadData.category}`
-      const { data } = await handleAxiosRequest({api: `auditLog/filter?${queryData}`});
+      const { data } = await handleAxiosRequest({ api: `auditLog/filter?${queryData}` });
       const sortedLogs = data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
       setSearchData(sortedLogs);
       const pdfDoc = generatePdfDocument(data);
@@ -276,7 +284,7 @@ const AuditReports = () => {
             </Link>
           </div>
         </div>
-        
+
       </form>
       {status.status && (
         <>
@@ -285,13 +293,15 @@ const AuditReports = () => {
             <table className="font-thin w-full p-4 border-collapse border border-slate-500 text-primaryDark">
               <thead className="">
                 <tr className="">
-                  <th className="border border-slate-600 p-2">Time</th>
+                  <th className="border border-slate-600 p-2">Date & Time</th>
+                  <th className="border border-slate-600 p-2">Category</th>
+                  <th className="border border-slate-600 p-2">Description</th>
+                  <th className="border border-slate-600 p-2">User Level</th>
                   <th className="border border-slate-600 p-2">Username</th>
                   <th className="border border-slate-600 p-2">Updated User</th>
-                  <th className="border border-slate-600 p-2">Category</th>
-                  <th className="border border-slate-600 p-2">Log</th>
                   <th className="border border-slate-600 p-2">Old Value</th>
                   <th className="border border-slate-600 p-2">New Value</th>
+                  <th className="border border-slate-600 p-2">Comment</th>
                 </tr>
               </thead>
               <tbody className="">
@@ -303,16 +313,19 @@ const AuditReports = () => {
                   log,
                   newValue,
                   oldValue,
-                  updatedAt
+                  updatedAt,
+                  comment
                 }) => (
                   <tr key={`test-${id}`} className="text-primaryDark">
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{moment(updatedAt).format('DD-MM-YYYY HH:mm')}</td>
-                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.username}</td>
-                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{UpdatedUser?.username || '-'}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{category}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{log}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.userLevel}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.username}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{UpdatedUser?.username || '-'}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{oldValue || '-'}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{newValue || '-'}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{comment || '-'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -320,7 +333,6 @@ const AuditReports = () => {
           </AxiosHCO>
         </>
       )}
-      
     </div>
   );
 };

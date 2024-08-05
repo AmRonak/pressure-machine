@@ -44,6 +44,7 @@ export const userManagementSchema = yup.object({
   autoLogoutTime: yup.string().required(AUTO_LOGOUT_TIME_REQUIRED).test('autoLogoutTime', AUTO_LOGOUT_TIME_POSITIVE, isPositiveNumberTest),
   passwordExpiry: yup.string().required(PASSWORD_EXPIRY_REQUIRED).test('passwordExpiry', PASSWORD_EXPIRY_POSITIVE, isPositiveNumberTest),
   expiryDaysNotification: yup.string().required(EXPIRY_DAYS_REQUIRED).test('expiryDaysNotification', EXPIRY_DAYS_POSITIVE, isPositiveNumberTest),
+  comments: yup.string()
 });
 
 export const passwordChangeSchema = yup.object({
