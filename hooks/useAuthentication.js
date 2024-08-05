@@ -34,27 +34,37 @@ const useAuthentication = () => {
       };
       
       axios.request(config)
-      .then((response) => {
-        dispatch(setUserDetail(response.data.user))
-        dispatch(setAuth(token));
-        if(response.data.user.tokenExpirationInfo) {
-          toast.warn(response.data.use.tokenExpirationInfo, toatsConfig);
-        }
-        if(pathname === '/' || pathname === '/login') {
-          router.push("/dashboard");
-        } else {
-          if(pathname !== '/dashboard' && response.data.user.userLevel !== SUPER_ADMIN) {
-            const permissions = response.data.user.permissions;
-            const menu = allMenu.find(({urlPath}) => pathname.includes((urlPath)))
-            if(!permissions.includes(menu.id))
-            router.push("/dashboard");
+        .then((response) => {
+          dispatch(setUserDetail(response.data.user))
+          dispatch(setAuth(token));
+          
+          if(response.data?.user?.passwordExpired) {
             setIsLoading(false);
+            router.push("/user-profile");
+            return
           }
-        }
-      })
-      .catch(() => {
-        router.push("/");
-      })
+          if(response.data?.user?.tokenExpirationInfo) {
+            toast.warn(response.data.user.tokenExpirationInfo, {...toatsConfig, id: 1});
+          }
+          if(pathname === '/' || pathname === '/login') {
+            router.push("/dashboard");
+          } else {
+            if(pathname !== '/dashboard' && response.data.user.userLevel !== SUPER_ADMIN) {
+              const permissions = response.data.user.permissions;
+              const menu = allMenu.find(({urlPath}) => pathname.includes((urlPath)))
+              if(!permissions.includes(menu.id))
+              router.push("/dashboard");
+              setIsLoading(false);
+            }
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          router.push("/");
+        })
+    } else {
+      if(pathname === '/' || pathname === '/login') return;
+      router.push("/");
     }
     setIsLoading(false);
   }, [dispatch, pathname, router]);
