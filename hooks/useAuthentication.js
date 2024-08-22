@@ -63,8 +63,9 @@ const useAuthentication = () => {
           router.push("/");
         })
     } else {
-      if(pathname === '/' || pathname === '/login') return;
-      router.push("/");
+      if(pathname !== '/' && pathname !== '/login') {
+        router.push("/");
+      }
     }
     setIsLoading(false);
   }, [dispatch, pathname, router]);
