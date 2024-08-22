@@ -1,7 +1,8 @@
 import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
 import { toatsConfig } from "@/constants/toast";
-import { resetAuth, setAuth, setUserDetail } from "@/redux/slices/authSlice";
+import { resetAuth, setAuth, setCompanyName, setUserDetail } from "@/redux/slices/authSlice";
+import handleAxiosRequest from "@/util/handleRequest";
 import { jwtTokenValidate } from "@/util/isValidToken";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
@@ -15,6 +16,18 @@ const useAuthentication = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   
+  useEffect(() => {
+    const fetchCompanyName = async () => {
+      try {
+        const { data } = await handleAxiosRequest({ api: 'parameterSetting/getCompanyname' });
+        dispatch(setCompanyName(data.companyName))
+      } catch (error) {
+        // 
+      }
+    };
+    fetchCompanyName();
+  }, [dispatch])
+
   useEffect(() => {
     const token = window.localStorage.getItem(JWT_TOKEN_NAME);
     

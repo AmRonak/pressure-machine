@@ -1,12 +1,11 @@
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import "./globals.css";
-import Navigation from "@/components/buttons/Navigation";
 import Providers from "@/redux/Providers";
 import AuthWrapper from "@/components/Auth/AuthWrapper";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-        
+
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
       <body className={montserrat.className}>
         <Providers>
           <AuthWrapper>
-            {/* <Navigation /> */}
             <Image
               src='/images/bg.svg'
               alt="background image"

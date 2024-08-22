@@ -1,5 +1,6 @@
 'use client';
 import LoginButton from "@/components/buttons/LoginButton";
+import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { setAuth } from "@/redux/slices/authSlice";
 import { loginSchema } from "@/schema/userManagementSchema.yup";
@@ -27,7 +28,7 @@ const Login = () => {
   const USERNAME = 'username';
   const PASSWORD = 'password';
 
-  const onSubmit = async(payloadData) => {
+  const onSubmit = async (payloadData) => {
     try {
       const { data: dataToken } = await handleAxiosRequest({
         api: 'users/login',
@@ -45,8 +46,13 @@ const Login = () => {
   }
 
   return (
-    <div className="grid-flow-col px-16 py-20">
-      <p className="text-6xl font-bold">LOGIN</p>
+    <div className="grid-flow-col mx-auto px-16 pt-10">
+      <div className="flex justify-between items-center">
+        <p className="text-6xl font-bold">
+          LOGIN
+        </p>
+        <Navigation />
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-2 mt-28 max-w-[800px] gap-16">
         <RecipeInput
           id={USERNAME}
