@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <main>
       <div className="grid-flow-col mx-auto px-16 pt-10">
-        <div className="flex justify-between items-center">
-          <p></p>
+        <div className="flex justify-end items-center">
           <Navigation />
         </div>
       </div>

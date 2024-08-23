@@ -19,6 +19,7 @@ export const PIN_NUMBER = "Pin must be a number";
 export const PIN_LENGTH_ERROR_MESSAGE = 'Pin must be length of 4';
 export const CONFIRM_PASSWORD_REQUIRED = 'Confirm Password is required';
 export const PASSWORD_MATCH = 'Passwords must match';
+export const SAME_PASSWORD_MATCH = 'Old passwords can\'t be used as New Password';
 export const PIN_MATCH = 'Pins must match';
 export const USERLEVEL_REQUIRED = 'Userlevel is required';
 export const AUTO_UNBLOCK_TIME_REQUIRED = 'Auto unblock time is required';

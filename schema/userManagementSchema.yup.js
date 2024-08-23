@@ -20,6 +20,7 @@ import {
   PIN_MATCH,
   PIN_NUMBER,
   PIN_REQUIRED,
+  SAME_PASSWORD_MATCH,
   SUPER_ADMIN,
   USERLEVEL_REQUIRED,
   userLevels,
@@ -49,8 +50,8 @@ export const userManagementSchema = yup.object({
 
 export const passwordChangeSchema = yup.object({
   currentPassword: yup.string().required(OLD_PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
-  newPassword: yup.string().required(NEW_PASSWORD_REQUIRED).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
-  confirmPassword: yup.string().required(CONFIRM_PASSWORD_REQUIRED).oneOf([yup.ref('newPassword')], PASSWORD_MATCH),
+  newPassword: yup.string().required(NEW_PASSWORD_REQUIRED).notOneOf([yup.ref('currentPassword')], SAME_PASSWORD_MATCH).matches(passwordPattern,PASSWORD_ERROR_MESSAGE),
+  confirmPassword: yup.string().required(CONFIRM_PASSWORD_REQUIRED).notOneOf([yup.ref('currentPassword')], SAME_PASSWORD_MATCH).oneOf([yup.ref('newPassword')], PASSWORD_MATCH),
 })
 
 export const loginSchema = yup.object({

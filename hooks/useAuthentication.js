@@ -1,7 +1,7 @@
 import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
 import { toatsConfig } from "@/constants/toast";
-import { resetAuth, setAuth, setCompanyName, setUserDetail } from "@/redux/slices/authSlice";
+import { resetAuth, setAuth, setCompanyName, setUserDetail, useAuthSelector } from "@/redux/slices/authSlice";
 import handleAxiosRequest from "@/util/handleRequest";
 import { jwtTokenValidate } from "@/util/isValidToken";
 import axios from "axios";
@@ -9,12 +9,24 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import {useIdle} from 'react-use';
 
 const useAuthentication = () => {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
   const dispatch = useDispatch();
   const router = useRouter();
+  const {userDetail} = useAuthSelector();
+  const isIdle = useIdle(userDetail.autoLogoutTime*60e3 || 200*60e3);
+  
+
+  useEffect(() => {
+    const token = window.localStorage.getItem(JWT_TOKEN_NAME);
+    if(isIdle && token && userDetail.autoLogoutTime) {
+      dispatch(resetAuth());
+        router.push('/');
+    }
+  }, [dispatch, isIdle, router, userDetail.autoLogoutTime])
   
   useEffect(() => {
     const fetchCompanyName = async () => {
