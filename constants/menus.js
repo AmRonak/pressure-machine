@@ -3,7 +3,7 @@ const allMenu = [
   {
     id: 1,
     urlPath: '/devices',
-    imagePath: '/images/test-mode-btn.svg',
+    imagePath: '/images/device-btn.svg',
     buttonText: 'Devices'
   },
   {

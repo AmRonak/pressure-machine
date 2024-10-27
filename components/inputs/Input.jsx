@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from "react";
-import PasswordInput from "./PasswordInput";
 
 const Input = ({
   id,
@@ -17,7 +16,7 @@ const Input = ({
   const [passwordType, setPasswordType] = useState(true);
   return (
     <>
-      {type !== 'password' && !isPin && (
+      {!(type === 'password' || type === 'loginPassword') && !isPin && (
         <input
           placeholder={placeholderValue}
           id={id}
@@ -27,7 +26,7 @@ const Input = ({
           {...register(id, validationSchema)}
         />
       )}
-      {(type === 'password' || isPin) && (
+      {(type === 'password' || type === 'loginPassword' || isPin) && (
         <div className="relative w-full">
           <input
             placeholder={placeholderValue}
@@ -37,12 +36,14 @@ const Input = ({
             autocomplete="off"
             {...register(id, validationSchema)}
           />
-          <div className="absolute inset-y-0 right-2 px-4 bottom-3 flex items-center">
-            <input className="hidden js-password-toggle" id={`${id}ShowPassword`} type="checkbox" onChange={() => { setPasswordType(!passwordType) }} />
-            <label className={`rounded text-sm font-mono cursor-pointer js-password-label `} for={`${id}ShowPassword`}>
-              {passwordType ? 'show' : 'hide'}
-            </label>
-          </div>
+          { type !== 'loginPassword' && (
+            <div className="absolute inset-y-0 right-2 px-4 bottom-3 flex items-center">
+              <input className="hidden js-password-toggle" id={`${id}ShowPassword`} type="checkbox" onChange={() => { setPasswordType(!passwordType) }} />
+              <label className={`rounded text-sm font-mono cursor-pointer js-password-label `} for={`${id}ShowPassword`}>
+                {passwordType ? 'show' : 'hide'}
+              </label>
+            </div>
+          )}
         </div>
       )}
       {errors && (
