@@ -64,13 +64,6 @@ const Navigation = () => {
               </div>
             </>
           )}
-        <Image
-          src={`/images/battery-full.svg`}
-          width={80}
-          height={80}
-          alt="battery status"
-          className="hover:cursor-pointer"
-        />
       </div>
     </div>
   )
