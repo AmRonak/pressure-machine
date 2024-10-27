@@ -261,15 +261,20 @@ const AuditReports = () => {
                 src={'/images/search-btn.svg'}
                 width={130}
                 height={130}
-                alt={`save recipe button`}
+                alt={`search report button`}
               />
             </button>
-            <button id="downloadBtn" onClick={handleSubmit(onDownload)} className="flex flex-col items-center">
+            <button
+              id="downloadBtn"
+              disabled={searchData.length === 0}
+              onClick={handleSubmit(onDownload)}
+              className={`flex flex-col items-center ${searchData.length === 0 && 'opacity-50 cursor-default'}`}
+            >
               <Image
                 src={'/images/download-btn.svg'}
                 width={130}
                 height={130}
-                alt={`save recipe button`}
+                alt={`download report button`}
               />
             </button>
           </div>
