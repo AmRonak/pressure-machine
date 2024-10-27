@@ -170,14 +170,6 @@ const MasterSetting = () => {
                     alt={`save recipe button`}
                   />
                 </button>
-                <Link href={'/master-settings/maintenance-mode'}>
-                  <Image
-                    src={"/images/back_button.svg"}
-                    width={100}
-                    height={100}
-                    alt="back button"
-                  />
-                </Link>
               </div>
             </div>
             <div className="flex flex-col gap-10 flex-no-wrap">
