@@ -11,7 +11,7 @@ const Devices = () => {
     isError,
     devices,
   } = useDevicesSelector();
-  console.log({devices})
+  // console.log({devices})
   return (
     <div className="grid-flow-col mx-auto px-16 pt-10 pb-5">
       <div className="flex justify-between items-center">

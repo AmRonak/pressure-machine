@@ -92,7 +92,7 @@ function useWebSocket() {
                 })
               ));
           } else if (message.type === 'online-device-list') {
-            console.log(message.devices)
+            // console.log(message.devices)
             dispatch(setOnlineDevices(message.devices));
           } else if (message.type === 'device-offline') {
             // console.log('Received response from device offline:', message);
