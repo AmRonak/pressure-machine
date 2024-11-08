@@ -3,9 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useAuthSelector } from "@/redux/slices/authSlice";
 import Clock from 'react-live-clock';
+import { useDevicesSelector } from "@/redux/slices/devices";
+import { TEST_STARTED } from "@/constants/devicesStatus";
 
 const Navigation = () => {
   const { isAuthenticated, userDetail, companyName } = useAuthSelector();
+  const { devices } = useDevicesSelector();
 
   return (
     <div className="flex flex-col justify-center">
@@ -40,14 +43,16 @@ const Navigation = () => {
         {
           isAuthenticated && (
             <>
-              <Link href={'/dashboard'}>
-                <Image
-                  src={`/images/home_icon.svg`}
-                  width={80}
-                  height={80}
-                  alt="home button"
-                />
-              </Link>
+              {!devices.some(d => d.status === TEST_STARTED) && (
+                <Link href={'/dashboard'}>
+                  <Image
+                    src={`/images/home_icon.svg`}
+                    width={80}
+                    height={80}
+                    alt="home button"
+                  />
+                </Link>
+              )}
               <div className="relative">
                 <div className="group cursor-pointer relative">
                   <Image

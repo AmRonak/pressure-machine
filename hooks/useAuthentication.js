@@ -10,16 +10,20 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import {useIdle} from 'react-use';
+import useWebSocket from "./useSocket";
+import { useDevicesSelector } from "@/redux/slices/devices";
+import { TEST_STARTED } from "@/constants/devicesStatus";
 
 const useAuthentication = () => {
+  useWebSocket();
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
   const dispatch = useDispatch();
   const router = useRouter();
   const {userDetail} = useAuthSelector();
   const isIdle = useIdle(userDetail.autoLogoutTime*60e3 || 200*60e3);
+  const { devices } = useDevicesSelector();
   
-
   useEffect(() => {
     const token = window.localStorage.getItem(JWT_TOKEN_NAME);
     if(isIdle && token && userDetail.autoLogoutTime) {
@@ -74,17 +78,20 @@ const useAuthentication = () => {
           if(pathname === '/' || pathname === '/login') {
             router.push("/dashboard");
           } else {
-            if(pathname !== '/dashboard' && response.data.user.userLevel !== SUPER_ADMIN) {
-              const permissions = response.data.user.permissions;
-              const menu = allMenu.find(({urlPath}) => pathname.includes((urlPath)))
-              if(!permissions.includes(menu.id))
-              router.push("/dashboard");
+            const permissions = response.data.user.permissions;
+            const menu = allMenu.find(({urlPath}) => pathname.includes((urlPath)))
+            if(devices?.some(device => device.status === TEST_STARTED && !permissions.includes(menu?.id))) {
+              router.push("/devices");
+            } else if(pathname !== '/dashboard' && response.data.user.userLevel !== SUPER_ADMIN) {
+              if(!permissions.includes(menu.id)) {
+                router.push("/dashboard");
+              }
               setIsLoading(false);
             }
           }
         })
         .catch((error) => {
-          console.log(error)
+          // console.log(error)
           router.push("/");
         })
     } else {
@@ -93,7 +100,8 @@ const useAuthentication = () => {
       }
     }
     setIsLoading(false);
-  }, [dispatch, pathname, router]);
+  }, [dispatch, pathname, router, devices]);
+
   return isLoading;
 };
 

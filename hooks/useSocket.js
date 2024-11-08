@@ -1,75 +1,133 @@
-import { useState, useEffect, useRef } from 'react';
+import { OFFLINE } from '@/constants/devicesStatus';
+import { setDevices, setIsError, setIsLoading, useDevicesSelector, setIsOnlineDevicesUpdated, setOnlineDevices } from '@/redux/slices/devices';
+import handleAxiosRequest from '@/util/handleRequest';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-function useWebSocket(url) {
-  const [messages, setMessages] = useState([]);
-  const [isConnected, setIsConnected] = useState(false);
-  const socketRef = useRef(null);
+function useWebSocket() {
+  const {
+    isOnlineDevicesUpdated,
+    devices,
+    onlineDevices
+  } = useDevicesSelector();
 
+  const dispatch = useDispatch();
+
+  // fetch all devices
   useEffect(() => {
-    // Create WebSocket connection.
-    const socket = new WebSocket(url);
-    socketRef.current = socket;
-
-    // Connection opened
-    socket.onopen = () => {
-      console.log('Connected to WebSocket server');
-      setIsConnected(true);
-    };
-
-    // Listen for messages constantly
-    socket.onmessage = (event) => {
-      const {
-        ActualPressure,
-        DifferancePressure,
-        EndPressure,
-        HoldTime,
-        SetPressure,
-        StabilizationTime,
-        StartPressure,
-        TestResult,
-        TestStatus,
-      } = JSON.parse(event.data);
-      console.log({
-        ActualPressure,
-        DifferancePressure,
-        EndPressure,
-        HoldTime,
-        SetPressure,
-        StabilizationTime,
-        StartPressure,
-        TestResult,
-        TestStatus,
-      });
-      setMessages((prevMessages) => [...prevMessages, event.data]);
-    };
-
-    // Handle connection close
-    socket.onclose = () => {
-      console.log('WebSocket connection closed');
-      setIsConnected(false);
-    };
-
-    // Handle errors
-    socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
-
-    // Clean up the connection when the component unmounts
-    return () => {
-      socket.close();
-    };
-  }, [url]);
-
-  // Function to send messages
-  const sendMessage = (message) => {
-    if (isConnected && socketRef.current) {
-      socketRef.current.send(message);
-    } else {
-      console.error('WebSocket is not connected');
+    dispatch(setIsError(false));
+    dispatch(setIsLoading(true));
+    const fetchDevices = async () => {
+      try {
+        const { data } = await handleAxiosRequest({
+          api: 'devices',
+        });
+        dispatch(setDevices(data))
+        dispatch(setIsLoading(false));
+      } catch (error) {
+        dispatch(setIsError(true));
+        dispatch(setIsLoading(false));
+      }
     }
-  };
+    fetchDevices();
+  }, [dispatch]);
 
-  return { messages, sendMessage, isConnected };
+  // Socket
+  useEffect(() => {
+    const socket = new WebSocket('ws://localhost:5000');
+
+      // Register this React client to receive WebSocket messages
+      socket.onopen = () => {
+          // console.log('WebSocket connected');
+          socket.send(JSON.stringify({ type: 'react-register' }));
+      };
+
+      // Handle messages from the server
+      socket.onmessage = (event) => {
+          const message = JSON.parse(event.data);
+          // console.log({ message });
+          if (message.type === 'device-login-success') {
+              // console.log('Received response from device: login success', message);
+              dispatch(setDevices(devices.map(s => {
+                  if (s.deviceId === message.deviceInfo.deviceId) {
+                      return { ...s, loggedIn: true, status: message?.deviceInfo?.status }
+                  }
+                  return s
+                })
+              ))
+          } else if (message.type === 'device-logout-success') {
+            // console.log('Received response from device: logout', message);
+            dispatch(setDevices(devices.map(s => {
+                if (s.deviceId === message.deviceInfo.deviceId) {
+                    return { ...s, loggedIn: false, status: message?.deviceInfo?.status }
+                }
+                return s
+              })
+            ))
+          } else if (message.type === 'new-device-online') {
+              // console.log('Received response from device new-device-online:', message);
+              dispatch(setDevices(devices.map(s => {
+                  if (s.deviceId === message.deviceInfo.deviceId) {
+                      return { ...s, isOnline: true, status: message?.deviceInfo?.status }
+                  }
+                  return s
+                })
+              ));
+          } else if (message.type === 'device-test-start') {
+              // console.log('Received response from device device-test-start:', message);
+              dispatch(setDevices(devices.map(s => {
+                  if (s.deviceId === message.deviceInfo.deviceId) {
+                      return { ...s, isTestStarted: true, status: message?.deviceInfo?.status }
+                  }
+                  return s
+                })
+              ));
+          } else if (message.type === 'device-test-stop') {
+              // console.log('Received response from device device-test-stop:', message);
+              dispatch(setDevices(devices.map(s => {
+                  if (s.deviceId === message.deviceInfo.deviceId) {
+                      return { ...s, isTestStarted: false, status: message?.deviceInfo?.status }
+                  }
+                  return s
+                })
+              ));
+          } else if (message.type === 'online-device-list') {
+            console.log(message.devices)
+            dispatch(setOnlineDevices(message.devices));
+          } else if (message.type === 'device-offline') {
+            // console.log('Received response from device offline:', message);
+            dispatch(setDevices(devices.map(s => {
+                if (s.deviceId === message.deviceId) {
+                    return { ...s, isOnline: false, status: OFFLINE }
+                }
+                return s
+              })
+            ));
+          }
+      };
+
+      return () => {
+          // Clean up the WebSocket connection
+          if (socket) socket.close();
+      };
+  }, [devices, dispatch]);
+
+  // console.log(devices)
+
+  // onLoad set online device
+  useEffect(() => {
+    if(devices.length !== 0 && onlineDevices?.length !== 0 && isOnlineDevicesUpdated) {
+      dispatch(setIsOnlineDevicesUpdated(false))
+      dispatch(setDevices(devices.map(s => {
+          const found = onlineDevices.find(d => d.deviceId === s.deviceId)
+          if(found) {
+            return { ...s, isOnline: true, status: found.status, ...found }
+          }
+          return { ...s, isOnline: false, status: OFFLINE }
+        })
+      ));
+    }
+  }, [onlineDevices, devices, isOnlineDevicesUpdated, dispatch])
 }
 
 export default useWebSocket;

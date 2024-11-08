@@ -5,25 +5,34 @@ import axios from "axios";
 import Image from "next/image";
 import { useAuthSelector } from "@/redux/slices/authSlice";
 import { SUPER_ADMIN } from "@/constants/constants";
-import { useMemo } from "react";
 
 const DeviceButton = ({
   device: {
     deviceId,
     pin,
     status,
+    loggedIn
   },
 }) => {
+  const state = useAuthSelector();
   let color = 'grey';
 
-  const state = useAuthSelector();
-
   switch(status){
-    case ONLINE: color = 'blue'; break;
-    case OFFLINE: color = 'grey'; break;
-    case TEST_STARTED: color = 'yellow'; break;
-    case LOGGED_IN: color = 'green'; break;
-    default: color = 'grey'; break;
+    case ONLINE:
+      color = 'blue';
+      break;
+    case OFFLINE:
+      color = 'grey';
+      break;
+    case TEST_STARTED:
+      color = 'yellow';
+      break;
+    case LOGGED_IN:
+      color = 'green';
+      break;
+    default:
+      color = 'grey';
+      break;
   }
 
   const handleSendData = () => {
@@ -33,10 +42,10 @@ const DeviceButton = ({
         data: { message: deviceId, pin },
     })
       .then((response) => {
-          console.log('Data sent:', response.data);
+          // console.log('Data sent:', response.data);
       })
       .catch((error) => {
-          console.error('Error sending data:', error);
+          // console.error('Error sending data:', error);
       });
   };
 
@@ -54,7 +63,7 @@ const DeviceButton = ({
         {deviceId}
       </p>
       <button
-        disabled={disabled}
+        disabled={disabled || status === LOGGED_IN || status === TEST_STARTED}
         type="button"
         className={`
           login-btn-common
@@ -64,7 +73,7 @@ const DeviceButton = ({
         `}
         onClick={handleSendData}
       >
-        {(status === LOGGED_IN || status === TEST_STARTED) ? 'Logged In' : 'Login'}
+        {(status === LOGGED_IN || (status === TEST_STARTED && loggedIn)) ? 'Logged In' : 'Login'}
       </button>
     </div>
   );
