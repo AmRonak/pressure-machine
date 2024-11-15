@@ -39,7 +39,14 @@ const DeviceButton = ({
     axios.post('http://localhost:5000/send-data', {
         deviceId,
         isSuperUser: state?.userDetail?.userLevel === SUPER_ADMIN,
-        data: { message: deviceId, pin },
+        data: {
+          deviceId,
+          pin,
+          userLevel: state?.userDetail?.userLevel,
+          username: state?.userDetail?.username,
+          userId: state?.userDetail?.id,
+          isSuperUser: state?.userDetail?.userLevel === SUPER_ADMIN,
+        },
     })
       .then((response) => {
           // console.log('Data sent:', response.data);
