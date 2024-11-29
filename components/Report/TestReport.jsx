@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 import React from "react";
 
 const TestReport = ({
@@ -10,15 +11,25 @@ const TestReport = ({
   endtesttime,
   data,
 }) => {
-  // console.log(data)
   const {
+    companyName,
     End_Pressure,
-    Initial_Pressure,
     Pressure_Data,
     Result,
-    Set_Pressure,
-    Stabilization_Time,
+    set_Pressure,
+    stabilization_Time,
     Start_Pressure,
+    department_Name,
+    area_Name,
+    equipment_Name,
+    batch_No,
+    initial_Pressure,
+    Differance_Pressure,
+    Test_Time,
+    leak_Test_Pressure,
+    lower_Test_Pressure,
+    Glove_No,
+    leakTestStatus
   } = data;
 
   const rows = [];
@@ -32,14 +43,34 @@ const TestReport = ({
         {/* Header Section */}
         <div className="border-b-4 border-black w-full flex items-stretch">
           <div className="w-60 border-r-2 border-black flex items-center justify-center p-2">
-            <p className="text-center text-black font-bold p-4 text-lg">Client Logo</p>
+            <p className="text-center text-black font-bold p-4 text-lg">
+              <Image
+                src='/images/clientLogo.svg'
+                alt="background image"
+                className="object-fill"
+                width={0}
+                height={0}
+                quality={80}
+                style={{ width: '40px', height: '40px' }}
+              />
+            </p>
           </div>
           <div className="flex-1 flex flex-col items-center justify-center p-2">
-            <p className="text-center text-black font-bold text-xl p-2">COMPANY NAME</p>
+            <p className="text-center text-black font-bold text-xl p-2">{companyName}</p>
             <p className="text-center text-black font-bold text-xl p-2">GLOVE LEAK TEST REPORT</p>
           </div>
           <div className="w-60 border-l-2 border-black flex items-center justify-center p-2">
-            <p className="text-center text-black font-bold text-lg p-4">Our Logo</p>
+            <p className="text-center text-black font-bold text-lg p-4">
+              <Image
+                src='/images/clientLogo.svg'
+                alt="background image"
+                className="object-fill"
+                width={0}
+                height={0}
+                quality={80}
+                style={{ width: '40px', height: '40px' }}
+              />
+            </p>
           </div>
         </div>
 
@@ -49,19 +80,19 @@ const TestReport = ({
             <tbody className="">
               <tr className="border-b-2 border-black">
                   <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Department Name</td>
-                  <td className="text-black w-96 border-r-2 border-black p-2">Abc123</td>
+                  <td className="text-black w-96 border-r-2 border-black p-2">{department_Name}</td>
                   <td className="text-black w-60 border-r-2 border-black p-2 font-bold">User Id</td>
                   <td className="text-black w-96 p-2">{userid}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Area Name</td>
-                <td className="text-black w-96 border-r-2 border-black p-2">Abc123</td>
+                <td className="text-black w-96 border-r-2 border-black p-2">{area_Name}</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Test Start Time</td>
                 <td className="text-black w-96 p-2">{moment(starttesttime).format('DD/MM/YYYY HH:MM:SS')}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Equipment Name</td>
-                <td className="text-black w-96 border-r-2 border-black p-2">Abc123</td>
+                <td className="text-black w-96 border-r-2 border-black p-2">{equipment_Name}</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Test End Time</td>
                 <td className="text-black w-96 p-2">{moment(endtesttime).format('DD/MM/YYYY HH:MM:SS')}</td>
               </tr>
@@ -69,17 +100,17 @@ const TestReport = ({
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Equipment Id</td>
                 <td className="text-black w-96 border-r-2 border-black p-2">{deviceid}</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Total Test Time</td>
-                <td className="text-black w-96 p-2">MM:SS</td>
+                <td className="text-black w-96 p-2">{Test_Time}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">GLT Sr No</td>
-                <td className="text-black w-96 border-r-2 border-black p-2">Abc/123</td>
+                <td className="text-black w-96 border-r-2 border-black p-2"></td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Glove No</td>
-                <td className="text-black w-96 p-2">Abc/123</td>
+                <td className="text-black w-96 p-2">{Glove_No}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Batch No</td>
-                <td className="text-black w-96 border-r-2 border-black p-2">{batchid}</td>
+                <td className="text-black w-96 border-r-2 border-black p-2">{batch_No}</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Result</td>
                 <td className="text-black w-96 p-2 font-bold">
                   {Result === 'PASS' && <span className="font-normal text-green-500">PASS</span>}
@@ -88,7 +119,7 @@ const TestReport = ({
               </tr>
               <tr>
                 <td className="text-black border-r-2 border-black p-2 font-bold">Test Status</td>
-                <td className="text-black border-r-2 border-black p-2">Pre / Post</td>
+                <td className="text-black border-r-2 border-black p-2">{leakTestStatus}</td>
               </tr>
             </tbody>
           </table>
@@ -101,21 +132,21 @@ const TestReport = ({
             <tbody>
               <tr className="border-b border-black">
                 <td className="text-black w-60 border-r-2 border-b-2 border-black p-2 font-bold">Initial Pressure:</td>
-                <td className="text-black w-96 border-r-2 border-b-2 border-black p-2">{Initial_Pressure} Pa</td>
+                <td className="text-black w-96 border-r-2 border-b-2 border-black p-2">{initial_Pressure} Pa</td>
                 <td className="text-black w-60 border-r-2 border-b-2 border-black p-2 font-bold">Stabilization Time:</td>
-                <td className="text-black w-96 border-b-2 border-black p-2">{Stabilization_Time} Sec</td>
+                <td className="text-black w-96 border-b-2 border-black p-2">{stabilization_Time} Sec</td>
               </tr>
               <tr className="border-b border-black">
                 <td className="text-black w-60 border-r-2 border-b-2 border-black p-2 font-bold">Set Pressure:</td>
-                <td className="text-black w-96 border-r-2 border-b-2 border-black p-2">{Set_Pressure} Pa</td>
+                <td className="text-black w-96 border-r-2 border-b-2 border-black p-2">{set_Pressure} Pa</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Leak Test Time:</td>
-                <td className="text-black w-96 border-b-2 border-black p-2">123 Sec</td>
+                <td className="text-black w-96 border-b-2 border-black p-2">{Test_Time} Sec</td>
               </tr>
               <tr>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Lower Test Limit:</td>
-                <td className="text-black w-96 border-r-2 border-black p-2">123 Pa</td>
+                <td className="text-black w-96 border-r-2 border-black p-2">{lower_Test_Pressure} Pa</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Leak Test Limit:</td>
-                <td className="text-black w-96 border-black p-2">123 Pa</td>
+                <td className="text-black w-96 border-black p-2">{leak_Test_Pressure} Pa</td>
               </tr>
             </tbody>
           </table>
@@ -146,15 +177,15 @@ const TestReport = ({
             <tbody>
               <tr>
                 <td className="text-black p-2">Test Start Point</td>
-                <td className="text-black">1234 Pa</td>
+                <td className="text-black">{Start_Pressure} Pa</td>
               </tr>
               <tr>
                 <td className="text-black p-2">Test End Point</td>
-                <td className="text-black">1234 Pa</td>
+                <td className="text-black">{End_Pressure} Pa</td>
               </tr>
               <tr>
                 <td className="text-black p-2">Difference</td>
-                <td className="text-black">1234 Pa</td>
+                <td className="text-black">{Differance_Pressure} Pa</td>
               </tr>
               <tr>
                 <td className="text-black p-2">Test Result</td>

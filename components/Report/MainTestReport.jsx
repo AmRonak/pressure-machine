@@ -64,34 +64,40 @@ const MainTestReport = ({searchData, handleDownloadPDF}) => {
   }, [handleDownloadPDF]);
 
   return (
-    <div ref={hiddenContentRef} className="">
-      {searchData.map(({
-        id,
-        batchid,
-        userid,
-        deviceid,
-        starttesttime,
-        endtesttime,
-        data
-      }) => (
-        <div
-          id="report-content"
-          key={id}
-          className="container mx-auto font-sans mt-2 border-4 border-black"
-        >
-          <TestReport
-            id={id}
-            batchid={batchid}
-            userid={userid}
-            deviceid={deviceid}
-            starttesttime={starttesttime}
-            endtesttime={endtesttime}
-            data={data}
-          />
-        </div>
-      ))}
-    </div>
-    
+    <>
+      {searchData.length > 0 && (
+        <p className="text-center font-bold text-2xl">
+          There are {searchData.length} number of reports available to download.
+        </p>
+      )}
+      <div ref={hiddenContentRef} className="absolute invisible">
+        {searchData.map(({
+          id,
+          batchid,
+          userid,
+          deviceid,
+          starttesttime,
+          endtesttime,
+          data
+        }) => (
+          <div
+            id="report-content"
+            key={id}
+            className="container mx-auto font-sans mt-2 border-4 border-black"
+          >
+            <TestReport
+              id={id}
+              batchid={batchid}
+              userid={userid}
+              deviceid={deviceid}
+              starttesttime={starttesttime}
+              endtesttime={endtesttime}
+              data={data}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
