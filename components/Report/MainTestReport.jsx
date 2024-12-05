@@ -70,7 +70,7 @@ const MainTestReport = ({searchData, handleDownloadPDF}) => {
           There are {searchData.length} number of reports available to download.
         </p>
       )}
-      <div ref={hiddenContentRef} className="absolute invisible">
+      <div ref={hiddenContentRef} className="invisible">
         {searchData.map(({
           id,
           batchid,
