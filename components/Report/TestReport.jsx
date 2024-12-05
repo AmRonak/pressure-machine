@@ -51,7 +51,7 @@ const TestReport = ({
                 width={0}
                 height={0}
                 quality={80}
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: '80px', height: '80px' }}
               />
             </p>
           </div>
@@ -62,13 +62,13 @@ const TestReport = ({
           <div className="w-60 border-l-2 border-black flex items-center justify-center p-2">
             <p className="text-center text-black font-bold text-lg p-4">
               <Image
-                src='/images/clientLogo.svg'
+                src='/images/ourLogo.svg'
                 alt="background image"
                 className="object-fill"
                 width={0}
                 height={0}
                 quality={80}
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: '80px', height: '80px' }}
               />
             </p>
           </div>
