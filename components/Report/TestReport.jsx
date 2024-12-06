@@ -29,7 +29,8 @@ const TestReport = ({
     leak_Test_Pressure,
     lower_Test_Pressure,
     Glove_No,
-    leakTestStatus
+    leakTestStatus,
+    serial_No,
   } = data;
 
   const rows = [];
@@ -104,7 +105,7 @@ const TestReport = ({
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">GLT Sr No</td>
-                <td className="text-black w-96 border-r-2 border-black p-2"></td>
+                <td className="text-black w-96 border-r-2 border-black p-2">{serial_No}</td>
                 <td className="text-black w-60 border-r-2 border-black p-2 font-bold">Glove No</td>
                 <td className="text-black w-96 p-2">{Glove_No}</td>
               </tr>
