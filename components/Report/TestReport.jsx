@@ -1,16 +1,19 @@
+import { useAuthSelector } from "@/redux/slices/authSlice";
 import moment from "moment";
 import Image from "next/image";
 import React from "react";
 
 const TestReport = ({
-  id,
-  batchid,
   userid,
   deviceid,
   starttesttime,
   endtesttime,
   data,
 }) => {
+  const {userDetail : {
+    userLevel,
+    username
+  }} = useAuthSelector();
   const {
     companyName,
     End_Pressure,
@@ -52,7 +55,7 @@ const TestReport = ({
                 width={0}
                 height={0}
                 quality={80}
-                style={{ width: '80px', height: '80px' }}
+                style={{ width: '100px', height: '80px' }}
               />
             </p>
           </div>
@@ -63,13 +66,13 @@ const TestReport = ({
           <div className="w-60 border-l-2 border-black flex items-center justify-center p-2">
             <p className="text-center text-black font-bold text-lg p-4">
               <Image
-                src='/images/ourLogo.svg'
+                src='/images/clientLogo.svg'
                 alt="background image"
                 className="object-fill"
                 width={0}
                 height={0}
                 quality={80}
-                style={{ width: '80px', height: '80px' }}
+                style={{ width: '100px', height: '80px' }}
               />
             </p>
           </div>
@@ -217,8 +220,8 @@ const TestReport = ({
       </div>
 
       <div className="text-center p-2 border-2 border-t-0 border-black">
-        <p className="text-black">REPORT PRINTED BY (USER): operator</p>
-        <p className="text-black">REPORT PRINT DATE & TIME: 05/03/2024 & 13:34:23</p>
+        <p className="text-black">REPORT PRINTED BY ({username}): {userLevel}</p>
+        <p className="text-black">REPORT PRINT DATE & TIME: {moment().format('DD/MM/YYYY & hh:mm:ss')}</p>
       </div>
     </>
   );
