@@ -81,7 +81,7 @@ const Permission = () => {
               {permission.map(({id, module, administrator, manager, operator, supervisor}) => (
                 <tr key={`user-${id}`} className="">
                   <th className="border border-slate-600 p-2 text-primaryDark">
-                    {module}
+                    {module === 'Test Mode' ? 'Devices' : module}
                   </th>
                   <td className="border border-slate-600 p-2">
                     <div className="flex justify-center">

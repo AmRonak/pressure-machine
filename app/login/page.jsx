@@ -72,7 +72,7 @@ const Login = () => {
           errors={errors}
           inputStyle={'w-full rounded-4xl p-5'}
           labelStyles={'self-start ml-8'}
-          type={'password'}
+          type={'loginPassword'}
         />
         {errors?.root?.serverError && <p className="pt-3 mt-5 text-center text-red-600">{errors.root.serverError.message}</p>}
         <div className="flex justify-center items-center gap-20 mt-8">

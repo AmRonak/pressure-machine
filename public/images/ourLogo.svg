@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2019 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8.8732mm" height="8.8733mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1.2466 1.2466"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="765" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="700">
+	<font-face 
+		font-family="Montserrat">
+		<font-face-src>
+			<font-face-name name="Montserrat Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="1" horiz-adv-x="392" d="M308.989 699.995l0 -699.995 -162.006 0 0 570.014 -139.98 0 0 129.981 301.985 0z"/>
+   <glyph unicode="M" horiz-adv-x="954" d="M719.992 0l-1.01435 419.987 -205.96 -345.989 -73.0329 0 -204.994 337.004 0 -411.003 -152.007 0 0 699.995 134.039 0 261.991 -435.009 257.982 435.009 133.024 0 1.98039 -699.995 -152.007 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Montserrat";font-variant:normal;font-style:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil108 {fill:#9D9E9E}
+    .fil100 {fill:url(#id0)}
+    .fil80 {fill:url(#id1)}
+    .fil96 {fill:url(#id2)}
+    .fil14 {fill:url(#id3)}
+    .fil51 {fill:url(#id4)}
+    .fil101 {fill:url(#id5)}
+    .fil10 {fill:url(#id6)}
+    .fil106 {fill:url(#id7)}
+    .fil105 {fill:url(#id8)}
+    .fil24 {fill:url(#id9)}
+    .fil107 {fill:url(#id10)}
+    .fil99 {fill:url(#id11)}
+    .fil87 {fill:url(#id12)}
+    .fil40 {fill:url(#id13)}
+    .fil25 {fill:url(#id14)}
+    .fil4 {fill:url(#id15)}
+    .fil27 {fill:url(#id16)}
+    .fil78 {fill:url(#id17)}
+    .fil71 {fill:url(#id18)}
+    .fil72 {fill:url(#id19)}
+    .fil58 {fill:url(#id20)}
+    .fil76 {fill:url(#id21)}
+    .fil36 {fill:url(#id22)}
+    .fil31 {fill:url(#id23)}
+    .fil7 {fill:url(#id24)}
+    .fil49 {fill:url(#id25)}
+    .fil11 {fill:url(#id26)}
+    .fil16 {fill:url(#id27)}
+    .fil34 {fill:url(#id28)}
+    .fil3 {fill:url(#id29)}
+    .fil37 {fill:url(#id30)}
+    .fil68 {fill:url(#id31)}
+    .fil90 {fill:url(#id32)}
+    .fil89 {fill:url(#id33)}
+    .fil81 {fill:url(#id34)}
+    .fil44 {fill:url(#id35)}
+    .fil91 {fill:url(#id36)}
+    .fil103 {fill:url(#id37)}
+    .fil94 {fill:url(#id38)}
+    .fil92 {fill:url(#id39)}
+    .fil102 {fill:url(#id40)}
+    .fil0 {fill:url(#id41)}
+    .fil39 {fill:url(#id42)}
+    .fil15 {fill:url(#id43)}
+    .fil9 {fill:url(#id44)}
+    .fil2 {fill:url(#id45)}
+    .fil46 {fill:url(#id46)}
+    .fil20 {fill:url(#id47)}
+    .fil86 {fill:url(#id48)}
+    .fil61 {fill:url(#id49)}
+    .fil74 {fill:url(#id50)}
+    .fil64 {fill:url(#id51)}
+    .fil88 {fill:url(#id52)}
+    .fil69 {fill:url(#id53)}
+    .fil54 {fill:url(#id54)}
+    .fil18 {fill:url(#id55)}
+    .fil63 {fill:url(#id56)}
+    .fil23 {fill:url(#id57)}
+    .fil48 {fill:url(#id58)}
+    .fil22 {fill:url(#id59)}
+    .fil33 {fill:url(#id60)}
+    .fil26 {fill:url(#id61)}
+    .fil47 {fill:url(#id62)}
+    .fil52 {fill:url(#id63)}
+    .fil62 {fill:url(#id64)}
+    .fil104 {fill:url(#id65)}
+    .fil75 {fill:url(#id66)}
+    .fil85 {fill:url(#id67)}
+    .fil97 {fill:url(#id68)}
+    .fil56 {fill:url(#id69)}
+    .fil98 {fill:url(#id70)}
+    .fil13 {fill:url(#id71)}
+    .fil38 {fill:url(#id72)}
+    .fil19 {fill:url(#id73)}
+    .fil43 {fill:url(#id74)}
+    .fil5 {fill:url(#id75)}
+    .fil35 {fill:url(#id76)}
+    .fil60 {fill:url(#id77)}
+    .fil83 {fill:url(#id78)}
+    .fil59 {fill:url(#id79)}
+    .fil65 {fill:url(#id80)}
+    .fil70 {fill:url(#id81)}
+    .fil21 {fill:url(#id82)}
+    .fil32 {fill:url(#id83)}
+    .fil41 {fill:url(#id84)}
+    .fil30 {fill:url(#id85)}
+    .fil29 {fill:url(#id86)}
+    .fil79 {fill:url(#id87)}
+    .fil67 {fill:url(#id88)}
+    .fil66 {fill:url(#id89)}
+    .fil1 {fill:url(#id90)}
+    .fil95 {fill:url(#id91)}
+    .fil93 {fill:url(#id92)}
+    .fil73 {fill:url(#id93)}
+    .fil84 {fill:url(#id94)}
+    .fil45 {fill:url(#id95)}
+    .fil12 {fill:url(#id96)}
+    .fil8 {fill:url(#id97)}
+    .fil17 {fill:url(#id98)}
+    .fil77 {fill:url(#id99)}
+    .fil57 {fill:url(#id100)}
+    .fil55 {fill:url(#id101)}
+    .fil53 {fill:url(#id102)}
+    .fil82 {fill:url(#id103)}
+    .fil42 {fill:url(#id104)}
+    .fil28 {fill:url(#id105)}
+    .fil50 {fill:url(#id106)}
+    .fil6 {fill:url(#id107)}
+    .fnt0 {font-weight:bold;font-size:0.2909px;font-family:'Montserrat'}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#95918F"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#B9B5B4"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#B9B5B4"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B2AFAD"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#DAD9DA"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DAD9DA"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#9D9896"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#BFBCBC"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#BFBCBC"/>
+  </linearGradient>
+  <linearGradient id="id3" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D4D3D2"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#FEFEFE"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FEFEFE"/>
+  </linearGradient>
+  <linearGradient id="id4" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id5" gradientUnits="userSpaceOnUse" xlink:href="#id0" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id6" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id7" gradientUnits="userSpaceOnUse" x1="0.8409" y1="1.0096" x2="0.4262" y2="0.2707">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D4D3D2"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FEFEFE"/>
+  </linearGradient>
+  <linearGradient id="id8" gradientUnits="userSpaceOnUse" x1="0.3651" y1="0.1229" x2="0.8187" y2="1.0003">
+   <stop offset="0" style="stop-opacity:1; stop-color:#E84D22"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D2363A"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D2363A"/>
+  </linearGradient>
+  <linearGradient id="id9" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id10" gradientUnits="userSpaceOnUse" xlink:href="#id7" x1="0.3764" y1="0.2619" x2="0.8955" y2="1.0161">
+  </linearGradient>
+  <linearGradient id="id11" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#979390"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#B9B7B7"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#B9B7B7"/>
+  </linearGradient>
+  <linearGradient id="id12" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A6A4A2"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D0CCCC"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D0CCCC"/>
+  </linearGradient>
+  <linearGradient id="id13" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id14" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id15" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id16" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id17" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B4B2B2"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#DCDBDB"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DCDBDB"/>
+  </linearGradient>
+  <linearGradient id="id18" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#BDBBBA"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E7E7E6"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E7E7E6"/>
+  </linearGradient>
+  <linearGradient id="id19" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#BDBAB9"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E7E5E5"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E7E5E5"/>
+  </linearGradient>
+  <linearGradient id="id20" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D0CCCC"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#FAFBFB"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FAFBFB"/>
+  </linearGradient>
+  <linearGradient id="id21" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B6B4B4"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#DFDEDF"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DFDEDF"/>
+  </linearGradient>
+  <linearGradient id="id22" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id23" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id24" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id25" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id26" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id27" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id28" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id29" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id30" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id31" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C1BEBE"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#EBECEC"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#EBECEC"/>
+  </linearGradient>
+  <linearGradient id="id32" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A19F9F"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#C9C7C7"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#C9C7C7"/>
+  </linearGradient>
+  <linearGradient id="id33" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A4A09F"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#CCC9C8"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#CCC9C8"/>
+  </linearGradient>
+  <linearGradient id="id34" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#AEABAA"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D8D6D7"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D8D6D7"/>
+  </linearGradient>
+  <linearGradient id="id35" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id36" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A29F9D"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#C9C6C5"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#C9C6C5"/>
+  </linearGradient>
+  <linearGradient id="id37" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#918D8C"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#B4B2B0"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#B4B2B0"/>
+  </linearGradient>
+  <linearGradient id="id38" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#9D9A99"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#C4C1C1"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#C4C1C1"/>
+  </linearGradient>
+  <linearGradient id="id39" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A09D9C"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#C5C3C2"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#C5C3C2"/>
+  </linearGradient>
+  <linearGradient id="id40" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#918D8C"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#B4B3B3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#B4B3B3"/>
+  </linearGradient>
+  <linearGradient id="id41" gradientUnits="userSpaceOnUse" xlink:href="#id7" x1="0.2273" y1="-0.0046" x2="0.952" y2="1.1445">
+  </linearGradient>
+  <linearGradient id="id42" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id43" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id44" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id45" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id46" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id47" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id48" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A7A5A5"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D0CECD"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D0CECD"/>
+  </linearGradient>
+  <linearGradient id="id49" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#CCC9C8"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#F6F5F6"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F6F5F6"/>
+  </linearGradient>
+  <linearGradient id="id50" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B9B7B7"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E3E1E2"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E3E1E2"/>
+  </linearGradient>
+  <linearGradient id="id51" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C8C6C4"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#F2F2F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F2F2F3"/>
+  </linearGradient>
+  <linearGradient id="id52" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A4A1A1"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#CCC9CA"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#CCC9CA"/>
+  </linearGradient>
+  <linearGradient id="id53" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C1BEBD"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E9E9EA"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E9E9EA"/>
+  </linearGradient>
+  <linearGradient id="id54" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id55" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id56" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C9C6C5"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#F3F3F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F3F3F3"/>
+  </linearGradient>
+  <linearGradient id="id57" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id58" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1594" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id59" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id60" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id61" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id62" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id63" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0698" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id64" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C9C7C7"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#F3F3F3"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F3F3F3"/>
+  </linearGradient>
+  <linearGradient id="id65" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#8F8B8A"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#B2AFAD"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#B2AFAD"/>
+  </linearGradient>
+  <linearGradient id="id66" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B9B7B5"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E0DFDF"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E0DFDF"/>
+  </linearGradient>
+  <linearGradient id="id67" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#A9A6A5"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D2D0D0"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D2D0D0"/>
+  </linearGradient>
+  <linearGradient id="id68" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#9A9694"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#BDBBBA"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#BDBBBA"/>
+  </linearGradient>
+  <linearGradient id="id69" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D2D0D0"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#FCFDFE"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FCFDFE"/>
+  </linearGradient>
+  <linearGradient id="id70" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#979594"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#BDBAB9"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#BDBAB9"/>
+  </linearGradient>
+  <linearGradient id="id71" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id72" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id73" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id74" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1594" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id75" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id76" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id77" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#CCC9CA"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#F6F8F9"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F6F8F9"/>
+  </linearGradient>
+  <linearGradient id="id78" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#AEAAA8"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D4D3D2"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D4D3D2"/>
+  </linearGradient>
+  <linearGradient id="id79" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#CDCBCC"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#F8F8F9"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#F8F8F9"/>
+  </linearGradient>
+  <linearGradient id="id80" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C5C3C2"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#EFEFF0"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#EFEFF0"/>
+  </linearGradient>
+  <linearGradient id="id81" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#BFBCBC"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E9E9E9"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E9E9E9"/>
+  </linearGradient>
+  <linearGradient id="id82" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id83" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id84" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id85" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id86" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id87" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B2AFAF"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#DCDADA"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DCDADA"/>
+  </linearGradient>
+  <linearGradient id="id88" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C4C1C1"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#EEEDEE"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#EEEDEE"/>
+  </linearGradient>
+  <linearGradient id="id89" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#C5C2C1"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#EFEFF0"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#EFEFF0"/>
+  </linearGradient>
+  <linearGradient id="id90" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id91" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#9D9A97"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#C1BEBD"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#C1BEBD"/>
+  </linearGradient>
+  <linearGradient id="id92" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#9F9C9B"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#C5C2C1"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#C5C2C1"/>
+  </linearGradient>
+  <linearGradient id="id93" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#BAB9B8"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#E4E4E5"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#E4E4E5"/>
+  </linearGradient>
+  <linearGradient id="id94" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#ACA8A6"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D1D0D1"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D1D0D1"/>
+  </linearGradient>
+  <linearGradient id="id95" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id96" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id97" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id98" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id99" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#B4B3B3"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#DFDEDD"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#DFDEDD"/>
+  </linearGradient>
+  <linearGradient id="id100" gradientUnits="userSpaceOnUse" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D0CECD"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#FAFBFB"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FAFBFB"/>
+  </linearGradient>
+  <linearGradient id="id101" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#D1D0D1"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#FCFDFE"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FCFDFE"/>
+  </linearGradient>
+  <linearGradient id="id102" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id103" gradientUnits="userSpaceOnUse" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+   <stop offset="0" style="stop-opacity:1; stop-color:#AEABAA"/>
+   <stop offset="0.788235" style="stop-opacity:1; stop-color:#D6D4D4"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#D6D4D4"/>
+  </linearGradient>
+  <linearGradient id="id104" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0214" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id105" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id106" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1592" y2="0.1028">
+  </linearGradient>
+  <linearGradient id="id107" gradientUnits="userSpaceOnUse" xlink:href="#id3" x1="1.0215" y1="1.0699" x2="0.1593" y2="0.1028">
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1798111765456">
+   <path class="fil0" d="M0.6233 1.2466c-0.3443,0 -0.6233,-0.2791 -0.6233,-0.6233 0,-0.3443 0.2791,-0.6233 0.6233,-0.6233 0.3443,0 0.6233,0.2791 0.6233,0.6233 0,0.3442 -0.2791,0.6233 -0.6233,0.6233zm0 -1.2189c-0.3289,0 -0.5956,0.2666 -0.5956,0.5956 0,0.3289 0.2666,0.5955 0.5956,0.5955 0.3289,0 0.5955,-0.2666 0.5955,-0.5955 0,-0.3289 -0.2666,-0.5956 -0.5955,-0.5956z"/>
+   <path class="fil1" d="M0.6233 1.2189c-0.3289,0 -0.5956,-0.2666 -0.5956,-0.5955 0,-0.3289 0.2666,-0.5956 0.5956,-0.5956 0.3289,0 0.5955,0.2666 0.5955,0.5956 0,0.3289 -0.2666,0.5955 -0.5955,0.5955zm-0.4216 -0.351c0.0769,0.1666 0.2453,0.2822 0.4408,0.2822 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.0001 0,-0.0002 0,-0.0003 0,-0.14 -0.0593,-0.2661 -0.1541,-0.3547 -0.0886,-0.0948 -0.2147,-0.1541 -0.3547,-0.1541 -0.268,0 -0.4853,0.2173 -0.4853,0.4853 0,0.0729 0.0161,0.1421 0.0449,0.2042 0.0002,0.0004 0.0004,0.0007 0.0005,0.0011 0.0004,0.0007 0.0007,0.0015 0.001,0.0022 0.0001,0.0002 0.0002,0.0004 0.0003,0.0006 0.0002,0.0004 0.0004,0.0008 0.0005,0.0011 0.0003,0.0007 0.0007,0.0015 0.001,0.0022 0.0001,0.0002 0.0002,0.0004 0.0003,0.0007 0.0004,0.0008 0.0007,0.0016 0.0011,0.0024 0.0001,0.0002 0.0002,0.0004 0.0003,0.0006 0.0002,0.0004 0.0003,0.0007 0.0005,0.0011 0.0003,0.0007 0.0007,0.0014 0.001,0.0022 0.0002,0.0004 0.0003,0.0007 0.0005,0.0011 0.0003,0.0006 0.0005,0.0012 0.0008,0.0017 0,0.0001 0.0001,0.0002 0.0001,0.0003 0.0001,0.0003 0.0002,0.0005 0.0004,0.0008 0.0001,0.0001 0.0001,0.0002 0.0002,0.0003 0.0005,0.001 0.0009,0.002 0.0014,0.003 0,0.0001 0.0001,0.0002 0.0001,0.0002 0.0004,0.0009 0.0008,0.0018 0.0012,0.0027 0,0.0001 0.0001,0.0001 0.0001,0.0002 0,0 0,0.0001 0.0001,0.0001 0.0001,0.0003 0.0003,0.0006 0.0004,0.0009 0.0004,0.0009 0.0008,0.0017 0.0012,0.0026 0.0001,0.0003 0.0002,0.0005 0.0004,0.0008 0.0004,0.0007 0.0007,0.0015 0.001,0.0022 0.0001,0.0002 0.0002,0.0005 0.0003,0.0007 0.0004,0.0007 0.0007,0.0015 0.001,0.0022 0,0.0001 0.0001,0.0002 0.0001,0.0003 0.0003,0.0006 0.0005,0.0011 0.0008,0.0017 0.0003,0.0006 0.0006,0.0013 0.0009,0.0019 0.0002,0.0004 0.0003,0.0007 0.0005,0.0011 0.0003,0.0006 0.0006,0.0012 0.0009,0.0019 0,0 0,0.0001 0,0.0001 0,0.0001 0.0001,0.0002 0.0001,0.0003 0.0003,0.0005 0.0005,0.0011 0.0007,0.0016 0.0003,0.0006 0.0006,0.0013 0.0009,0.0019 0,0.0001 0.0001,0.0002 0.0001,0.0002 0.0001,0.0003 0.0003,0.0006 0.0004,0.001 0.0003,0.0006 0.0005,0.0011 0.0008,0.0017 0.0001,0.0001 0.0001,0.0003 0.0002,0.0004 0.0001,0.0002 0.0001,0.0003 0.0002,0.0005 0.0001,0.0003 0.0003,0.0006 0.0004,0.0009z"/>
+   <path class="fil2" d="M1.1279 0.638c-0.0001,-0.138 -0.0577,-0.2625 -0.1502,-0.3508 -0.0013,-0.0014 -0.0025,-0.0028 -0.0038,-0.0041 0.0948,0.0886 0.1541,0.2147 0.1541,0.3547 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil3" d="M1.1279 0.6385c-0.0001,-0.1361 -0.0562,-0.2591 -0.1465,-0.3472 -0.0012,-0.0014 -0.0025,-0.0028 -0.0037,-0.0041 0.0925,0.0883 0.1502,0.2128 0.1502,0.3508 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil4" d="M1.1279 0.6391c-0.0001,-0.1343 -0.0547,-0.2559 -0.143,-0.3437 -0.0012,-0.0013 -0.0024,-0.0027 -0.0036,-0.004 0.0904,0.0881 0.1465,0.2111 0.1465,0.3472 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil5" d="M1.1279 0.6396c-0.0001,-0.1326 -0.0533,-0.2527 -0.1395,-0.3402 -0.0011,-0.0013 -0.0023,-0.0027 -0.0035,-0.004 0.0883,0.0878 0.1429,0.2094 0.143,0.3437 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil6" d="M1.1279 0.6401c-0.0001,-0.1309 -0.0519,-0.2496 -0.1362,-0.3368 -0.0011,-0.0013 -0.0022,-0.0026 -0.0033,-0.0039 0.0862,0.0875 0.1394,0.2077 0.1395,0.3402 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil7" d="M1.1279 0.6407c-0.0001,-0.1292 -0.0506,-0.2465 -0.1329,-0.3334 -0.0011,-0.0013 -0.0021,-0.0026 -0.0032,-0.0039 0.0843,0.0872 0.1361,0.206 0.1362,0.3368 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil8" d="M1.1279 0.6412c-0.0001,-0.1275 -0.0493,-0.2435 -0.1298,-0.3301 -0.001,-0.0013 -0.0021,-0.0026 -0.0031,-0.0038 0.0823,0.0869 0.1329,0.2043 0.1329,0.3334 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil9" d="M1.1279 0.6417c-0.0001,-0.1259 -0.0481,-0.2406 -0.1268,-0.3268 -0.001,-0.0013 -0.002,-0.0026 -0.003,-0.0038 0.0805,0.0866 0.1297,0.2026 0.1298,0.3301 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil10" d="M1.1279 0.6423c-0.0001,-0.1244 -0.0469,-0.2378 -0.1239,-0.3236 -0.001,-0.0013 -0.0019,-0.0025 -0.0029,-0.0038 0.0787,0.0862 0.1267,0.2009 0.1268,0.3268 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil11" d="M1.1279 0.6428c-0.0001,-0.1228 -0.0458,-0.235 -0.121,-0.3204 -0.0009,-0.0013 -0.0019,-0.0025 -0.0028,-0.0037 0.077,0.0858 0.1238,0.1992 0.1239,0.3236 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil12" d="M1.1279 0.6433c-0.0001,-0.1213 -0.0446,-0.2322 -0.1183,-0.3173 -0.0009,-0.0012 -0.0018,-0.0024 -0.0027,-0.0037 0.0753,0.0854 0.121,0.1976 0.121,0.3204 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil13" d="M1.1279 0.6439c-0.0001,-0.1199 -0.0436,-0.2296 -0.1157,-0.3142 -0.0009,-0.0012 -0.0018,-0.0024 -0.0026,-0.0036 0.0737,0.085 0.1183,0.1959 0.1183,0.3173 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil14" d="M1.1279 0.6444c-0.0001,-0.1185 -0.0426,-0.227 -0.1131,-0.3112 -0.0008,-0.0012 -0.0017,-0.0024 -0.0025,-0.0036 0.0721,0.0846 0.1156,0.1943 0.1157,0.3142 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil15" d="M1.1279 0.6449c-0.0001,-0.1171 -0.0416,-0.2244 -0.1107,-0.3082 -0.0008,-0.0012 -0.0016,-0.0023 -0.0025,-0.0035 0.0706,0.0842 0.1131,0.1927 0.1131,0.3112 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil16" d="M1.1279 0.6455c-0.0001,-0.1157 -0.0406,-0.222 -0.1083,-0.3053 -0.0008,-0.0012 -0.0016,-0.0023 -0.0024,-0.0035 0.0691,0.0838 0.1106,0.1912 0.1107,0.3082 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil17" d="M1.1279 0.646c-0.0001,-0.1144 -0.0397,-0.2195 -0.106,-0.3024 -0.0008,-0.0011 -0.0015,-0.0023 -0.0023,-0.0034 0.0677,0.0834 0.1082,0.1896 0.1083,0.3053 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil18" d="M1.1279 0.6465c-0.0001,-0.1131 -0.0388,-0.2171 -0.1037,-0.2996 -0.0007,-0.0011 -0.0015,-0.0022 -0.0022,-0.0033 0.0663,0.0829 0.1059,0.188 0.106,0.3024 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil19" d="M1.1279 0.647c-0.0001,-0.1118 -0.0379,-0.2148 -0.1016,-0.2969 -0.0007,-0.0011 -0.0014,-0.0022 -0.0022,-0.0033 0.0649,0.0825 0.1037,0.1865 0.1037,0.2996 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil20" d="M1.1279 0.6476c-0.0001,-0.1106 -0.0371,-0.2125 -0.0995,-0.2941 -0.0007,-0.0011 -0.0014,-0.0022 -0.0021,-0.0033 0.0636,0.082 0.1015,0.185 0.1016,0.2969 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil21" d="M1.1279 0.6481c-0.0001,-0.1094 -0.0363,-0.2103 -0.0974,-0.2914 -0.0007,-0.0011 -0.0013,-0.0021 -0.002,-0.0032 0.0623,0.0816 0.0994,0.1835 0.0995,0.2941 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil22" d="M1.1279 0.6486c-0.0001,-0.1082 -0.0355,-0.2081 -0.0955,-0.2888 -0.0006,-0.0011 -0.0013,-0.0021 -0.002,-0.0032 0.0611,0.0811 0.0974,0.1821 0.0974,0.2914 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil23" d="M1.1279 0.6492c-0.0001,-0.1071 -0.0348,-0.206 -0.0936,-0.2862 -0.0006,-0.001 -0.0013,-0.0021 -0.0019,-0.0031 0.0599,0.0807 0.0954,0.1806 0.0955,0.2888 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil24" d="M1.1279 0.6497c-0.0001,-0.1059 -0.0341,-0.2039 -0.0917,-0.2837 -0.0006,-0.001 -0.0012,-0.0021 -0.0018,-0.0031 0.0588,0.0802 0.0935,0.1792 0.0936,0.2862 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil25" d="M1.1279 0.6502c-0.0001,-0.1049 -0.0334,-0.2019 -0.0899,-0.2812 -0.0006,-0.001 -0.0012,-0.002 -0.0018,-0.003 0.0577,0.0798 0.0917,0.1778 0.0917,0.2837 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil26" d="M1.1279 0.6508c-0.0001,-0.1038 -0.0327,-0.1999 -0.0882,-0.2788 -0.0006,-0.001 -0.0012,-0.002 -0.0017,-0.003 0.0566,0.0793 0.0899,0.1764 0.0899,0.2812 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil27" d="M1.1279 0.6513c-0.0001,-0.1027 -0.032,-0.198 -0.0865,-0.2764 -0.0005,-0.001 -0.0011,-0.002 -0.0017,-0.0029 0.0555,0.0789 0.0882,0.175 0.0882,0.2788 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil28" d="M1.1279 0.6518c-0.0001,-0.1017 -0.0314,-0.1961 -0.0849,-0.274 -0.0005,-0.001 -0.0011,-0.0019 -0.0016,-0.0029 0.0545,0.0784 0.0865,0.1737 0.0865,0.2764 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil29" d="M1.1279 0.6524c-0.0001,-0.1007 -0.0308,-0.1942 -0.0833,-0.2717 -0.0005,-0.0009 -0.001,-0.0019 -0.0016,-0.0028 0.0535,0.078 0.0849,0.1723 0.0849,0.274 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil30" d="M1.1279 0.6529c-0.0001,-0.0997 -0.0302,-0.1924 -0.0818,-0.2695 -0.0005,-0.0009 -0.001,-0.0019 -0.0015,-0.0028 0.0526,0.0775 0.0833,0.171 0.0833,0.2717 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil31" d="M1.1279 0.6534c-0.0001,-0.0988 -0.0296,-0.1906 -0.0803,-0.2672 -0.0005,-0.0009 -0.001,-0.0018 -0.0015,-0.0028 0.0516,0.0771 0.0818,0.1697 0.0818,0.2695 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil32" d="M1.1279 0.6539c-0,-0.0978 -0.0291,-0.1889 -0.0789,-0.265 -0.0005,-0.0009 -0.001,-0.0018 -0.0014,-0.0027 0.0507,0.0766 0.0803,0.1685 0.0803,0.2672 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil33" d="M1.1279 0.6545c-0,-0.0969 -0.0285,-0.1872 -0.0775,-0.2629 -0.0005,-0.0009 -0.0009,-0.0018 -0.0014,-0.0027 0.0498,0.0762 0.0788,0.1672 0.0789,0.265 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil34" d="M1.1279 0.655c-0,-0.096 -0.028,-0.1855 -0.0761,-0.2608 -0.0004,-0.0009 -0.0009,-0.0018 -0.0013,-0.0026 0.049,0.0758 0.0775,0.166 0.0775,0.2629 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil35" d="M1.1279 0.6555c-0,-0.0951 -0.0275,-0.1839 -0.0748,-0.2587 -0.0004,-0.0009 -0.0009,-0.0017 -0.0013,-0.0026 0.0482,0.0753 0.0761,0.1648 0.0761,0.2608 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil36" d="M1.1279 0.6561c-0,-0.0943 -0.027,-0.1823 -0.0735,-0.2567 -0.0004,-0.0009 -0.0009,-0.0017 -0.0013,-0.0026 0.0474,0.0749 0.0748,0.1636 0.0748,0.2587 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil37" d="M1.1279 0.6566c-0,-0.0934 -0.0265,-0.1807 -0.0723,-0.2547 -0.0004,-0.0009 -0.0008,-0.0017 -0.0012,-0.0025 0.0466,0.0744 0.0735,0.1624 0.0735,0.2567 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil38" d="M1.1279 0.6571c-0,-0.0926 -0.026,-0.1791 -0.0711,-0.2528 -0.0004,-0.0008 -0.0008,-0.0017 -0.0012,-0.0025 0.0458,0.074 0.0723,0.1613 0.0723,0.2547 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil39" d="M1.1279 0.6577c-0,-0.0918 -0.0256,-0.1776 -0.0699,-0.2508 -0.0004,-0.0008 -0.0008,-0.0016 -0.0012,-0.0025 0.0451,0.0736 0.0711,0.1601 0.0711,0.2528 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil40" d="M1.1279 0.6582c-0,-0.091 -0.0252,-0.1762 -0.0688,-0.249 -0.0004,-0.0008 -0.0007,-0.0016 -0.0011,-0.0024 0.0443,0.0732 0.0699,0.159 0.0699,0.2508 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil41" d="M1.1279 0.6587c-0,-0.0903 -0.0247,-0.1747 -0.0677,-0.2471 -0.0003,-0.0007 -0.0007,-0.0014 -0.001,-0.0021 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0003 0.0437,0.0728 0.0688,0.1579 0.0688,0.249 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil42" d="M1.1279 0.6593c-0,-0.0894 -0.0243,-0.1732 -0.0665,-0.2451 -0.0002,-0.0005 -0.0004,-0.0009 -0.0006,-0.0014 -0.0001,-0.0003 -0.0003,-0.0006 -0.0004,-0.0009 -0,-0.0001 -0.0001,-0.0001 -0.0001,-0.0002 0.0429,0.0724 0.0676,0.1568 0.0677,0.2471 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil43" d="M1.1279 0.6598c-0,-0.0886 -0.0238,-0.1716 -0.0653,-0.2431 -0,-0 -0,-0.0001 -0,-0.0001 -0,-0.0001 -0.0001,-0.0001 -0.0001,-0.0002 -0,-0.0001 -0,-0.0001 -0.0001,-0.0002 -0.0002,-0.0004 -0.0004,-0.0009 -0.0006,-0.0013 -0.0001,-0.0003 -0.0003,-0.0005 -0.0004,-0.0008 0.0422,0.0719 0.0665,0.1557 0.0665,0.2451 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil44" d="M1.1279 0.6603c-0,-0.0877 -0.0233,-0.1699 -0.0641,-0.2409 -0.0001,-0.0002 -0.0002,-0.0004 -0.0002,-0.0005 -0.0003,-0.0007 -0.0007,-0.0015 -0.001,-0.0022 0.0415,0.0715 0.0653,0.1545 0.0653,0.2431 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil45" d="M1.1279 0.6609c-0,-0.0867 -0.0228,-0.1681 -0.0627,-0.2385 -0.0001,-0.0001 -0.0001,-0.0002 -0.0002,-0.0004 -0.0004,-0.0008 -0.0008,-0.0016 -0.0011,-0.0025 -0,-0 -0,-0 -0,-0.0001 0.0407,0.071 0.064,0.1532 0.0641,0.2409 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil46" d="M1.1279 0.6614c-0,-0.0857 -0.0223,-0.1661 -0.0613,-0.236 -0.0003,-0.0006 -0.0006,-0.0012 -0.0009,-0.0018 -0.0001,-0.0001 -0.0001,-0.0003 -0.0002,-0.0004 -0.0001,-0.0003 -0.0003,-0.0006 -0.0004,-0.0008 0.0399,0.0704 0.0627,0.1518 0.0627,0.2385 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil47" d="M1.1279 0.6619c-0,-0.0845 -0.0217,-0.164 -0.0598,-0.2332 -0.0003,-0.0007 -0.0007,-0.0014 -0.001,-0.0021 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 -0.0001,-0.0001 -0.0001,-0.0003 -0.0002,-0.0004 0.039,0.0699 0.0613,0.1503 0.0613,0.236 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil48" d="M1.1279 0.6624c-0,-0.0833 -0.0211,-0.1617 -0.0581,-0.2302 -0.0003,-0.0006 -0.0005,-0.0011 -0.0008,-0.0017 -0,-0 -0,-0.0001 -0.0001,-0.0001 0,-0 -0,-0.0001 -0,-0.0001 -0.0002,-0.0005 -0.0005,-0.001 -0.0007,-0.0016 -0,-0 -0,-0.0001 -0.0001,-0.0001 0.0381,0.0692 0.0597,0.1487 0.0598,0.2332 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil49" d="M1.1279 0.663c-0,-0.0819 -0.0204,-0.1591 -0.0563,-0.2267 -0.0001,-0.0002 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 -0.0007,-0.0016 -0.0011,-0.0024 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0006 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0006 0.037,0.0685 0.0581,0.1469 0.0581,0.2302 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil50" d="M1.1279 0.6635c-0,-0.0802 -0.0196,-0.1559 -0.0541,-0.2226 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0005 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 -0.0003,-0.0007 -0.0007,-0.0014 -0.001,-0.0021 -0,-0 -0,-0 -0,-0.0001 -0.0001,-0.0001 -0.0001,-0.0003 -0.0002,-0.0004 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 0.0359,0.0676 0.0562,0.1448 0.0563,0.2267 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil51" d="M1.1279 0.664c-0,-0.0781 -0.0185,-0.1518 -0.0513,-0.2172 -0.0004,-0.0008 -0.0008,-0.0017 -0.0012,-0.0025 -0,-0 -0,-0.0001 -0.0001,-0.0001 -0,-0 0,0 -0,-0 -0.0002,-0.0005 -0.0005,-0.0011 -0.0007,-0.0016 -0.0003,-0.0006 -0.0005,-0.0011 -0.0008,-0.0017 0.0345,0.0667 0.054,0.1423 0.0541,0.2226 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil52" d="M1.1279 0.6646c-0,-0.0728 -0.0161,-0.1419 -0.0449,-0.2038 -0.0001,-0.0003 -0.0003,-0.0006 -0.0004,-0.001 -0.0004,-0.0008 -0.0008,-0.0017 -0.0012,-0.0025 -0.0001,-0.0002 -0.0002,-0.0005 -0.0004,-0.0008 -0.0003,-0.0007 -0.0007,-0.0014 -0.001,-0.0021 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0006 -0.0004,-0.0009 -0.0008,-0.0018 -0.0013,-0.0027 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0006 -0.0004,-0.0008 -0.0007,-0.0016 -0.0011,-0.0023 0,-0 -0,-0 -0,-0 -0.0001,-0.0001 -0.0001,-0.0003 -0.0002,-0.0004 -0,-0 -0,-0 -0,-0 0.0328,0.0653 0.0513,0.1391 0.0513,0.2172 0,0.0001 0,0.0002 0,0.0003 0,0.0001 0,0.0002 0,0.0003z"/>
+   <path class="fil53" d="M0.6426 1.1501c-0.1955,0 -0.364,-0.1156 -0.4408,-0.2822 0.0771,0.1661 0.2453,0.2812 0.4404,0.2812 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1413 -0.0444,-0.2031 0.0288,0.062 0.0448,0.131 0.0449,0.2038 0,0.0001 0,0.0002 0,0.0003 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil54" d="M0.6421 1.1491c-0.1951,0 -0.3633,-0.1151 -0.4404,-0.2812 -0.0001,-0.0003 -0.0003,-0.0006 -0.0004,-0.0009 0.0771,0.166 0.2453,0.2811 0.4404,0.2811 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1413 -0.0444,-0.203 0.0001,0.0003 0.0003,0.0006 0.0004,0.001 0.0285,0.0618 0.0444,0.1306 0.0444,0.2031 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil55" d="M0.6417 1.1481c-0.1951,0 -0.3632,-0.1151 -0.4404,-0.2811 -0.0001,-0.0002 -0.0001,-0.0003 -0.0002,-0.0005 0.0772,0.1657 0.2452,0.2806 0.4401,0.2806 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0729 -0.0161,-0.142 -0.0449,-0.2041 -0.0001,-0.0002 -0.0002,-0.0003 -0.0002,-0.0005 0.0004,0.0008 0.0008,0.0017 0.0012,0.0025 0.0285,0.0618 0.0444,0.1305 0.0444,0.203 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil56" d="M0.6412 1.1471c-0.1949,0 -0.3629,-0.1149 -0.4401,-0.2806 -0.0001,-0.0001 -0.0001,-0.0003 -0.0002,-0.0004 0.0773,0.1654 0.2452,0.28 0.4398,0.28 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1413 -0.0444,-0.2031 0.0288,0.062 0.0449,0.1312 0.0449,0.2041 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil57" d="M0.6408 1.1461c-0.1946,0 -0.3625,-0.1146 -0.4398,-0.28 -0.0003,-0.0006 -0.0005,-0.0011 -0.0008,-0.0017 0.0772,0.1658 0.2452,0.2807 0.4402,0.2807 0.268,0 0.4853,-0.2172 0.4853,-0.4852 0,-0.0726 -0.0159,-0.1415 -0.0446,-0.2034 0.0001,0.0003 0.0003,0.0005 0.0004,0.0008 0.0001,0.0002 0.0002,0.0003 0.0002,0.0005 0.0285,0.0618 0.0444,0.1306 0.0444,0.2031 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil58" d="M0.6403 1.1451c-0.1949,0 -0.363,-0.1149 -0.4402,-0.2807 -0.0002,-0.0003 -0.0003,-0.0006 -0.0004,-0.001 0.0772,0.1658 0.2452,0.2807 0.4401,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0161,-0.1423 -0.0451,-0.2045 -0,-0 -0,-0 -0,-0.0001 0.0003,0.0007 0.0007,0.0014 0.001,0.0021 0.0286,0.0619 0.0446,0.1307 0.0446,0.2034 0,0.268 -0.2173,0.4852 -0.4853,0.4852z"/>
+   <path class="fil59" d="M0.6398 1.1441c-0.1949,0 -0.363,-0.1149 -0.4401,-0.2807 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0002 0.0773,0.1653 0.2452,0.2799 0.4398,0.2799 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.016,-0.1416 -0.0446,-0.2035 0.0289,0.0621 0.0451,0.1314 0.0451,0.2045 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil60" d="M0.6394 1.1432c-0.1946,0 -0.3625,-0.1146 -0.4398,-0.2799 -0.0003,-0.0006 -0.0006,-0.0013 -0.0009,-0.0019 0.0771,0.1658 0.2453,0.2808 0.4402,0.2808 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2033 0.0001,0.0002 0.0002,0.0005 0.0004,0.0008 0,0 0,0 0,0.0001 0.0286,0.0619 0.0446,0.1308 0.0446,0.2035 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil61" d="M0.6389 1.1422c-0.195,0 -0.3631,-0.115 -0.4402,-0.2808 -0.0003,-0.0005 -0.0005,-0.0011 -0.0007,-0.0016 0.077,0.1662 0.2453,0.2815 0.4405,0.2815 0.268,0 0.4852,-0.2172 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1412 -0.0443,-0.2029 0.0001,0.0002 0.0002,0.0004 0.0003,0.0006 0.0286,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil62" d="M0.6385 1.1412c-0.1952,0 -0.3635,-0.1153 -0.4405,-0.2815 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0003 0.0772,0.1658 0.2452,0.2807 0.4402,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.073 -0.0161,-0.1423 -0.045,-0.2044 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0003 0.0004,0.0009 0.0008,0.0018 0.0013,0.0027 0.0285,0.0617 0.0443,0.1305 0.0443,0.2029 -0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil63" d="M0.638 1.1402c-0.1949,0 -0.363,-0.1149 -0.4402,-0.2807 -0,-0 -0,-0.0001 -0,-0.0001 0.0774,0.1653 0.2452,0.2798 0.4398,0.2798 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.016,-0.1415 -0.0445,-0.2034 0.0289,0.0621 0.045,0.1313 0.045,0.2044 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil64" d="M0.6375 1.1392c-0.1946,0 -0.3624,-0.1145 -0.4398,-0.2798 -0.0003,-0.0006 -0.0006,-0.0013 -0.0009,-0.0019 0.0772,0.1658 0.2452,0.2807 0.4402,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1414 -0.0445,-0.2033 0.0001,0.0002 0.0002,0.0004 0.0003,0.0006 0,0.0001 0.0001,0.0002 0.0001,0.0003 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil65" d="M0.6371 1.1382c-0.1949,0 -0.363,-0.1149 -0.4402,-0.2807 -0.0002,-0.0004 -0.0003,-0.0007 -0.0005,-0.0011 0,0 0,0 0,0.0001 0.0772,0.1658 0.2452,0.2807 0.4402,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0162,-0.1424 -0.0451,-0.2046 0.0004,0.0008 0.0007,0.0016 0.0011,0.0023 0.0285,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil66" d="M0.6366 1.1372c-0.1949,0 -0.363,-0.1149 -0.4402,-0.2807 0.0774,0.1653 0.2452,0.2797 0.4397,0.2797 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0727 -0.016,-0.1417 -0.0447,-0.2037 0,0 0,0 0,0 0.029,0.0622 0.0451,0.1315 0.0451,0.2046 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil67" d="M0.6361 1.1362c-0.1945,0 -0.3623,-0.1145 -0.4397,-0.2797 -0,-0 -0,-0 -0,-0.0001 -0.0003,-0.0006 -0.0006,-0.0013 -0.0009,-0.0019 0.0772,0.1658 0.2452,0.2807 0.4402,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1413 -0.0444,-0.203 0.0001,0.0001 0.0001,0.0003 0.0002,0.0004 0.0287,0.0619 0.0447,0.1309 0.0447,0.2037 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil68" d="M0.6357 1.1352c-0.1949,0 -0.363,-0.1149 -0.4402,-0.2807 -0.0003,-0.0006 -0.0005,-0.0011 -0.0008,-0.0017 0.077,0.1662 0.2453,0.2814 0.4405,0.2814 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0162,-0.1424 -0.0451,-0.2046 0.0004,0.0008 0.0008,0.0017 0.0012,0.0025 0,0 0,0 0,0 0.0285,0.0618 0.0444,0.1305 0.0444,0.203 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil69" d="M0.6352 1.1342c-0.1952,0 -0.3635,-0.1153 -0.4405,-0.2814 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0003 0,0 0,0.0001 0,0.0001 0.0772,0.1657 0.2452,0.2806 0.4401,0.2806 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0728 -0.016,-0.1418 -0.0447,-0.2037 0,0 0,0.0001 0.0001,0.0001 0.029,0.0622 0.0451,0.1315 0.0451,0.2046 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil70" d="M0.6348 1.1332c-0.1949,0 -0.3629,-0.1149 -0.4401,-0.2806 0.0774,0.1652 0.2452,0.2796 0.4397,0.2796l0 0c0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0724 -0.0158,-0.1411 -0.0443,-0.2027 0,0 0,0 0,0 0.0287,0.0619 0.0447,0.131 0.0447,0.2037 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil71" d="M0.6343 1.1322l0 0c-0.1945,0 -0.3623,-0.1144 -0.4397,-0.2796 -0,-0 -0,-0.0001 -0,-0.0001 -0.0004,-0.0007 -0.0007,-0.0015 -0.001,-0.0022 0.0771,0.1659 0.2453,0.2809 0.4403,0.2809 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2034 0.0002,0.0005 0.0005,0.0011 0.0007,0.0016 0.0284,0.0617 0.0443,0.1304 0.0443,0.2027 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil72" d="M0.6338 1.1312c-0.195,0 -0.3631,-0.115 -0.4403,-0.2809 -0.0001,-0.0002 -0.0002,-0.0005 -0.0003,-0.0007 0,0 0,0.0001 0.0001,0.0001 0.0772,0.1657 0.2452,0.2805 0.4401,0.2805 0.268,0 0.4853,-0.2172 0.4853,-0.4852 0,-0.073 -0.0161,-0.1422 -0.045,-0.2043 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0002 0.0001,0.0002 0.0002,0.0004 0.0003,0.0005 0.0003,0.0006 0.0005,0.0011 0.0008,0.0017 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil73" d="M0.6334 1.1302c-0.1949,0 -0.3629,-0.1148 -0.4401,-0.2805 0.0774,0.1652 0.2452,0.2795 0.4396,0.2795 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2034 0.0289,0.0621 0.045,0.1313 0.045,0.2043 0,0.268 -0.2173,0.4852 -0.4853,0.4852z"/>
+   <path class="fil74" d="M0.6329 1.1293c-0.1945,0 -0.3622,-0.1144 -0.4396,-0.2795 -0,-0 -0,-0.0001 -0.0001,-0.0001 -0.0004,-0.0008 -0.0007,-0.0015 -0.001,-0.0022 0.0771,0.1659 0.2453,0.2809 0.4403,0.2809 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2034 0.0001,0.0003 0.0002,0.0005 0.0004,0.0008 0,0.0001 0.0001,0.0002 0.0001,0.0002 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil75" d="M0.6325 1.1283c-0.195,0 -0.3631,-0.115 -0.4403,-0.2809 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 0.0001,0.0001 0.0001,0.0003 0.0002,0.0004 0.0773,0.1656 0.2452,0.2803 0.44,0.2803 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0161,-0.1423 -0.0451,-0.2045 0.0003,0.0007 0.0007,0.0014 0.001,0.0021 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil76" d="M0.632 1.1273c-0.1948,0 -0.3627,-0.1147 -0.44,-0.2803 0.0775,0.165 0.2451,0.2793 0.4395,0.2793 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0727 -0.016,-0.1417 -0.0446,-0.2036 0,0 0,0.0001 0,0.0001 0.0289,0.0622 0.0451,0.1314 0.0451,0.2045 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil77" d="M0.6315 1.1263c-0.1944,0 -0.362,-0.1143 -0.4395,-0.2793 -0.0001,-0.0001 -0.0001,-0.0003 -0.0002,-0.0004 -0.0004,-0.0009 -0.0008,-0.0018 -0.0012,-0.0026 0.077,0.1661 0.2453,0.2813 0.4405,0.2813 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1412 -0.0444,-0.203 0.0001,0.0001 0.0001,0.0003 0.0002,0.0004 0.0286,0.0619 0.0446,0.1309 0.0446,0.2036 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil78" d="M0.6311 1.1253c-0.1952,0 -0.3634,-0.1152 -0.4405,-0.2813 -0.0001,-0.0003 -0.0003,-0.0006 -0.0004,-0.0009 0.077,0.1661 0.2453,0.2813 0.4404,0.2813 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1414 -0.0445,-0.2033 0.0001,0.0002 0.0001,0.0003 0.0002,0.0005 0.0001,0.0003 0.0002,0.0005 0.0004,0.0008 0.0285,0.0618 0.0444,0.1305 0.0444,0.203 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil79" d="M0.6306 1.1243c-0.1951,0 -0.3634,-0.1152 -0.4404,-0.2813 -0,-0 -0,-0.0001 -0.0001,-0.0001 0.0772,0.1656 0.2452,0.2804 0.44,0.2804 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0731 -0.0162,-0.1424 -0.0451,-0.2046l0 0c0.0004,0.0008 0.0007,0.0016 0.0011,0.0024 0.0285,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil80" d="M0.6302 1.1233c-0.1948,0 -0.3628,-0.1148 -0.44,-0.2804 -0,-0.0001 -0.0001,-0.0001 -0.0001,-0.0002 0.0774,0.1652 0.2452,0.2796 0.4396,0.2796 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0727 -0.016,-0.1417 -0.0447,-0.2036 0.029,0.0622 0.0451,0.1315 0.0451,0.2046 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil81" d="M0.6297 1.1223c-0.1945,0 -0.3623,-0.1144 -0.4396,-0.2796 -0.0004,-0.0009 -0.0008,-0.0018 -0.0012,-0.0027 0.0771,0.1661 0.2453,0.2813 0.4404,0.2813 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1414 -0.0445,-0.2033 0.0001,0.0002 0.0002,0.0004 0.0003,0.0006l0 0c0.0287,0.0619 0.0447,0.1309 0.0447,0.2036 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil82" d="M0.6292 1.1213c-0.1951,0 -0.3634,-0.1152 -0.4404,-0.2813 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0002 0,0.0001 0.0001,0.0001 0.0001,0.0002 0.0773,0.1656 0.2452,0.2803 0.44,0.2803 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0162,-0.1424 -0.0451,-0.2045 0.0003,0.0006 0.0005,0.0011 0.0008,0.0017 0.0001,0.0002 0.0002,0.0004 0.0003,0.0006 0.0286,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil83" d="M0.6288 1.1203c-0.1948,0 -0.3627,-0.1147 -0.44,-0.2803 0.0775,0.165 0.2451,0.2793 0.4395,0.2793 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0727 -0.016,-0.1417 -0.0447,-0.2037 0,0 0,0.0001 0.0001,0.0001 0.0289,0.0622 0.0451,0.1315 0.0451,0.2045 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil84" d="M0.6283 1.1193c-0.1944,0 -0.362,-0.1143 -0.4395,-0.2793 -0,-0.0001 -0.0001,-0.0001 -0.0001,-0.0002 -0.0005,-0.001 -0.0009,-0.002 -0.0014,-0.003 0.077,0.1662 0.2453,0.2815 0.4405,0.2815 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0724 -0.0158,-0.141 -0.0442,-0.2027 0,0 0,0.0001 0,0.0001 0.0287,0.0619 0.0447,0.1309 0.0447,0.2037 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil85" d="M0.6279 1.1183c-0.1952,0 -0.3636,-0.1153 -0.4405,-0.2815 -0.0001,-0.0001 -0.0001,-0.0002 -0.0002,-0.0003 0.0771,0.1659 0.2453,0.2809 0.4402,0.2809 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2033 0.0003,0.0005 0.0005,0.0011 0.0007,0.0016 0.0284,0.0617 0.0442,0.1304 0.0442,0.2027 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil86" d="M0.6274 1.1174c-0.195,0 -0.3631,-0.115 -0.4402,-0.2809 -0.0001,-0.0003 -0.0002,-0.0005 -0.0004,-0.0008 0.0772,0.1658 0.2452,0.2807 0.4401,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.073 -0.0161,-0.1422 -0.045,-0.2043 -0,-0.0001 -0.0001,-0.0002 -0.0001,-0.0002 0.0003,0.0007 0.0007,0.0014 0.001,0.0021 0,0 0,0.0001 0.0001,0.0001 0.0286,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil87" d="M0.6269 1.1164c-0.1949,0 -0.363,-0.1149 -0.4401,-0.2807 -0.0001,-0.0001 -0.0001,-0.0002 -0.0001,-0.0003 0.0773,0.1654 0.2452,0.2799 0.4398,0.2799 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2033 0.0289,0.0621 0.045,0.1313 0.045,0.2043 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil88" d="M0.6265 1.1154c-0.1946,0 -0.3625,-0.1146 -0.4398,-0.2799 -0.0003,-0.0006 -0.0005,-0.0012 -0.0008,-0.0017 0.0772,0.1658 0.2452,0.2807 0.4402,0.2807 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2034 0.0001,0.0002 0.0002,0.0005 0.0004,0.0008 0,0.0001 0.0001,0.0002 0.0001,0.0002 0.0286,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil89" d="M0.626 1.1144c-0.1949,0 -0.363,-0.1149 -0.4402,-0.2807 -0.0002,-0.0004 -0.0003,-0.0007 -0.0005,-0.0011 0,0 0,0.0001 0.0001,0.0001 0.0772,0.1657 0.2452,0.2806 0.4401,0.2806 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.073 -0.0161,-0.1423 -0.045,-0.2044 -0,-0.0001 -0,-0.0001 -0.0001,-0.0001 0.0003,0.0006 0.0006,0.0012 0.0009,0.0018 0,0.0001 0.0001,0.0003 0.0002,0.0004 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil90" d="M0.6256 1.1134c-0.1949,0 -0.3629,-0.1149 -0.4401,-0.2806 0.0774,0.1652 0.2452,0.2796 0.4397,0.2796 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.016,-0.1416 -0.0446,-0.2034 0.0289,0.0621 0.045,0.1314 0.045,0.2044 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil91" d="M0.6251 1.1124c-0.1945,0 -0.3623,-0.1144 -0.4397,-0.2796 -0,-0.0001 -0,-0.0001 -0.0001,-0.0001 -0.0003,-0.0007 -0.0007,-0.0015 -0.001,-0.0022 0.0771,0.1659 0.2453,0.281 0.4403,0.281 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1412 -0.0444,-0.203 0.0001,0.0001 0.0001,0.0003 0.0002,0.0004 0,0.0001 0,0.0001 0.0001,0.0001 0.0286,0.0619 0.0446,0.1308 0.0446,0.2034 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil92" d="M0.6246 1.1114c-0.195,0 -0.3632,-0.115 -0.4403,-0.281 -0.0002,-0.0004 -0.0004,-0.0007 -0.0005,-0.0011 0.0771,0.166 0.2453,0.2811 0.4403,0.2811 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1414 -0.0445,-0.2032 0.0001,0.0001 0.0001,0.0002 0.0002,0.0004 0.0001,0.0003 0.0003,0.0006 0.0004,0.0008 0.0285,0.0618 0.0444,0.1305 0.0444,0.203 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil93" d="M0.6242 1.1104c-0.1951,0 -0.3632,-0.1151 -0.4403,-0.2811 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0006 0,0.0001 0.0001,0.0001 0.0001,0.0002 0.0772,0.1657 0.2452,0.2805 0.4401,0.2805 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0162,-0.1424 -0.0451,-0.2046l0 -0c0.0004,0.0008 0.0008,0.0016 0.0011,0.0025 0.0285,0.0618 0.0445,0.1306 0.0445,0.2032 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil94" d="M0.6237 1.1094c-0.1948,0 -0.3628,-0.1148 -0.4401,-0.2805 0.0774,0.1651 0.2451,0.2795 0.4396,0.2795 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0727 -0.016,-0.1417 -0.0447,-0.2036 0.029,0.0622 0.0451,0.1315 0.0451,0.2046 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil95" d="M0.6232 1.1084c-0.1944,0 -0.3622,-0.1143 -0.4396,-0.2795 -0,-0.0001 -0.0001,-0.0001 -0.0001,-0.0002 -0.0004,-0.0008 -0.0007,-0.0016 -0.0011,-0.0024 0.0771,0.166 0.2453,0.2811 0.4404,0.2811 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1414 -0.0445,-0.2033 0.0001,0.0002 0.0002,0.0004 0.0002,0.0005 0,0 0,0.0001 0,0.0001l0 0c0.0287,0.0619 0.0447,0.1309 0.0447,0.2036 0,0.268 -0.2172,0.4853 -0.4853,0.4853z"/>
+   <path class="fil96" d="M0.6228 1.1074c-0.1951,0 -0.3633,-0.1151 -0.4404,-0.2811 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0007 0.0001,0.0001 0.0001,0.0002 0.0002,0.0003 0.0772,0.1657 0.2452,0.2805 0.4401,0.2805 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0731 -0.0162,-0.1424 -0.0451,-0.2045 0,0 0,0.0001 0,0.0001 0.0004,0.0007 0.0007,0.0015 0.001,0.0022 0.0286,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil97" d="M0.6223 1.1064c-0.1948,0 -0.3628,-0.1148 -0.4401,-0.2805 0.0774,0.1651 0.2452,0.2795 0.4396,0.2795 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0727 -0.016,-0.1418 -0.0447,-0.2037 0,0 0.0001,0.0001 0.0001,0.0002 0.0289,0.0622 0.0451,0.1315 0.0451,0.2045 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil98" d="M0.6219 1.1055c-0.1944,0 -0.3621,-0.1144 -0.4396,-0.2795 -0,-0.0001 -0.0001,-0.0002 -0.0002,-0.0003 -0.0003,-0.0007 -0.0007,-0.0014 -0.001,-0.0022 0.0771,0.1659 0.2453,0.281 0.4403,0.281 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0725 -0.0159,-0.1412 -0.0443,-0.2029 0,0.0001 0.0001,0.0001 0.0001,0.0002 0.0287,0.0619 0.0447,0.131 0.0447,0.2037 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil99" d="M0.6214 1.1045c-0.195,0 -0.3632,-0.1151 -0.4403,-0.281 -0.0002,-0.0004 -0.0004,-0.0008 -0.0005,-0.0011 0.0771,0.166 0.2453,0.2811 0.4404,0.2811 0.268,0 0.4853,-0.2172 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1414 -0.0445,-0.2033 0.0002,0.0004 0.0004,0.0009 0.0006,0.0013 0.0285,0.0617 0.0443,0.1305 0.0443,0.2029 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil100" d="M0.6209 1.1035c-0.1951,0 -0.3633,-0.1151 -0.4404,-0.2811 -0.0001,-0.0002 -0.0002,-0.0004 -0.0003,-0.0006 0,0 0,0.0001 0,0.0001 0.0772,0.1658 0.2452,0.2807 0.4401,0.2807 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.073 -0.0161,-0.1422 -0.045,-0.2043 -0,-0 -0,-0.0001 -0.0001,-0.0001 0.0002,0.0005 0.0004,0.0009 0.0006,0.0014 0.0001,0.0003 0.0003,0.0005 0.0004,0.0008 0.0286,0.0618 0.0445,0.1307 0.0445,0.2033 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil101" d="M0.6205 1.1025c-0.1949,0 -0.363,-0.1149 -0.4401,-0.2807 0.0774,0.1652 0.2452,0.2797 0.4397,0.2797 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2034 0.0289,0.0621 0.045,0.1313 0.045,0.2043 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil102" d="M0.62 1.1015c-0.1945,0 -0.3623,-0.1144 -0.4397,-0.2797 -0,-0 -0,-0 -0,-0.0001 -0.0003,-0.0007 -0.0007,-0.0015 -0.001,-0.0022 0.0771,0.1659 0.2453,0.281 0.4403,0.281 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0726 -0.0159,-0.1415 -0.0445,-0.2034 0.0001,0.0003 0.0003,0.0006 0.0004,0.0009 0,0.0001 0,0.0001 0.0001,0.0001 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil103" d="M0.6196 1.1005c-0.195,0 -0.3632,-0.1151 -0.4403,-0.281 -0.0002,-0.0004 -0.0003,-0.0007 -0.0005,-0.0011 0.0771,0.166 0.2453,0.2811 0.4404,0.2811 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.0732 -0.0162,-0.1425 -0.0452,-0.2047 0.0003,0.0007 0.0007,0.0014 0.001,0.0021 0,0.0001 0.0001,0.0001 0.0001,0.0002 0.0286,0.0619 0.0445,0.1307 0.0445,0.2034 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil104" d="M0.6191 1.0995c-0.1951,0 -0.3633,-0.1151 -0.4404,-0.2811 -0.0288,-0.0621 -0.0449,-0.1312 -0.0449,-0.2042 0,-0.268 0.2172,-0.4853 0.4853,-0.4853 0.14,0 0.2661,0.0593 0.3547,0.1541 0.0013,0.0014 0.0026,0.0028 0.0038,0.0041 0.0012,0.0013 0.0025,0.0027 0.0037,0.0041 0.0012,0.0013 0.0024,0.0027 0.0036,0.004 0.0012,0.0013 0.0023,0.0027 0.0035,0.004 0.0011,0.0013 0.0022,0.0026 0.0033,0.0039 0.0011,0.0013 0.0022,0.0026 0.0032,0.0039 0.0011,0.0013 0.0021,0.0026 0.0031,0.0038 0.001,0.0013 0.002,0.0025 0.003,0.0038 0.001,0.0013 0.002,0.0025 0.0029,0.0038 0.0009,0.0012 0.0019,0.0025 0.0028,0.0037 0.0009,0.0012 0.0018,0.0024 0.0027,0.0037 0.0009,0.0012 0.0018,0.0024 0.0026,0.0036 0.0009,0.0012 0.0017,0.0024 0.0025,0.0036 0.0008,0.0012 0.0017,0.0023 0.0025,0.0035 0.0008,0.0012 0.0016,0.0023 0.0024,0.0035 0.0008,0.0011 0.0015,0.0023 0.0023,0.0034 0.0007,0.0011 0.0015,0.0022 0.0022,0.0033 0.0007,0.0011 0.0014,0.0022 0.0022,0.0033 0.0007,0.0011 0.0014,0.0022 0.0021,0.0033 0.0007,0.0011 0.0014,0.0021 0.002,0.0032 0.0006,0.001 0.0013,0.0021 0.002,0.0032 0.0006,0.001 0.0013,0.0021 0.0019,0.0031 0.0006,0.001 0.0012,0.002 0.0018,0.0031 0.0006,0.001 0.0012,0.002 0.0018,0.003 0.0006,0.001 0.0012,0.002 0.0017,0.003 0.0006,0.001 0.0011,0.002 0.0017,0.0029 0.0005,0.001 0.0011,0.0019 0.0016,0.0029 0.0005,0.0009 0.0011,0.0019 0.0016,0.0028 0.0005,0.0009 0.001,0.0019 0.0015,0.0028 0.0005,0.0009 0.001,0.0018 0.0015,0.0028 0.0005,0.0009 0.001,0.0018 0.0014,0.0027 0.0005,0.0009 0.0009,0.0018 0.0014,0.0027 0.0004,0.0009 0.0009,0.0018 0.0013,0.0026 0.0004,0.0009 0.0009,0.0017 0.0013,0.0026 0.0004,0.0008 0.0009,0.0017 0.0013,0.0026 0.0004,0.0008 0.0008,0.0017 0.0012,0.0025 0.0004,0.0008 0.0008,0.0016 0.0012,0.0025 0.0004,0.0008 0.0008,0.0016 0.0012,0.0025 0.0004,0.0008 0.0008,0.0016 0.0011,0.0024 0,0.0001 0.0001,0.0002 0.0001,0.0003 0.029,0.0622 0.0452,0.1316 0.0452,0.2047 0,0.268 -0.2173,0.4853 -0.4853,0.4853z"/>
+   <path class="fil105" d="M0.1338 0.6143c0,0.268 0.2172,0.4853 0.4853,0.4853 0.268,0 0.4853,-0.2173 0.4853,-0.4853 0,-0.268 -0.2173,-0.4853 -0.4853,-0.4853 -0.268,0 -0.4853,0.2173 -0.4853,0.4853z"/>
+   <path class="fil106" d="M0.1876 0.6152c0,0.2386 0.1934,0.432 0.432,0.432 0.2386,0 0.432,-0.1934 0.432,-0.432 0,-0.2386 -0.1934,-0.432 -0.432,-0.432 -0.2386,0 -0.432,0.1934 -0.432,0.432z"/>
+   <path class="fil107" d="M0.2188 0.6152c0,0.2214 0.1794,0.4008 0.4008,0.4008 0.2213,0 0.4008,-0.1794 0.4008,-0.4008 0,-0.2213 -0.1794,-0.4008 -0.4008,-0.4008 -0.2213,0 -0.4008,0.1795 -0.4008,0.4008z"/>
+  </g>
+  <text x="0.4274" y="0.7251"  class="fil108 fnt0">M1</text>
+ </g>
+</svg>

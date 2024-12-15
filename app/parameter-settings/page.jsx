@@ -94,8 +94,8 @@ const ParameterSetting = () => {
         <Navigation />
       </div>
       <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-10">
-          <div className="flex flex-col gap-20">
+        <form onSubmit={handleSubmit(onSubmit)} className="py-10 grid grid-cols-12 gap-4">
+          <div className="flex flex-col gap-20 col-span-10">
             <RecipeInput
               id={COMPANY_NAME}
               labelText={"Company Name"}
@@ -118,31 +118,16 @@ const ParameterSetting = () => {
               labelStyles={'self-start ml-8'}
               placeholder={true}
             />
-            <div className="flex justify-between items-center">
-              <div className="flex justify-between items-center gap-36">
-                <RecipeInput
-                  id={EQUIPMENT_NAME}
-                  labelText={"Equipment Name"}
-                  register={register}
-                  validationSchema={{}}
-                  errors={errors}
-                  containerStyles={'w-48 lg:w-72'}
-                  inputStyle={'w-48 lg:w-72 p-5'}
-                  placeholder={true}
-                  />
-                <RecipeInput
-                  id={EQUIPMENT_NUMBER}
-                  labelText={"Equipment Serial Number"}
-                  register={register}
-                  validationSchema={{}}
-                  errors={errors}
-                  containerStyles={''}
-                  inputStyle={'w-48 lg:w-72 p-5'}
-                  textWrap={false}
-                  placeholder={true}
-                />
-              </div>
-            </div>
+            <RecipeInput
+              id={EQUIPMENT_NAME}
+              labelText={"Equipment Name"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={'w-full lg:w-full'}
+              inputStyle={'w-full lg:w-full p-5'}
+              placeholder={true}
+            />
             <RecipeInput
               id='defaultComment'
               labelText={"COMMENT"}
@@ -153,7 +138,7 @@ const ParameterSetting = () => {
               containerStyles={'w-full'}
             />
           </div>
-          <div className="flex flex-col items-center self-end gap-4">
+          <div className="flex flex-col items-center self-end gap-4 col-span-2">
             <Link href={PRINT_PARAMETER_PATH}>
               <Image
                 src={"/images/back_button.svg"}

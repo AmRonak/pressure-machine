@@ -2,9 +2,9 @@
 const allMenu = [
   {
     id: 1,
-    urlPath: '/test-mode',
-    imagePath: '/images/test-mode-btn.svg',
-    buttonText: 'Test Mode'
+    urlPath: '/devices',
+    imagePath: '/images/device-btn.svg',
+    buttonText: 'Devices'
   },
   {
     id: 2,
