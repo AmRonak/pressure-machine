@@ -9,7 +9,6 @@ import { SUPER_ADMIN } from "@/constants/constants";
 const DeviceButton = ({
   device: {
     deviceId,
-    pin,
     status,
     loggedIn
   },
@@ -41,7 +40,7 @@ const DeviceButton = ({
         isSuperUser: state?.userDetail?.userLevel === SUPER_ADMIN,
         data: {
           deviceId,
-          pin,
+          pin: state.userDetail.pin,
           userLevel: state?.userDetail?.userLevel,
           username: state?.userDetail?.username,
           userId: state?.userDetail?.id,
