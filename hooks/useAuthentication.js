@@ -25,7 +25,7 @@ const useAuthentication = () => {
   const { devices } = useDevicesSelector();
   
   useEffect(() => {
-    const token = window.localStorage.getItem(JWT_TOKEN_NAME);
+    const token = window.sessionStorage.getItem(JWT_TOKEN_NAME);
     if(isIdle && token && userDetail.autoLogoutTime) {
       dispatch(resetAuth());
         router.push('/');
@@ -45,7 +45,7 @@ const useAuthentication = () => {
   }, [dispatch])
 
   useEffect(() => {
-    const token = window.localStorage.getItem(JWT_TOKEN_NAME);
+    const token = window.sessionStorage.getItem(JWT_TOKEN_NAME);
     
     if(token) {
       if(!jwtTokenValidate(token)) {

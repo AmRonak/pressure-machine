@@ -39,7 +39,6 @@ const TestReports = () => {
       const queryData = `starttesttime=${fromDateTime}&endtesttime=${toDateData}&batchid=${payloadData.batchNo}`
       const { data } = await handleAxiosRequest({api: `logs?${queryData}`});
       setSearchData(data);
-      console.log(data)
       
       setStatus({
         status: SUCCESS,

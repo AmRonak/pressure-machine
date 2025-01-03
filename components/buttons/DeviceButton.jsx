@@ -4,7 +4,8 @@ import { LOGGED_IN, OFFLINE, ONLINE, TEST_STARTED } from "@/constants/devicesSta
 import axios from "axios";
 import Image from "next/image";
 import { useAuthSelector } from "@/redux/slices/authSlice";
-import { SUPER_ADMIN } from "@/constants/constants";
+import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
+import { useEffect } from "react";
 
 const DeviceButton = ({
   device: {
@@ -33,6 +34,30 @@ const DeviceButton = ({
       color = 'grey';
       break;
   }
+
+  useEffect(() => {
+    if(status === TEST_STARTED) {
+      const token = window.sessionStorage.getItem(JWT_TOKEN_NAME);
+      let config = {
+        method: 'post',
+        url: 'http://localhost:5000/api/refresh-token',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      };
+      
+      axios.request(config)
+        .then((response) => {
+            if(response?.token) {
+              dispatch(setAuth(response.token));
+            }
+        })
+        .catch(() => {
+          console.error('failed to refresh token in device page')
+        })
+    }
+  }, [status])
 
   const handleSendData = () => {
     axios.post('http://localhost:5000/send-data', {

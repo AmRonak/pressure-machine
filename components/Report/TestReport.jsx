@@ -92,13 +92,13 @@ const TestReport = ({
                 <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Area Name</td>
                 <td className="text-black w-96 border-r-2 border-black p-1">{area_Name}</td>
                 <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Test Start Time</td>
-                <td className="text-black w-96 p-1">{moment(starttesttime).format('DD/MM/YYYY HH:MM:SS')}</td>
+                <td className="text-black w-96 p-1">{moment(starttesttime).format('DD/MM/YYYY HH:mm:ss')}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Equipment Name</td>
                 <td className="text-black w-96 border-r-2 border-black p-1">{equipment_Name}</td>
                 <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Test End Time</td>
-                <td className="text-black w-96 p-1">{moment(endtesttime).format('DD/MM/YYYY HH:MM:SS')}</td>
+                <td className="text-black w-96 p-1">{moment(endtesttime).format('DD/MM/YYYY HH:mm:ss')}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Equipment Id</td>

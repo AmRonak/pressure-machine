@@ -13,10 +13,10 @@ const authSlice = createSlice({
     },
     setAuth: ((state, action) => {
       state.isAuthenticated = true;
-      localStorage.setItem(JWT_TOKEN_NAME, action.payload);
+      sessionStorage.setItem(JWT_TOKEN_NAME, action.payload);
     }),
     resetAuth: ((state) => {
-      localStorage.removeItem(JWT_TOKEN_NAME);
+      sessionStorage.removeItem(JWT_TOKEN_NAME);
       state.isAuthenticated = false;
       state.userDetail = {};
     }),

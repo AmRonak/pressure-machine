@@ -7,7 +7,7 @@ const handleAxiosRequest = ({api, method = 'get', payloadData = null}) => {
     url: `http://localhost:5000/api/${api}`,
     headers: { 
       'Content-Type': 'application/json', 
-      'Authorization': `Bearer ${localStorage.getItem(JWT_TOKEN_NAME)}`
+      'Authorization': `Bearer ${sessionStorage.getItem(JWT_TOKEN_NAME)}`
     },
     data: payloadData,
   };
