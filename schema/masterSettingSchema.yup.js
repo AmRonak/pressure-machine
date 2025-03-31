@@ -43,11 +43,3 @@ export const masterSettingSchema = object({
   valveOnTime: number().typeError(VALVE_ON_TIME_NUMBER).required(VALVE_ON_TIME_NUMBER_REQUIRED).min(0, VALVE_ON_TIME_MIN).max(10000, VALVE_ON_TIME_MAX),
   valveOffTime: number().typeError(VALVE_OFF_TIME_NUMBER).required(VALVE_OFF_TIME_NUMBER_REQUIRED).min(0, VALVE_OFF_TIME_MIN).max(10000, VALVE_OFF_TIME_MAX),
 });
-
-export const maintenanceModeSchema = object({
-  motor1: bool().required(),
-  motor2: bool().required(),
-  motor3: bool().required(),
-  valve1: bool().required(),
-  valve2: bool().required()
-})

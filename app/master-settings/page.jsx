@@ -8,10 +8,11 @@ import { masterSettingSchema } from "@/schema/masterSettingSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { setDataChanged } from "@/redux/slices/devices";
 
 const GASKET_PRESSURE = "gasketPressure";
 const GASKET_PRESSURE_ALARM_TIME = 'gasketPressureAlarmTime';
@@ -25,15 +26,23 @@ const VALVE_OFF_TIME = 'valveOffTime';
 const MasterSetting = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [initialData, setInitialData] = useState({});
+  const [isChanged, setIsChanged] = useState(false);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    watch,
+    formState: { errors, isDirty },
+    getValues,
   } = useForm({
     resolver: yupResolver(masterSettingSchema),
     mode: "onChange"
   });
+
+  const watchedValues = watch();
 
   useEffect(() => {
     setIsLoading(true);
@@ -46,6 +55,7 @@ const MasterSetting = () => {
         delete data.updatedAt;
         delete data.macId;
         delete data.id;
+        setInitialData(data);
         reset(data);
         setIsLoading(false);
       } catch (error) {
@@ -56,6 +66,18 @@ const MasterSetting = () => {
     fetchUserData();
   }, [reset, setIsError]);
 
+  useEffect(() => {
+    const currentValues = getValues();
+    const hasChanged = Object.keys(initialData).some(
+      (key) => {
+        if(key === 'motor1' || key === 'motor2' || key === 'motor3' || key === 'valve1' || key === 'valve2') return false;
+        const val = +currentValues[key];
+        return val !== initialData[key]
+      }
+    );
+    setIsChanged(isDirty && hasChanged);
+  }, [watchedValues, isDirty, getValues, initialData]);
+
   const onSubmit = async (payloadData) => {
     try {
       await handleAxiosRequest({
@@ -64,6 +86,13 @@ const MasterSetting = () => {
         payloadData,
       });
       toast.success('master parameter saved successfully', toatsConfig);
+      dispatch(setDataChanged());
+
+      // ✅ Set new initial data to current values
+      setInitialData(payloadData);
+      
+      // ✅ Reset form state to mark it as "not dirty"
+      reset(payloadData);
     } catch (error) {
       toast.error(error.response.data.message, toatsConfig);
     }
@@ -161,7 +190,8 @@ const MasterSetting = () => {
               <div className="flex items-center justify-center gap-4 mt-14">
                 <button
                   type="submit"
-                  className="flex flex-col items-center"
+                  disabled={!isChanged}
+                  className={`flex flex-col items-center ${!isChanged ? 'opacity-50' : 'opacity-100'}`}
                 >
                   <Image
                     src={'/images/save-btn.svg'}

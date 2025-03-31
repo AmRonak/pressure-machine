@@ -4,12 +4,14 @@ import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
 import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
 import { toatsConfig } from "@/constants/toast";
+import { setDataChanged } from "@/redux/slices/devices";
 import { recipeSchema } from "@/schema/recipeSchema.yup";
 import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 const STABILIZATION_TIME = "stabilizationTime";
@@ -23,28 +25,35 @@ const COMMENT = "comment";
 const Recipe = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [initialData, setInitialData] = useState({});
+  const [isChanged, setIsChanged] = useState(false);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    watch,
+    formState: { errors, isDirty },
+    getValues,
   } = useForm({
     resolver: yupResolver(recipeSchema),
     mode: "onChange"
   });
+
+  const watchedValues = watch();
 
   useEffect(() => {
     setIsError(false);
     setIsLoading(true);
     const fetchUserData = async () => {
       try {
-        const { data } = await handleAxiosRequest({
-          api: 'recipeSetting',
-        });
+        const { data } = await handleAxiosRequest({ api: 'recipeSetting' });
         delete data.createdAt;
         delete data.updatedAt;
         delete data.macId;
         delete data.id;
+        setInitialData(data); // Store initial data for comparison
         reset({...data, comment: ''});
         setIsLoading(false);
       } catch (error) {
@@ -55,6 +64,21 @@ const Recipe = () => {
     fetchUserData();
   }, [reset, setIsError]);
 
+  useEffect(() => {
+    const currentValues = getValues();
+    const hasChanged = Object.keys(initialData).some(
+      (key) => {
+        if(key === 'comment'){
+          if(currentValues['comment'].length !== 0) return true;
+          return false;
+        }
+        const val = +currentValues[key];
+        return val !== initialData[key]
+      }
+    );
+    setIsChanged(isDirty && hasChanged);
+  }, [watchedValues, isDirty, getValues, initialData]);
+  
   const onSubmit = async (payloadData) => {
     try {
       await handleAxiosRequest({
@@ -63,6 +87,13 @@ const Recipe = () => {
         payloadData,
       });
       toast.success('recipe saved successfully', toatsConfig);
+      dispatch(setDataChanged());
+
+      // ✅ Set new initial data to current values
+      setInitialData(payloadData);
+      
+      // ✅ Reset form state to mark it as "not dirty"
+      reset({...payloadData, comment: ''});
     } catch (error) {
       toast.error(error.response.data.message, toatsConfig);
     }
@@ -180,7 +211,7 @@ const Recipe = () => {
                 containerStyles={'w-full'}
               />
               <div className="flex flex-col items-center">
-                <button type="submit">
+                <button type="submit" disabled={!isChanged} className={`${!isChanged ? 'opacity-50' : 'opacity-100'}`}>
                   <Image
                     src={'/images/save-btn.svg'}
                     width={130}

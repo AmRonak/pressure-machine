@@ -6,7 +6,8 @@ const initialState = {
   isLoading: false,
   isError: false,
   devices: [],
-  onlineDevices: []
+  onlineDevices: [],
+  dataChanged: false,
 }
 
 const devicesSlice = createSlice({
@@ -28,10 +29,16 @@ const devicesSlice = createSlice({
     setOnlineDevices: (state, action) => {
       state.onlineDevices = action.payload;
     },
+    setDataChanged: (state) => {
+      state.dataChanged = true;
+    },
+    resetDataChanged: (state) => {
+      state.dataChanged = false;
+    }
   }
 });
 
-export const { setDevices, setIsError, setIsLoading, setIsOnlineDevicesUpdated, setOnlineDevices } = devicesSlice.actions;
+export const { setDevices, setIsError, setIsLoading, setIsOnlineDevicesUpdated, setOnlineDevices, setDataChanged, resetDataChanged } = devicesSlice.actions;
 
 export const useDevicesSelector = () => useSelector(state => state.devices);
 

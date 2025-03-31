@@ -86,7 +86,7 @@ const TestReport = ({
                   <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Department Name</td>
                   <td className="text-black w-96 border-r-2 border-black p-1">{department_Name}</td>
                   <td className="text-black w-60 border-r-2 border-black p-1 font-bold">User Id</td>
-                  <td className="text-black w-96 p-1">{userid}</td>
+                  <td className="text-black w-96 p-1">{deviceid}</td>
               </tr>
               <tr className="border-b-2 border-black">
                 <td className="text-black w-60 border-r-2 border-black p-1 font-bold">Area Name</td>

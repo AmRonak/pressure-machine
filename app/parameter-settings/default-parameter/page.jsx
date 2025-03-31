@@ -1,29 +1,29 @@
 'use client';
 
-import Dropdown from "@/components/inputs/Dropdown";
+import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
+import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import { useAuthSelector } from "@/redux/slices/authSlice";
-import { leakTestStatusOptions, printParameterSchema } from "@/schema/parameterSettingSchema.yup";
+import { COMMENT, MANAGER, OPERATOR } from "@/constants/constants";
+import { toatsConfig } from "@/constants/toast";
+import { setCompanyName, useAuthSelector } from "@/redux/slices/authSlice";
+import { defaultParameterSchema } from "@/schema/parameterSettingSchema.yup";
+import handleAxiosRequest from "@/util/handleRequest";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { PRINT_PARAMETER_PATH } from "../page";
-import { MANAGER, OPERATOR } from "@/constants/constants";
 import { useEffect, useState } from "react";
-import handleAxiosRequest from "@/util/handleRequest";
-import AxiosHCO from "@/components/axiosHOC/AxiosHCO";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { toatsConfig } from "@/constants/toast";
-import Navigation from "@/components/buttons/Navigation";
 import { useDispatch } from "react-redux";
 import { setDataChanged } from "@/redux/slices/devices";
 
-const AREA_NAME = "areaName";
-const BATCH_NAME = "batchName";
-const BATCH_NO = "batchNo";
-const LEAK_TEST_STATUS = "leakTestStatus";
+const COMPANY_NAME = "companyName";
+const DEPARTMENT_NAME = "departmentName";
+const EQUIPMENT_NAME = "equipmentName";
+const EQUIPMENT_NUMBER = "equipmentSerialNo";
+
+export const PRINT_PARAMETER_PATH = '/parameter-settings';
 
 const ParameterSetting = () => {
   const {
@@ -34,12 +34,12 @@ const ParameterSetting = () => {
     formState: { errors, isDirty },
     getValues,
   } = useForm({
-    resolver: yupResolver(printParameterSchema),
-    mode: 'onChange',
+    resolver: yupResolver(defaultParameterSchema),
+    mode: "onChange"
   });
 
   const watchedValues = watch();
-
+  
   const [isLoading, setIsLoading] = useState();
   const [isError, setIsError] = useState(false);
   const {userDetail} = useAuthSelector();
@@ -64,16 +64,8 @@ const ParameterSetting = () => {
           api: 'parameterSetting',
           method: 'get',
         });
-        setInitialData({
-          ...data.printParameter,
-          leakTestStatus: data.printParameter.leakTestStatus,
-          printComment: ''
-        }); // Store initial data for comparison
-        reset({
-          ...data.printParameter,
-          leakTestStatus: data.printParameter.leakTestStatus,
-          printComment: ''
-        });
+        setInitialData({...data.defaultParameter, defaultComment: ''}); // Store initial data for comparison
+        reset({...data.defaultParameter, defaultComment: ''});
         setIsLoading(false);
       } catch (error) {
         setIsError(true);
@@ -87,8 +79,8 @@ const ParameterSetting = () => {
     const currentValues = getValues();
     const hasChanged = Object.keys(initialData).some(
       (key) => {
-        if(key === 'printComment'){
-          if(currentValues['printComment'].length !== 0) return true;
+        if(key === 'defaultComment'){
+          if(currentValues['defaultComment'].length !== 0) return true;
           return false;
         }
         const val = +currentValues[key];
@@ -104,15 +96,15 @@ const ParameterSetting = () => {
         api: 'parameterSetting',
         method: 'put',
         payloadData,
-      })
-      toast.success('Print parameters saved successfully', toatsConfig);
+      });
+      toast.success('Default parameters saved successfully', toatsConfig);
       dispatch(setDataChanged());
 
       // ✅ Set new initial data to current values
       setInitialData(payloadData);
       
       // ✅ Reset form state to mark it as "not dirty"
-      reset({...payloadData, printComment: ''});
+      reset({...payloadData, defaultComment: ''});
     } catch (error) {
       toast.error(error.response.data.message, toatsConfig);
     }
@@ -126,17 +118,17 @@ const ParameterSetting = () => {
             parameter setting
           </h1>
           <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-            print parameter
+            default parameter
           </h2>
         </div>
         <Navigation />
       </div>
       <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-10">
-          <div className="flex flex-col gap-20">
+        <form onSubmit={handleSubmit(onSubmit)} className="py-10 grid grid-cols-12 gap-4">
+          <div className="flex flex-col gap-20 col-span-10">
             <RecipeInput
-              id={AREA_NAME}
-              labelText={"Area Name"}
+              id={COMPANY_NAME}
+              labelText={"Company Name"}
               register={register}
               validationSchema={{}}
               errors={errors}
@@ -146,8 +138,8 @@ const ParameterSetting = () => {
               placeholder={true}
             />
             <RecipeInput
-              id={BATCH_NAME}
-              labelText={"Batch Name"}
+              id={DEPARTMENT_NAME}
+              labelText={"Department Name"}
               register={register}
               validationSchema={{}}
               errors={errors}
@@ -156,30 +148,18 @@ const ParameterSetting = () => {
               labelStyles={'self-start ml-8'}
               placeholder={true}
             />
-            <div className="flex justify-between items-center">
-              <div className="flex justify-between items-center gap-36">
-                <RecipeInput
-                  id={BATCH_NO}
-                  labelText={"Batch No"}
-                  register={register}
-                  errors={errors}
-                  containerStyles={'w-48 lg:w-72'}
-                  inputStyle={'w-48 lg:w-72 p-5'}
-                  placeholder={true}
-                />
-                <Dropdown
-                  id={LEAK_TEST_STATUS}
-                  labelText={"Leak Test Status"}
-                  register={register}
-                  errors={errors}
-                  containerStyles={'col-span-2'}
-                  inputStyle={'w-48 lg:w-72 p-5'}
-                  options={leakTestStatusOptions}
-                />
-              </div>
-            </div>
             <RecipeInput
-              id="printComment"
+              id={EQUIPMENT_NAME}
+              labelText={"Equipment Name"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={'w-full lg:w-full'}
+              inputStyle={'w-full lg:w-full p-5'}
+              placeholder={true}
+            />
+            <RecipeInput
+              id='defaultComment'
               labelText={"COMMENT"}
               register={register}
               validationSchema={{}}
@@ -188,15 +168,15 @@ const ParameterSetting = () => {
               containerStyles={'w-full'}
             />
           </div>
-          <div className="flex flex-col items-center self-end gap-4">
-            <Link href={'/parameter-settings/default-parameter'}>
-                <Image
-                  src={"/images/back_button.svg"}
-                  width={100}
-                  height={100}
-                  alt="back button"
-                />
-              </Link>
+          <div className="flex flex-col items-center self-end gap-4 col-span-2">
+            <Link href={PRINT_PARAMETER_PATH}>
+              <Image
+                src={"/images/back_button.svg"}
+                width={100}
+                height={100}
+                alt="back button"
+              />
+            </Link>
             <button type="submit"  disabled={!isChanged} className={`flex flex-col items-center ${!isChanged ? 'opacity-50' : 'opacity-100'}`}>
               <Image
                 src={'/images/save-btn.svg'}

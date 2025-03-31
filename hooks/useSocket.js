@@ -1,5 +1,13 @@
 import { OFFLINE } from '@/constants/devicesStatus';
-import { setDevices, setIsError, setIsLoading, useDevicesSelector, setIsOnlineDevicesUpdated, setOnlineDevices } from '@/redux/slices/devices';
+import {
+  setDevices,
+  setIsError,
+  setIsLoading,
+  useDevicesSelector,
+  setIsOnlineDevicesUpdated,
+  setOnlineDevices,
+  resetDataChanged
+} from '@/redux/slices/devices';
 import handleAxiosRequest from '@/util/handleRequest';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -8,7 +16,8 @@ function useWebSocket() {
   const {
     isOnlineDevicesUpdated,
     devices,
-    onlineDevices
+    onlineDevices,
+    dataChanged,
   } = useDevicesSelector();
 
   const dispatch = useDispatch();
@@ -40,6 +49,12 @@ function useWebSocket() {
       socket.onopen = () => {
           // console.log('WebSocket connected');
           socket.send(JSON.stringify({ type: 'react-register' }));
+
+          if(dataChanged) {
+            console.log('data changed')
+            socket.send(JSON.stringify({ type: 'data-changed' }))
+            dispatch(resetDataChanged());
+          }
       };
 
       // Handle messages from the server
@@ -106,11 +121,16 @@ function useWebSocket() {
           }
       };
 
+      // if(dataChanged) {
+      //   socket.send(JSON.stringify({ type: 'data-changed' }))
+      //   dispatch(resetDataChanged());
+      // }
+
       return () => {
           // Clean up the WebSocket connection
           if (socket) socket.close();
       };
-  }, [devices, dispatch]);
+  }, [devices, dispatch, dataChanged]);
 
   // console.log(devices)
 
