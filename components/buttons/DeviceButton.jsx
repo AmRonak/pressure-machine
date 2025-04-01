@@ -5,7 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useAuthSelector } from "@/redux/slices/authSlice";
 import { JWT_TOKEN_NAME, SUPER_ADMIN } from "@/constants/constants";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const DeviceButton = ({
   device: {
@@ -15,6 +15,7 @@ const DeviceButton = ({
   },
 }) => {
   const state = useAuthSelector();
+  const [buttonClicked, setButtonClicked] = useState(false);
   let color = 'grey';
 
   switch(status){
@@ -60,6 +61,7 @@ const DeviceButton = ({
   }, [status])
 
   const handleSendData = () => {
+    setButtonClicked(true)
     axios.post('http://localhost:5000/send-data', {
         deviceId,
         isSuperUser: state?.userDetail?.userLevel === SUPER_ADMIN,
@@ -101,6 +103,7 @@ const DeviceButton = ({
           w-auto h-auto px-5 py-2 mt-4 text-lg xl:text-3xl
           ${status === ONLINE && 'cursor-pointer'}
           ${disabled && 'opacity-50'}
+          ${!buttonClicked && 'opacity-50' }
         `}
         onClick={handleSendData}
       >

@@ -18,7 +18,7 @@ const GASKET_PRESSURE = "gasketPressure";
 const GASKET_PRESSURE_ALARM_TIME = 'gasketPressureAlarmTime';
 const GLOVE_PRESSURE_ALARM_TIME = 'glovePressureAlarmTime';
 const PRESSURE_PURSUING = 'pressurePursuingPressure';
-const PRESSURE_PURSUING_ALARM_TIME = 'pressurePursuingTime';
+const PRESSURE_PURSUING_REPEAT_TIME = 'pressurePursuingTime';
 const VALVE_PRESSURE_RELEASE = 'glovePressure';
 const VALVE_ON_TIME = 'valveOnTime';
 const VALVE_OFF_TIME = 'valveOffTime';
@@ -177,9 +177,9 @@ const MasterSetting = () => {
                 labelStyles={'self-center text-nowrap'}
               />
               <RecipeInput
-                id={PRESSURE_PURSUING_ALARM_TIME}
+                id={PRESSURE_PURSUING_REPEAT_TIME}
                 labelText={"PRESSURE PURSUING"}
-                labelText2={"ALARM TIME"}
+                labelText2={"REPEAT TIME"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
