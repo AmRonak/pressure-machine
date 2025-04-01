@@ -158,7 +158,7 @@ const TestReport = ({
 
         {/* Measurement Overview Section */}
         <div className="border-y-2 border-black">
-          <h3 className="font-bold mb-2 p-2 text-black">Overview Point of Measurement: (Pa)</h3>
+          <h3 className="font-bold mb-2 p-2 text-black">Overview Point of Measurement Every 5 Seconds: (Pa)</h3>
           <table className="w-full">
             <tbody>
               {rows.map((row, rowIndex) => (
