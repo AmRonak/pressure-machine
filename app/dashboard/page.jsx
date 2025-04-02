@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { SUPER_ADMIN } from "@/constants/constants";
 import allMenu from "@/constants/menus";
 import Navigation from "@/components/buttons/Navigation";
+import handleAxiosRequest from "@/util/handleRequest";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,12 @@ const Dashboard = () => {
   const user = useAuthSelector();
   const [displayMenu, setDisplayMenu] = useState(allMenu)
 
-  const handleLogout = () => {
-    dispatch(resetAuth());
-    router.push('/');
+  const handleLogout = async () => {
+    try {
+      dispatch(resetAuth());
+      router.push('/');
+    } catch (error) {
+    }
   }
 
   useEffect(() => {
