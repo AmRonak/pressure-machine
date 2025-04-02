@@ -17,7 +17,7 @@ const Login = () => {
     register,
     handleSubmit,
     setError,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: yupResolver(loginSchema),
     mode: 'onChange'
@@ -80,6 +80,7 @@ const Login = () => {
             btnStyle='w-60 h-14'
             textStyle='sm:text-2xl sm:tracking-[.4rem] lg: xl:text-3xl xl:tracking-[.5rem]'
             type="submit"
+            disabled={isSubmitting}
           />
           <Link href={'/'}>
             <Image
