@@ -30,6 +30,7 @@ export const defaultParameterSchema = yup.object({
   companyName: yup.string().min(3, COMPANY_NAME_MIN).required(COMPANY_NAME_REQUIRED),
   departmentName: yup.string().min(3, DEPARTMENT_NAME_MIN).required(DEPARTMENT_NAME_REQUIRED),
   equipmentName: yup.string().min(3, EQUIPMENT_NAME_MIN).required(EQUIPMENT_NAME_REQUIRED),
+  equipmentSerialNo: yup.string().min(3, EQUIPMENT_SERIAL_NO_MIN).required(EQUIPMENT_SERIAL_NO_REQUIRED),
   defaultComment: yup.string()
 });
 

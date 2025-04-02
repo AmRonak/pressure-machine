@@ -125,7 +125,7 @@ const ParameterSetting = () => {
       </div>
       <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
         <form onSubmit={handleSubmit(onSubmit)} className="py-10 grid grid-cols-12 gap-4">
-          <div className="flex flex-col gap-20 col-span-10">
+          <div className="flex flex-col gap-7 col-span-10">
             <RecipeInput
               id={COMPANY_NAME}
               labelText={"Company Name"}
@@ -151,6 +151,16 @@ const ParameterSetting = () => {
             <RecipeInput
               id={EQUIPMENT_NAME}
               labelText={"Equipment Name"}
+              register={register}
+              validationSchema={{}}
+              errors={errors}
+              containerStyles={'w-full lg:w-full'}
+              inputStyle={'w-full lg:w-full p-5'}
+              placeholder={true}
+            />
+            <RecipeInput
+              id={EQUIPMENT_NUMBER}
+              labelText={"Equipment Serial No"}
               register={register}
               validationSchema={{}}
               errors={errors}
