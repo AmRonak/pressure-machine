@@ -58,6 +58,9 @@ const DeviceButton = ({
           console.error('failed to refresh token in device page')
         })
     }
+    if(status === ONLINE) {
+      setButtonClicked(false);
+    }
   }, [status])
 
   const handleSendData = () => {
