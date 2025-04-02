@@ -26,7 +26,7 @@ const Dashboard = () => {
           log: `${user.userDetail.username} Logged out from System ${user.userDetail.systemSerialNumber}`,
           oldValue: null,
           newValue: null,
-          category: 'alarm',
+          category: 'Alarm',
           comment: 'User Logged out from System'
         }
       });

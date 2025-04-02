@@ -4,7 +4,7 @@ const currentDate = new Date();
 
 export const categoryOptions = [
   {value: 'general', text: 'General'},
-  {value: 'alarm', text: 'Alarm'},
+  {value: 'Alarm', text: 'Alarm'},
 ]
 
 export const selectUser = {value: 'selectUser', text: 'Select A User'};

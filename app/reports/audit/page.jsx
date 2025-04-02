@@ -323,7 +323,7 @@ const AuditReports = () => {
                 }) => (
                   <tr key={`test-${id}`} className="text-primaryDark">
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{moment(updatedAt).format('DD-MM-YYYY HH:mm')}</td>
-                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{category}</td>
+                    <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{category ? `${category[0].toUpperCase() + category.slice(1)}`: 'General'}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{log}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.userLevel}</td>
                     <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">{User?.username}</td>
