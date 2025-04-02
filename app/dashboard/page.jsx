@@ -18,9 +18,22 @@ const Dashboard = () => {
 
   const handleLogout = async () => {
     try {
+      console.log({user})
+      await handleAxiosRequest({
+        api: `auditLog/`,
+        method: 'post',
+        payloadData: {
+          log: `${user.userDetail.username} Logged out from System ${user.userDetail.systemSerialNumber}`,
+          oldValue: null,
+          newValue: null,
+          category: 'alarm',
+          comment: 'User Logged out from System'
+        }
+      });
       dispatch(resetAuth());
       router.push('/');
     } catch (error) {
+      console.error(error)
     }
   }
 
