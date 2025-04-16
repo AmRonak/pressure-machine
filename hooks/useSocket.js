@@ -45,106 +45,106 @@ function useWebSocket() {
   useEffect(() => {
     const socket = new WebSocket('ws://localhost:5000');
 
-      // Register this React client to receive WebSocket messages
-      socket.onopen = () => {
-          // console.log('WebSocket connected');
-          socket.send(JSON.stringify({ type: 'react-register' }));
+    // Register this React client to receive WebSocket messages
+    socket.onopen = () => {
+      // console.log('WebSocket connected');
+      socket.send(JSON.stringify({ type: 'react-register' }));
 
-          if(dataChanged) {
-            console.log('data changed')
-            socket.send(JSON.stringify({ type: 'data-changed' }))
-            dispatch(resetDataChanged());
+      if (dataChanged) {
+        console.log('data changed')
+        socket.send(JSON.stringify({ type: 'data-changed' }))
+        dispatch(resetDataChanged());
+      }
+    };
+
+    // Handle messages from the server
+    socket.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      // console.log({ message });
+      if (message.type === 'device-login-success') {
+        // console.log('Received response from device: login success', message);
+        dispatch(setDevices(devices.map(s => {
+          if (s.deviceId === message.deviceInfo.deviceId) {
+            return { ...s, loggedIn: true, status: message?.deviceInfo?.status }
           }
-      };
-
-      // Handle messages from the server
-      socket.onmessage = (event) => {
-          const message = JSON.parse(event.data);
-          // console.log({ message });
-          if (message.type === 'device-login-success') {
-              // console.log('Received response from device: login success', message);
-              dispatch(setDevices(devices.map(s => {
-                  if (s.deviceId === message.deviceInfo.deviceId) {
-                      return { ...s, loggedIn: true, status: message?.deviceInfo?.status }
-                  }
-                  return s
-                })
-              ))
-          } else if (message.type === 'device-logout-success') {
-            // console.log('Received response from device: logout', message);
-            dispatch(setDevices(devices.map(s => {
-                if (s.deviceId === message.deviceInfo.deviceId) {
-                    return { ...s, loggedIn: false, status: message?.deviceInfo?.status }
-                }
-                return s
-              })
-            ))
-          } else if (message.type === 'new-device-online') {
-              // console.log('Received response from device new-device-online:', message);
-              dispatch(setDevices(devices.map(s => {
-                  if (s.deviceId === message.deviceInfo.deviceId) {
-                      return { ...s, isOnline: true, status: message?.deviceInfo?.status }
-                  }
-                  return s
-                })
-              ));
-          } else if (message.type === 'device-test-start') {
-              // console.log('Received response from device device-test-start:', message);
-              dispatch(setDevices(devices.map(s => {
-                  if (s.deviceId === message.deviceInfo.deviceId) {
-                      return { ...s, isTestStarted: true, status: message?.deviceInfo?.status }
-                  }
-                  return s
-                })
-              ));
-          } else if (message.type === 'device-test-stop') {
-              // console.log('Received response from device device-test-stop:', message);
-              dispatch(setDevices(devices.map(s => {
-                  if (s.deviceId === message.deviceInfo.deviceId) {
-                      return { ...s, isTestStarted: false, status: message?.deviceInfo?.status }
-                  }
-                  return s
-                })
-              ));
-          } else if (message.type === 'online-device-list') {
-            // console.log(message.devices)
-            dispatch(setOnlineDevices(message.devices));
-          } else if (message.type === 'device-offline') {
-            // console.log('Received response from device offline:', message);
-            dispatch(setDevices(devices.map(s => {
-                if (s.deviceId === message.deviceId) {
-                    return { ...s, isOnline: false, status: OFFLINE }
-                }
-                return s
-              })
-            ));
+          return s
+        })
+        ))
+      } else if (message.type === 'device-logout-success') {
+        // console.log('Received response from device: logout', message);
+        dispatch(setDevices(devices.map(s => {
+          if (s.deviceId === message.deviceInfo.deviceId) {
+            return { ...s, loggedIn: false, status: message?.deviceInfo?.status }
           }
-      };
+          return s
+        })
+        ))
+      } else if (message.type === 'new-device-online') {
+        // console.log('Received response from device new-device-online:', message);
+        dispatch(setDevices(devices.map(s => {
+          if (s.deviceId === message.deviceInfo.deviceId) {
+            return { ...s, isOnline: true, status: message?.deviceInfo?.status }
+          }
+          return s
+        })
+        ));
+      } else if (message.type === 'device-test-start') {
+        // console.log('Received response from device device-test-start:', message);
+        dispatch(setDevices(devices.map(s => {
+          if (s.deviceId === message.deviceInfo.deviceId) {
+            return { ...s, isTestStarted: true, status: message?.deviceInfo?.status }
+          }
+          return s
+        })
+        ));
+      } else if (message.type === 'device-test-stop') {
+        // console.log('Received response from device device-test-stop:', message);
+        dispatch(setDevices(devices.map(s => {
+          if (s.deviceId === message.deviceInfo.deviceId) {
+            return { ...s, isTestStarted: false, status: message?.deviceInfo?.status }
+          }
+          return s
+        })
+        ));
+      } else if (message.type === 'online-device-list') {
+        // console.log(message.devices)
+        dispatch(setOnlineDevices(message.devices));
+      } else if (message.type === 'device-offline') {
+        // console.log('Received response from device offline:', message);
+        dispatch(setDevices(devices.map(s => {
+          if (s.deviceId === message.deviceId) {
+            return { ...s, isOnline: false, status: OFFLINE }
+          }
+          return s
+        })
+        ));
+      }
+    };
 
-      // if(dataChanged) {
-      //   socket.send(JSON.stringify({ type: 'data-changed' }))
-      //   dispatch(resetDataChanged());
-      // }
+    // if(dataChanged) {
+    //   socket.send(JSON.stringify({ type: 'data-changed' }))
+    //   dispatch(resetDataChanged());
+    // }
 
-      return () => {
-          // Clean up the WebSocket connection
-          if (socket) socket.close();
-      };
+    return () => {
+      // Clean up the WebSocket connection
+      if (socket) socket.close();
+    };
   }, [devices, dispatch, dataChanged]);
 
   // console.log(devices)
 
   // onLoad set online device
   useEffect(() => {
-    if(devices.length !== 0 && onlineDevices?.length !== 0 && isOnlineDevicesUpdated) {
+    if (devices.length !== 0 && onlineDevices?.length !== 0 && isOnlineDevicesUpdated) {
       dispatch(setIsOnlineDevicesUpdated(false))
       dispatch(setDevices(devices.map(s => {
-          const found = onlineDevices.find(d => d.deviceId === s.deviceId)
-          if(found) {
-            return { ...s, isOnline: true, status: found.status, ...found }
-          }
-          return { ...s, isOnline: false, status: OFFLINE }
-        })
+        const found = onlineDevices.find(d => d.deviceId === s.deviceId)
+        if (found) {
+          return { ...s, isOnline: true, status: found.status, ...found }
+        }
+        return { ...s, isOnline: false, status: OFFLINE }
+      })
       ));
     }
   }, [onlineDevices, devices, isOnlineDevicesUpdated, dispatch])

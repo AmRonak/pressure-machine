@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import jsPDF from "jspdf";
@@ -9,7 +9,7 @@ import TestReport from "@/components/Report/TestReport";
 const page = () => {
   const measurementData = Array.from({ length: 120 }, (_, index) => ({
     id: index + 1,
-    value: '1234',
+    value: "1234",
   }));
 
   const rows = [];
@@ -32,12 +32,18 @@ const page = () => {
 
   return (
     <>
-      <div id="report-content" className="container mx-auto font-sans mt-10 border-4 border-black">
+      <div
+        id="report-content"
+        className="container mx-auto font-sans mt-10 border-4 border-black"
+      >
         <TestReport />
       </div>
 
       <div className="text-center my-4">
-        <button onClick={downloadPDF} className="px-4 py-2 bg-blue-500 text-white font-bold rounded">
+        <button
+          onClick={downloadPDF}
+          className="px-4 py-2 bg-blue-500 text-white font-bold rounded"
+        >
           Download as PDF
         </button>
       </div>

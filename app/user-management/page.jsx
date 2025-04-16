@@ -1,11 +1,17 @@
-'use client';
+"use client";
 import Dropdown from "@/components/inputs/Dropdown";
 import RecipeInput from "@/components/inputs/RecipeInput";
-import { ADMINISTRATOR, COMMENT, MANAGER, OPERATOR, SUPERVISOR } from "@/constants/constants";
+import {
+  ADMINISTRATOR,
+  COMMENT,
+  MANAGER,
+  OPERATOR,
+  SUPERVISOR,
+} from "@/constants/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup"
+import { yupResolver } from "@hookform/resolvers/yup";
 import { userManagementSchema } from "@/schema/userManagementSchema.yup";
 import { toatsConfig } from "@/constants/toast";
 import handleAxiosRequest from "@/util/handleRequest";
@@ -25,26 +31,26 @@ const PASSWORD_EXPIRY = "passwordExpiry";
 const EXPIRY_DAYS_NOTIFICATION = "expiryDaysNotification";
 
 const defaultValues = {
-  username: '',
-  password: '',
-  pin: '',
-  confirmPassword: '',
-  confirmPin: '',
+  username: "",
+  password: "",
+  pin: "",
+  confirmPassword: "",
+  confirmPin: "",
   userLevel: OPERATOR,
   autoUnblockTime: 300,
   attempts: 4,
   autoLogoutTime: 300,
   passwordExpiry: 90,
   expiryDaysNotification: 3,
-  comments: ''
-}
+  comments: "",
+};
 
 const userLevels = [
-  {value: 'choose', text: 'Select Role'},
-  {value: ADMINISTRATOR, text: 'Administrator'},
-  {value: SUPERVISOR, text: 'Supervisor'},
-  {value: MANAGER, text: 'Manager'},
-  {value: OPERATOR, text: 'Operator'},
+  { value: "choose", text: "Select Role" },
+  { value: ADMINISTRATOR, text: "Administrator" },
+  { value: SUPERVISOR, text: "Supervisor" },
+  { value: MANAGER, text: "Manager" },
+  { value: OPERATOR, text: "Operator" },
 ];
 
 const UserCreation = () => {
@@ -53,32 +59,32 @@ const UserCreation = () => {
     handleSubmit,
     formState: { errors },
     setError,
-    reset
+    reset,
   } = useForm({
     defaultValues,
     resolver: yupResolver(userManagementSchema),
     mode: "onChange",
-    reValidateMode: 'onSubmit'
+    reValidateMode: "onSubmit",
   });
 
   const onSubmit = async (payloadData) => {
     try {
       const { data } = await handleAxiosRequest({
-        api: 'users/register',
-        method: 'post',
+        api: "users/register",
+        method: "post",
         payloadData,
       });
       const successMessage = `${data.username} is created successfully`;
       toast.success(successMessage, toatsConfig);
       reset();
     } catch (error) {
-      setError('root.serverError', {
+      setError("root.serverError", {
         type: error.message,
-        message: error.response.data.message
-      })
+        message: error.response.data.message,
+      });
       toast.error(error.response.data.message);
     }
-  }
+  };
 
   return (
     <div className="grid-flow-col mx-auto px-16 pt-10">
@@ -88,7 +94,10 @@ const UserCreation = () => {
         </p>
         <Navigation />
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="grid grid-flow-row gap-y-10 mt-10">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="grid grid-flow-row gap-y-10 mt-10"
+      >
         <div className="grid grid-flow-col grid-cols-2 gap-28 gap-y-10">
           <div className="grid grid-flow-row col-span-1 gap-20">
             <RecipeInput
@@ -96,10 +105,10 @@ const UserCreation = () => {
               labelText={"USER NAME"}
               register={register}
               errors={errors}
-              containerStyles={''}
-              inputStyle={'w-full rounded-4xl p-5'}
+              containerStyles={""}
+              inputStyle={"w-full rounded-4xl p-5"}
               placeholder="DUMMY DUMMY"
-              labelStyles={'self-start ml-8'}
+              labelStyles={"self-start ml-8"}
             />
             <div className="grid grid-cols-3 gap-14">
               <RecipeInput
@@ -108,10 +117,10 @@ const UserCreation = () => {
                 placeholder="********"
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-2'}
-                inputStyle={'w-full rounded-4xl p-5'}
-                labelStyles={'self-start ml-8'}
-                type={'password'}
+                containerStyles={"col-span-2"}
+                inputStyle={"w-full rounded-4xl p-5"}
+                labelStyles={"self-start ml-8"}
+                type={"password"}
               />
               <RecipeInput
                 id={PIN}
@@ -119,9 +128,9 @@ const UserCreation = () => {
                 placeholder="****"
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-1'}
-                inputStyle={'w-full rounded-4xl p-5'}
-                type={'Number'}
+                containerStyles={"col-span-1"}
+                inputStyle={"w-full rounded-4xl p-5"}
+                type={"Number"}
                 isPin={true}
               />
             </div>
@@ -132,10 +141,10 @@ const UserCreation = () => {
                 placeholder="********"
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-2'}
-                inputStyle={'w-full rounded-4xl p-5'}
-                labelStyles={'self-start ml-8'}
-                type={'password'}
+                containerStyles={"col-span-2"}
+                inputStyle={"w-full rounded-4xl p-5"}
+                labelStyles={"self-start ml-8"}
+                type={"password"}
               />
               <RecipeInput
                 id={CONFIRM_PIN}
@@ -143,10 +152,10 @@ const UserCreation = () => {
                 placeholder="****"
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-1'}
-                inputStyle={'w-full rounded-4xl p-5'}
+                containerStyles={"col-span-1"}
+                inputStyle={"w-full rounded-4xl p-5"}
                 labelStyles={"text-nowrap"}
-                type={'Number'}
+                type={"Number"}
                 isPin={true}
               />
             </div>
@@ -158,8 +167,8 @@ const UserCreation = () => {
                 labelText={"USER LEVEL"}
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-2'}
-                inputStyle={'w-full rounded-4xl p-5'}
+                containerStyles={"col-span-2"}
+                inputStyle={"w-full rounded-4xl p-5"}
                 options={userLevels}
               />
               <RecipeInput
@@ -168,21 +177,21 @@ const UserCreation = () => {
                 labelText2={"UNBLOCK TIME"}
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-1'}
-                inputStyle={'w-full rounded-4xl p-5'}
+                containerStyles={"col-span-1"}
+                inputStyle={"w-full rounded-4xl p-5"}
                 labelStyles={"text-nowrap -mt-4"}
-                type={'Number'}
+                type={"Number"}
               />
             </div>
             <div className="grid grid-cols-2 gap-14">
               <RecipeInput
                 id={NO_OF_ATTEMPTS}
-                labelText={"No. Of"}
-                labelText2={"Attempts"}
+                labelText={"NO. OF"}
+                labelText2={"ATTEMPTS"}
                 register={register}
                 errors={errors}
-                inputStyle={'w-full rounded-4xl p-5'}
-                type={'Number'}
+                inputStyle={"w-full rounded-4xl p-5"}
+                type={"Number"}
               />
               <RecipeInput
                 id={AUTO_LOGOUT_TIME}
@@ -190,10 +199,10 @@ const UserCreation = () => {
                 labelText2={"LOGOUT TIME"}
                 register={register}
                 errors={errors}
-                containerStyles={'col-span-1'}
-                inputStyle={'w-full rounded-4xl p-5'}
+                containerStyles={"col-span-1"}
+                inputStyle={"w-full rounded-4xl p-5"}
                 labelStyles={"text-nowrap"}
-                type={'Number'}
+                type={"Number"}
               />
             </div>
             <div className="grid grid-cols-2 gap-14">
@@ -203,8 +212,8 @@ const UserCreation = () => {
                 labelText2={"EXPIRY"}
                 register={register}
                 errors={errors}
-                inputStyle={'w-full rounded-4xl p-5'}
-                type={'Number'}
+                inputStyle={"w-full rounded-4xl p-5"}
+                type={"Number"}
               />
               <RecipeInput
                 id={EXPIRY_DAYS_NOTIFICATION}
@@ -212,9 +221,9 @@ const UserCreation = () => {
                 labelText2={"DAYS NOTIFICATION"}
                 register={register}
                 errors={errors}
-                inputStyle={'w-full rounded-4xl p-5'}
+                inputStyle={"w-full rounded-4xl p-5"}
                 labelStyles={"text-nowrap"}
-                type={'Number'}
+                type={"Number"}
               />
             </div>
           </div>
@@ -227,21 +236,21 @@ const UserCreation = () => {
               register={register}
               validationSchema={{}}
               errors={errors}
-              inputStyle={'w-full'}
-              containerStyles={'w-full'}
+              inputStyle={"w-full"}
+              containerStyles={"w-full"}
             />
           </div>
-          <div className="flex items-center justify-around gap-28 mb-8" >
+          <div className="flex items-center justify-around gap-28 mb-8">
             <button type="submit" className="block h-14">
               <Image
-                src={'/images/create-btn.svg'}
+                src={"/images/create-btn.svg"}
                 width={130}
                 height={130}
                 alt={`create user button`}
               />
             </button>
             <button className="block h-14 scale-125">
-              <Link href={'/user-management/permission'}>
+              <Link href={"/user-management/permission"}>
                 <Image
                   src={"/images/permissions-btn.svg"}
                   width={130}
@@ -251,7 +260,7 @@ const UserCreation = () => {
               </Link>
             </button>
             <button>
-              <Link href={'/user-management/user-list'}>
+              <Link href={"/user-management/user-list"}>
                 <Image
                   src={"/images/back_button.svg"}
                   width={100}

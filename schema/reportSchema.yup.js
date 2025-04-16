@@ -3,16 +3,16 @@ import { date, object, string } from "yup";
 const currentDate = new Date();
 
 export const categoryOptions = [
-  {value: 'general', text: 'General'},
-  {value: 'Alarm', text: 'Alarm'},
+  { value: 'General', text: 'General' },
+  { value: 'Alarm', text: 'Alarm' },
 ]
 
-export const selectUser = {value: 'selectUser', text: 'Select A User'};
-export const allUsers = {value: '', text: 'All Users'};
+export const selectUser = { value: 'selectUser', text: 'Select A User' };
+export const allUsers = { value: '', text: 'All Users' };
 
 const DATE_REQUIRED = 'Date is required';
 const DATE_MIN = 'Date must be after than year 2000';
-const DATE_MAX = `Date must be earlier than or equal ${currentDate.getDate()}-${currentDate.getMonth()}-${currentDate.getFullYear()}` 
+const DATE_MAX = `Date must be earlier than or equal ${currentDate.getDate()}-${currentDate.getMonth()}-${currentDate.getFullYear()}`
 const TIME_REQUIRED = 'Time is required';
 const BATCH_REQUIRED = 'Batch no. is required';
 const USERNAME_REQUIRED = 'Username is required';

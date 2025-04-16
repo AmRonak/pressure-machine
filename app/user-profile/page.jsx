@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Navigation from "@/components/buttons/Navigation";
 import RecipeInput from "@/components/inputs/RecipeInput";
@@ -23,22 +23,26 @@ const UserProfile = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(passwordChangeSchema),
-    mode: "onChange"
+    mode: "onChange",
   });
 
   const onSubmit = async (payloadData) => {
     try {
       await handleAxiosRequest({
-        api: 'users/changePassword',
-        method: 'patch',
+        api: "users/changePassword",
+        method: "patch",
         payloadData,
       });
       toast.success("Password changed successfully", toatsConfig);
       reset();
     } catch (error) {
-      toast.error('Failed to update password, please try sometimes later.', toatsConfig);
+      toast.error(
+        error?.response?.data?.message ??
+          "Failed to update password, please try sometimes later.",
+        toatsConfig
+      );
     }
-  }
+  };
 
   return (
     <div className="grid-flow-col px-16 py-10">
@@ -63,39 +67,39 @@ const UserProfile = () => {
             labelText={"OLD PASSWORD"}
             register={register}
             errors={errors}
-            containerStyles={'w-full'}
-            inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-start ml-8'}
+            containerStyles={"w-full"}
+            inputStyle={"w-full rounded-3xl p-5"}
+            labelStyles={"self-start ml-8"}
             placeholder={true}
-            type={'password'}
+            type={"password"}
           />
           <RecipeInput
             id={NEW_PASSWORD}
             labelText={"NEW PASSWORD"}
             register={register}
             errors={errors}
-            containerStyles={'w-full'}
-            inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-start ml-8'}
+            containerStyles={"w-full"}
+            inputStyle={"w-full rounded-3xl p-5"}
+            labelStyles={"self-start ml-8"}
             placeholder={true}
-            type={'password'}
+            type={"password"}
           />
           <RecipeInput
             id={CONFIRM_PASSWORD}
             labelText={"CONFIRM PASSWORD"}
             register={register}
             errors={errors}
-            containerStyles={'w-full'}
-            inputStyle={'w-full rounded-3xl p-5'}
-            labelStyles={'self-start ml-8'}
+            containerStyles={"w-full"}
+            inputStyle={"w-full rounded-3xl p-5"}
+            labelStyles={"self-start ml-8"}
             placeholder={true}
-            type={'password'}
+            type={"password"}
           />
         </div>
         <div className="flex flex-col items-center self-end gap-4">
           <button type="submit" className="flex flex-col items-center">
             <Image
-              src={'/images/save-btn.svg'}
+              src={"/images/save-btn.svg"}
               width={130}
               height={130}
               alt={`save recipe button`}
