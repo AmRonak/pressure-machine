@@ -22,31 +22,82 @@ export const defaultStatus = {
 
 export const styles = StyleSheet.create({
   page: {
-    padding: 10,
+    paddingTop: 100,
+    paddingBottom: 70,
+    paddingHorizontal: 10,
+    fontSize: 10,
   },
   header: {
-    fontSize: 10,
-    marginBottom: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    border: '1px solid black',
+    padding: 10,
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    right: 10,
+  },
+  logo: {
+    width: 60,
+    height: 40,
+  },
+  centerTextContainer: {
+    alignItems: 'center',
+  },
+  companyName: {
+    fontSize: 12,
+    fontWeight: 'bold',
     textAlign: 'center',
-    textTransform: 'uppercase',
-    fontWeight: 'extrabold'
+  },
+  reportTitle: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 2,
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 10,
+    left: 10,
+    right: 10,
+    border: '1px solid black',
+    padding: 5,
+    fontSize: 7,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+  footerTextGroup: {
+    flexDirection: 'column',
+  },
+  footerText: {
+    fontSize: 7,
+    color: '#000',
+  },
+  pageNumber: {
+    fontSize: 7,
+    fontWeight: 'bold',
+    color: '#000',
   },
   table: {
-    display: "table",
-    width: "auto",
-    borderStyle: "solid",
-    borderWidth: .5,
+    display: 'table',
+    width: 'auto',
+    borderStyle: 'solid',
+    borderWidth: 0.5,
     borderColor: 'black',
   },
   tableRow: {
-    flexDirection: "row",
+    flexDirection: 'row',
+    wrap: false, // 🛡 Prevent row split
   },
   tableCol: {
-    borderStyle: "solid",
-    borderWidth: .5,
-    borderColor: 'black',
-    padding: 2,
     flex: 1,
+    borderStyle: 'solid',
+    borderWidth: 0.5,
+    borderColor: 'black',
+    padding: 3,
   },
   tableCell: {
     fontSize: 8,
