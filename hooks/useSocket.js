@@ -11,6 +11,7 @@ import {
 import handleAxiosRequest from '@/util/handleRequest';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { usePathname } from 'next/navigation'
 
 function useWebSocket() {
   const {
@@ -19,6 +20,7 @@ function useWebSocket() {
     onlineDevices,
     dataChanged,
   } = useDevicesSelector();
+  const pathname = usePathname();
 
   const dispatch = useDispatch();
 
@@ -49,6 +51,8 @@ function useWebSocket() {
     socket.onopen = () => {
       // console.log('WebSocket connected');
       socket.send(JSON.stringify({ type: 'react-register' }));
+
+      socket.send(JSON.stringify({ type: 'is-in-device-page', isDevicePage: pathname.includes('/devices') }));
 
       if (dataChanged) {
         console.log('data changed')
@@ -130,7 +134,7 @@ function useWebSocket() {
       // Clean up the WebSocket connection
       if (socket) socket.close();
     };
-  }, [devices, dispatch, dataChanged]);
+  }, [devices, dispatch, dataChanged, pathname]);
 
   // console.log(devices)
 
