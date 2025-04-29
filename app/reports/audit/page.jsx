@@ -105,9 +105,6 @@ const AuditReports = () => {
               <Text style={styles.tableCell}>Date & Time</Text>
             </View>
             <View style={styles.tableCol}>
-              <Text style={styles.tableCell}>Category</Text>
-            </View>
-            <View style={styles.tableCol}>
               <Text style={styles.tableCell}>Description</Text>
             </View>
             <View style={styles.tableCol}>
@@ -133,7 +130,6 @@ const AuditReports = () => {
             ({
               id,
               User,
-              category,
               log,
               newValue,
               oldValue,
@@ -144,11 +140,8 @@ const AuditReports = () => {
               <View style={styles.tableRow} key={`test-${id}`}>
                 <View style={styles.tableCol}>
                   <Text style={styles.tableCell}>
-                    {moment(updatedAt).format("DD-MM-YYYY HH:mm")}
+                    {moment(updatedAt).format("DD-MM-YYYY HH:mm:ss")}
                   </Text>
-                </View>
-                <View style={styles.tableCol}>
-                  <Text style={styles.tableCell}>{category}</Text>
                 </View>
                 <View style={styles.tableCol}>
                   <Text style={styles.tableCell}>{log}</Text>
@@ -443,7 +436,6 @@ const AuditReports = () => {
               <thead className="">
                 <tr className="">
                   <th className="border border-slate-600 p-2">Date & Time</th>
-                  <th className="border border-slate-600 p-2">Category</th>
                   <th className="border border-slate-600 p-2">Description</th>
                   <th className="border border-slate-600 p-2">User Level</th>
                   <th className="border border-slate-600 p-2">Username</th>
@@ -459,7 +451,6 @@ const AuditReports = () => {
                     id,
                     User,
                     UpdatedUser,
-                    category,
                     log,
                     newValue,
                     oldValue,
@@ -468,12 +459,7 @@ const AuditReports = () => {
                   }) => (
                     <tr key={`test-${id}`} className="text-primaryDark">
                       <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">
-                        {moment(updatedAt).format("DD-MM-YYYY HH:mm")}
-                      </td>
-                      <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">
-                        {category
-                          ? `${category[0].toUpperCase() + category.slice(1)}`
-                          : "General"}
+                        {moment(updatedAt).format("DD-MM-YYYY HH:mm:ss")}
                       </td>
                       <td className="text-primaryDark font-normal text-center border border-slate-600 p-2">
                         {log}

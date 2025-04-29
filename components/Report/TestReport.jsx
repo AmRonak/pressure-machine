@@ -27,6 +27,7 @@ const TestReport = ({ userid, deviceid, starttesttime, endtesttime, data }) => {
     Glove_No,
     leakTestStatus,
     serial_No,
+    Leak_Test_Time,
   } = data;
 
   const rows = [];
@@ -206,7 +207,7 @@ const TestReport = ({ userid, deviceid, starttesttime, endtesttime, data }) => {
                   Leak Test Time:
                 </td>
                 <td className="text-black w-96 border-b-2 border-black p-1">
-                  {Test_Time} Sec
+                  {Leak_Test_Time} Sec
                 </td>
               </tr>
               <tr>
