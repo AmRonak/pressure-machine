@@ -3,7 +3,7 @@ import moment from "moment";
 import Image from "next/image";
 import React from "react";
 
-const TestReport = ({ userid, deviceid, starttesttime, endtesttime, data }) => {
+const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, totalPages }) => {
   const {
     userDetail: { userLevel, username },
   } = useAuthSelector();
@@ -233,7 +233,7 @@ const TestReport = ({ userid, deviceid, starttesttime, endtesttime, data }) => {
           <h3 className="font-bold mb-2 p-2 text-black">
             Overview Point of Measurement Every 5 Seconds: (Pa)
           </h3>
-          <table className="w-full">
+          <table className="w-full mb-2">
             <tbody>
               {rows.map((row, rowIndex) => (
                 <tr key={rowIndex}>
@@ -309,7 +309,7 @@ const TestReport = ({ userid, deviceid, starttesttime, endtesttime, data }) => {
           </p>
         </div>
 
-        <p className="text-black">Page 1 of 1</p>
+        <p className="text-black">{`Page ${currentPage+1} of ${totalPages}`}</p>
       </div>
     </>
   );

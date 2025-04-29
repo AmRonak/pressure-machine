@@ -79,7 +79,7 @@ const MainTestReport = ({searchData, handleDownloadPDF}) => {
           starttesttime,
           endtesttime,
           data
-        }) => (
+        }, idx) => (
           <div
             id="report-content"
             key={id}
@@ -93,6 +93,8 @@ const MainTestReport = ({searchData, handleDownloadPDF}) => {
               starttesttime={starttesttime}
               endtesttime={endtesttime}
               data={data}
+              currentPage={idx}
+              totalPages={searchData.length}
             />
           </div>
         ))}
