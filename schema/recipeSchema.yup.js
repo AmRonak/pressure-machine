@@ -29,10 +29,23 @@ export const TEST_TIME_MAX = 'Test time must be less than or equal to 900';
 export const TEST_CUSTOM = 'The number must be a multiple of 30 like ( 30 sec, 60 sec,…,900 sec )';
 export const SET_PRESSURE_LOWER = 'Set Pressure must be lower than intial pressure';
 export const LOWET_TEST_PRESSURE_LOWER = 'Lower test limit pressure must be lower than set pressure';
-
+const PRESSURE_PURSUING_CHECK = 'Set Pressure value should be lower than ';
 export const recipeSchema = object({
   initialPressure: number().typeError(INITIAL_PRESSURE_NUMBER).required(INITIAL_PRESSURE_NUMBER_REQUIRED).min(0, INITIAL_PRESSURE_MIN).max(1500, INITIAL_PRESSURE_MAX),
-  setPressure: number().typeError(SET_PRESSURE_NUMBER).required(SET_PRESSURE_NUMBER_REQUIRED).min(0, SET_PRESSURE_MIN).max(1500, SET_PRESSURE_MAX).lessThan(yup.ref('initialPressure'), SET_PRESSURE_LOWER),
+  setPressure: number().typeError(SET_PRESSURE_NUMBER).required(SET_PRESSURE_NUMBER_REQUIRED).min(0, SET_PRESSURE_MIN).max(1500, SET_PRESSURE_MAX).lessThan(yup.ref('initialPressure'), SET_PRESSURE_LOWER)
+  .test(
+    'less-than-pursuing-pressure',
+    function (value) {
+      const { pressurePursuingPressure } = this.parent;
+      if (value == null || pressurePursuingPressure == null) return true;
+
+      return value < pressurePursuingPressure
+        ? true
+        : this.createError({
+          message: `${PRESSURE_PURSUING_CHECK} (${pressurePursuingPressure})`,
+        });
+    }
+  ),
   leakTestPressure: number().typeError(LEAK_TEST_PRESSURE_NUMBER).required(LEAK_TEST_PRESSURE_NUMBER_REQUIRED).min(0, LEAK_TEST_PRESSURE_MIN).max(1000, LEAK_TEST_PRESSURE_MAX),
   lowerTestPressure: number().typeError(LOWER_TEST_PRESSURE_NUMBER).required(LOWER_TEST_PRESSURE_NUMBER_REQUIRED).min(0, LOWER_TEST_PRESSURE_MIN).max(1000, LOWER_TEST_PRESSURE_MAX).lessThan(yup.ref('setPressure'), LOWET_TEST_PRESSURE_LOWER),
   stabilizationTime: number().typeError(STABILIZATION_TIME_NUMBER).required(STABILIZATION_TIME_NUMBER_REQUIRED).min(30, STABILIZATION_TIME_MIN)

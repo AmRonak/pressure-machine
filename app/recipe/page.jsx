@@ -38,7 +38,11 @@ const Recipe = () => {
     getValues,
   } = useForm({
     resolver: yupResolver(recipeSchema),
-    mode: "onChange"
+    mode: "onChange",
+    values: {
+      pressurePursuingPressure: 0,
+      ...initialData,
+    },
   });
 
   const watchedValues = watch();
@@ -49,11 +53,17 @@ const Recipe = () => {
     const fetchUserData = async () => {
       try {
         const { data } = await handleAxiosRequest({ api: 'recipeSetting' });
+        const { data: masterData } = await handleAxiosRequest({
+          api: "masterParameter",
+        });
         delete data.createdAt;
         delete data.updatedAt;
         delete data.macId;
         delete data.id;
-        setInitialData(data); // Store initial data for comparison
+        setInitialData({
+          ...data,
+          pressurePursuingPressure: masterData?.pressurePursuingPressure ?? "",
+        }); // Store initial data for comparison
         reset({...data, comment: ''});
         setIsLoading(false);
       } catch (error) {
