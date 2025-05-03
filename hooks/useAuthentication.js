@@ -91,7 +91,6 @@ const useAuthentication = () => {
           }
         })
         .catch((error) => {
-          // console.log(error)
           router.push("/");
         })
     } else {

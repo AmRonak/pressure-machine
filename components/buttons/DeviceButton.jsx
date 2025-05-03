@@ -78,10 +78,8 @@ const DeviceButton = ({
         },
     })
       .then((response) => {
-          // console.log('Data sent:', response.data);
       })
       .catch((error) => {
-          // console.error('Error sending data:', error);
       });
   };
 

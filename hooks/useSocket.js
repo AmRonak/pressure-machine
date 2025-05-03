@@ -49,13 +49,11 @@ function useWebSocket() {
 
     // Register this React client to receive WebSocket messages
     socket.onopen = () => {
-      // console.log('WebSocket connected');
       socket.send(JSON.stringify({ type: 'react-register' }));
 
       socket.send(JSON.stringify({ type: 'is-in-device-page', isDevicePage: pathname.includes('/devices') }));
 
       if (dataChanged) {
-        console.log('data changed')
         socket.send(JSON.stringify({ type: 'data-changed' }))
         dispatch(resetDataChanged());
       }
@@ -64,9 +62,7 @@ function useWebSocket() {
     // Handle messages from the server
     socket.onmessage = (event) => {
       const message = JSON.parse(event.data);
-      // console.log({ message });
       if (message.type === 'device-login-success') {
-        // console.log('Received response from device: login success', message);
         dispatch(setDevices(devices.map(s => {
           if (s.deviceId === message.deviceInfo.deviceId) {
             return { ...s, loggedIn: true, status: message?.deviceInfo?.status }
@@ -75,7 +71,6 @@ function useWebSocket() {
         })
         ))
       } else if (message.type === 'device-logout-success') {
-        // console.log('Received response from device: logout', message);
         dispatch(setDevices(devices.map(s => {
           if (s.deviceId === message.deviceInfo.deviceId) {
             return { ...s, loggedIn: false, status: message?.deviceInfo?.status }
@@ -84,7 +79,6 @@ function useWebSocket() {
         })
         ))
       } else if (message.type === 'new-device-online') {
-        // console.log('Received response from device new-device-online:', message);
         dispatch(setDevices(devices.map(s => {
           if (s.deviceId === message.deviceInfo.deviceId) {
             return { ...s, isOnline: true, status: message?.deviceInfo?.status }
@@ -93,7 +87,6 @@ function useWebSocket() {
         })
         ));
       } else if (message.type === 'device-test-start') {
-        // console.log('Received response from device device-test-start:', message);
         dispatch(setDevices(devices.map(s => {
           if (s.deviceId === message.deviceInfo.deviceId) {
             return { ...s, isTestStarted: true, status: message?.deviceInfo?.status }
@@ -102,7 +95,6 @@ function useWebSocket() {
         })
         ));
       } else if (message.type === 'device-test-stop') {
-        // console.log('Received response from device device-test-stop:', message);
         dispatch(setDevices(devices.map(s => {
           if (s.deviceId === message.deviceInfo.deviceId) {
             return { ...s, isTestStarted: false, status: message?.deviceInfo?.status }
@@ -111,10 +103,8 @@ function useWebSocket() {
         })
         ));
       } else if (message.type === 'online-device-list') {
-        // console.log(message.devices)
         dispatch(setOnlineDevices(message.devices));
       } else if (message.type === 'device-offline') {
-        // console.log('Received response from device offline:', message);
         dispatch(setDevices(devices.map(s => {
           if (s.deviceId === message.deviceId) {
             return { ...s, isOnline: false, status: OFFLINE }
@@ -125,18 +115,11 @@ function useWebSocket() {
       }
     };
 
-    // if(dataChanged) {
-    //   socket.send(JSON.stringify({ type: 'data-changed' }))
-    //   dispatch(resetDataChanged());
-    // }
-
     return () => {
       // Clean up the WebSocket connection
       if (socket) socket.close();
     };
   }, [devices, dispatch, dataChanged, pathname]);
-
-  // console.log(devices)
 
   // onLoad set online device
   useEffect(() => {

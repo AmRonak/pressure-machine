@@ -8,7 +8,6 @@ import React from "react";
 
 const Devices = () => {
   const { isLoading, isError, devices } = useDevicesSelector();
-  // console.log({devices})
   return (
     <>
       <div className="grid-flow-col mx-auto px-16 pt-10 pb-5">

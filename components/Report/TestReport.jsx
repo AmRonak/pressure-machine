@@ -31,8 +31,12 @@ const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, t
   } = data;
 
   const rows = [];
-  for (let i = 0; i < Pressure_Data.length; i += 7) {
-    rows.push(Pressure_Data.slice(i, i + 7));
+  for (let i = 0; i < 126; i += 7) {
+    const data = Pressure_Data.slice(i, i + 7);
+    while (data.length < 7) {
+      data.push('-'); // Fill with 0 if fewer than 7 items
+    }
+    rows.push(data.map(val => (val ?? 0))); // Replace undefined/null with 0
   }
 
   return (
@@ -235,6 +239,7 @@ const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, t
           </h3>
           <table className="w-full mb-2">
             <tbody>
+
               {rows.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                   {row.map((value, idx) => (
