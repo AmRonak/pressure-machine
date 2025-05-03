@@ -43,7 +43,7 @@ const MainTestReport = ({searchData, handleDownloadPDF}) => {
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       // Single page content
-      pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight);
+      pdf.addImage(imgData, "JPEG", 10, 5, imgWidth, imgHeight);
 
 
       // Add a new page for the next report, except the last one
@@ -80,23 +80,18 @@ const MainTestReport = ({searchData, handleDownloadPDF}) => {
           endtesttime,
           data
         }, idx) => (
-          <div
-            id="report-content"
+          <TestReport
             key={id}
-            className="container mx-auto font-sans mt-2 border-4 border-black"
-          >
-            <TestReport
-              id={id}
-              batchid={batchid}
-              userid={userid}
-              deviceid={deviceid}
-              starttesttime={starttesttime}
-              endtesttime={endtesttime}
-              data={data}
-              currentPage={idx}
-              totalPages={searchData.length}
-            />
-          </div>
+            id={id}
+            batchid={batchid}
+            userid={userid}
+            deviceid={deviceid}
+            starttesttime={starttesttime}
+            endtesttime={endtesttime}
+            data={data}
+            currentPage={idx}
+            totalPages={searchData.length}
+          />
         ))}
       </div>
     </>
