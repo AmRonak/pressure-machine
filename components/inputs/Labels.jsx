@@ -3,8 +3,8 @@
 const Labels = ({id, labelStyles, labelText, labelText2}) => {
   return (
     <label htmlFor={id} className={`${labelStyles}`}>
-      <p>{labelText}</p>
-      {labelText2 && <p>{labelText2}</p>}
+      <p className="text-start">{labelText}</p>
+      {labelText2 && <p className="text-start">{labelText2}</p>}
     </label>
   );
 };

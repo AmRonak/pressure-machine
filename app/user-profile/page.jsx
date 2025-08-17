@@ -61,43 +61,43 @@ const UserProfile = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="grid grid-cols-4 gap-10 py-5 my-5"
       >
-        <div className="flex flex-col gap-10 col-span-3">
+        <div className="flex flex-col gap-10 col-span-full">
           <RecipeInput
             id={CURRENT_PASSWORD}
-            labelText={"OLD PASSWORD"}
+            labelText={"Old Password"}
             register={register}
             errors={errors}
             containerStyles={"w-full"}
-            inputStyle={"w-full rounded-3xl p-5"}
+            inputStyle={"w-full"}
             labelStyles={"self-start ml-8"}
             placeholder={true}
             type={"password"}
           />
           <RecipeInput
             id={NEW_PASSWORD}
-            labelText={"NEW PASSWORD"}
+            labelText={"New Password"}
             register={register}
             errors={errors}
             containerStyles={"w-full"}
-            inputStyle={"w-full rounded-3xl p-5"}
+            inputStyle={"w-full"}
             labelStyles={"self-start ml-8"}
             placeholder={true}
             type={"password"}
           />
           <RecipeInput
             id={CONFIRM_PASSWORD}
-            labelText={"CONFIRM PASSWORD"}
+            labelText={"Confirm Password"}
             register={register}
             errors={errors}
             containerStyles={"w-full"}
-            inputStyle={"w-full rounded-3xl p-5"}
+            inputStyle={"w-full"}
             labelStyles={"self-start ml-8"}
             placeholder={true}
             type={"password"}
           />
         </div>
-        <div className="flex flex-col items-center self-end gap-4">
-          <button type="submit" className="flex flex-col items-center">
+        <div className="flex items-center justify-center gap-28 w-full fixed bottom-10 left-0 right-0 px-16 py-10">
+          <button type="submit">
             <Image
               src={"/images/save-btn.svg"}
               width={130}

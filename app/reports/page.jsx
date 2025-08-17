@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { BATCH_NO, defaultStatus, ERROR, FROM_DATE, FROM_TIME, SUCCESS, TO_DATE, TO_TIME, styles } from "@/constants/reportsConstants";
 import Navigation from "@/components/buttons/Navigation";
 import MainTestReport from "@/components/Report/MainTestReport";
+import { usePathname } from "next/navigation";
 
 const TestReports = () => {
   const [searchData, setSearchData] = useState([]);
@@ -62,6 +63,8 @@ const TestReports = () => {
     }
   };
 
+  const pathname = usePathname();
+
   return (
     <div className="grid-flow-col px-16 py-10">
       <div className="flex justify-between items-center">
@@ -69,20 +72,35 @@ const TestReports = () => {
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
             reports
           </h1>
-          <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-            test reports
-          </h2>
+          <div className="flex gap-4 border-b-2 border-gray-200 mb-8">
+            <Link
+              href="/reports/"
+              className={`px-6 py-2 text-sm md:text-xl lg:text-3xl font-bold uppercase border-b-4 transition-all duration-200 focus:outline-none ${
+                pathname === '/reports' ? 'border-primary text-primary' : 'border-transparent text-inputBlack hover:border-primary'
+              }`}
+            >
+              Test reports
+            </Link>
+            <Link
+              href="/reports/audit"
+              className={`px-6 py-2 text-sm md:text-xl lg:text-3xl font-bold uppercase border-b-4 transition-all duration-200 focus:outline-none ${
+                pathname === '/reports/audit' ? 'border-primary text-primary' : 'border-transparent text-inputBlack hover:border-primary'
+              }`}
+            >
+              Audit reports
+            </Link>
+          </div>
         </div>
         <Navigation />
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-20 justify-start items-start pt-10 my-5">
-        <div className="flex gap-20 justify-start">
-          <div className="flex flex-col gap-20">
-            <div className="flex gap-8 justify-between items-center">
-              <span className="font-bold text-3xl">FROM</span>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-20 justify-center items-start pt-10 my-5">
+        <div className="flex flex-col gap-10 justify-start">
+          <div className="flex flex-col">
+            <div className="flex gap-32 justify-between items-center">
+              <div className="font-bold text-3xl basis-80">From</div>
               <RecipeInput
                 id={FROM_DATE}
-                labelText={"DATE"}
+                labelText={"Date"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
@@ -93,7 +111,7 @@ const TestReports = () => {
               />
               <RecipeInput
                 id={FROM_TIME}
-                labelText={"TIME"}
+                labelText={"Time"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
@@ -104,12 +122,12 @@ const TestReports = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-20">
-            <div className="flex gap-8 justify-between items-center">
-              <span className="font-bold text-3xl">TO</span>
+          <div className="flex flex-col">
+            <div className="flex gap-32 justify-between items-center">
+              <div className="font-bold text-3xl basis-80">To</div>
               <RecipeInput
                 id={TO_DATE}
-                labelText={"DATE"}
+                labelText={"Date"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
@@ -121,7 +139,7 @@ const TestReports = () => {
               />
               <RecipeInput
                 id={TO_TIME}
-                labelText={"TIME"}
+                labelText={"Time"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
@@ -133,22 +151,22 @@ const TestReports = () => {
               />
             </div>
           </div>
-        </div>
-        <div>
           <RecipeInput
             id={BATCH_NO}
             labelText={"Batch No"}
             register={register}
             errors={errors}
-            inputStyle={'rounded-3xl p-5  bg-[url("/images/bg.svg")]'}
-            labelStyles={''}
+            inputStyle={'flex-1 bg-[url("/images/bg.svg")] flex flex-col'}
+            labelStyles={'flex-shrink-0 mr-4 ml-0'} // Prevent label from shrinking or wrapping
             placeholder={true}
-            containerStyles={"flex-row"}
+            textWrap={false}
+            validationSchema={{}}
+            specialStyles={"flex flex-row items-center justify-between gap-20"}
           />
         </div>
         <div className="flex justify-around items-center w-full">
           <div className="flex gap-8">
-            <button id="searchBtn" type="submit" className="flex flex-col items-center">
+            <button id="searchBtn" type="submit">
               <Image
                 src={'/images/search-btn.svg'}
                 width={130}
@@ -160,7 +178,7 @@ const TestReports = () => {
               id="downloadBtn"
               disabled={!searchData?.length}
               onClick={handleSubmit(handleDownloadPDF)}
-              className={`flex flex-col items-center ${!searchData?.length && 'opacity-60'}`}
+              className={`${!searchData?.length && 'opacity-60'}`}
             >
               <Image
                 src={'/images/download-btn.svg'}
@@ -170,16 +188,7 @@ const TestReports = () => {
               />
             </button>
           </div>
-          <div>
-            <Link href={'/reports/audit'}>
-              <Image
-                src={"/images/back_button.svg"}
-                width={100}
-                height={100}
-                alt="back button"
-              />
-            </Link>
-          </div>
+          <div />
         </div>
       </form>
       { status.status && (

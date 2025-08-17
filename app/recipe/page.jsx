@@ -113,7 +113,7 @@ const Recipe = () => {
     <div className="grid-flow-col mx-auto px-16 py-10">
       <div className="flex justify-between items-center">
         <p className="text-5xl lg:text-6xl font-bold">
-          Recipe
+          RECIPE
         </p>
         <Navigation />
       </div>
@@ -138,12 +138,12 @@ const Recipe = () => {
         </div>
         </div>
         <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
-          <form onSubmit={handleSubmit(onSubmit)} className="grid grid-flow-row gap-y-20 my-10">
+          <form onSubmit={handleSubmit(onSubmit)} className="grid grid-flow-row gap-y-10 mt-10">
             <div className="grid grid-flow-col grid-cols-3 gap-28 gap-y-10">
-              <div className="grid grid-flow-row col-span-1 gap-20">
+              <div className="grid grid-flow-row col-span-1 gap-10">
                 <RecipeInput
                   id={STABILIZATION_TIME}
-                  labelText={"STABILIZATION TIME"}
+                  labelText={"Stabilization Time"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -153,7 +153,7 @@ const Recipe = () => {
                 />
                 <RecipeInput
                   id={TEST_TIME}
-                  labelText={"TEST TIME"}
+                  labelText={"Test Time"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -162,10 +162,10 @@ const Recipe = () => {
                   type={'Number'}
                 />
               </div>
-              <div className="grid grid-flow-row col-span-1 gap-20">
+              <div className="grid grid-flow-row col-span-1 gap-5">
                 <RecipeInput
                   id={INITIAL_PRESSURE}
-                  labelText={"INITIAL PRESSURE"}
+                  labelText={"Initial Pressure"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -175,8 +175,8 @@ const Recipe = () => {
                 />
                 <RecipeInput
                   id={LEAK_PRESSURE}
-                  labelText={"LEAK TEST"}
-                  labelText2={"LIMIT PRESSURE"}
+                  labelText={"Leak Test"}
+                  labelText2={"Limit Pressure"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -186,10 +186,10 @@ const Recipe = () => {
                   type={'Number'}
                 />
               </div>
-              <div className="grid grid-flow-row col-span-1 gap-20">
+              <div className="grid grid-flow-row col-span-1 gap-5">
                 <RecipeInput
                   id={SET_PRESSURE}
-                  labelText={"SET PRESSURE"}
+                  labelText={"Set Pressure"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -199,8 +199,8 @@ const Recipe = () => {
                 />
                 <RecipeInput
                   id={LOWER_PRESSURE}
-                  labelText={"LOWER TEST"}
-                  labelText2={"LIMIT PRESSURE"}
+                  labelText={"Lower Test"}
+                  labelText2={"Limit Pressure"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -210,17 +210,18 @@ const Recipe = () => {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 items-center xl:gap-48">
+            <div className="grid items-center xl:gap-48">
               <RecipeInput
                 id={COMMENT}
-                labelText={"COMMENT"}
+                labelText={"Comment"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
                 inputStyle={'w-full'}
                 containerStyles={'w-full'}
               />
-              <div className="flex flex-col items-center">
+            </div>
+            <div className="flex items-center justify-center gap-28 w-full fixed bottom-10 left-0 right-0 px-16 py-10">
                 <button type="submit" disabled={!isChanged} className={`${!isChanged ? 'opacity-50' : 'opacity-100'}`}>
                   <Image
                     src={'/images/save-btn.svg'}
@@ -230,7 +231,6 @@ const Recipe = () => {
                   />
                 </button>
               </div>
-            </div>
           </form>
         </AxiosHCO>
     </div>

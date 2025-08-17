@@ -35,10 +35,10 @@ import {
   USERNAME,
   CATEGORY,
   styles,
-  logoBase64,
 } from "@/constants/reportsConstants";
 import Navigation from "@/components/buttons/Navigation";
 import { useAuthSelector } from "@/redux/slices/authSlice";
+import { usePathname } from "next/navigation";
 
 const AuditReports = () => {
   const [users, setUsers] = useState([]);
@@ -272,6 +272,8 @@ const AuditReports = () => {
     setIsLoading(false);
   };
 
+  const pathname = usePathname();
+
   return (
     <div className="grid-flow-col px-16 py-10">
       <div className="flex justify-between items-center">
@@ -279,103 +281,107 @@ const AuditReports = () => {
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold uppercase">
             reports
           </h1>
-          <h2 className="text-inputBlack text-sm md:text-xl lg:text-3xl font-bold uppercase">
-            audit reports
-          </h2>
+           <div className="flex gap-4 border-b-2 border-gray-200 mb-8">
+            <Link
+              href="/reports/"
+              className={`px-6 py-2 text-sm md:text-xl lg:text-3xl font-bold uppercase border-b-4 transition-all duration-200 focus:outline-none ${
+                pathname === '/reports/' ? 'border-primary text-primary' : 'border-transparent text-inputBlack hover:border-primary'
+              }`}
+            >
+              Test reports
+            </Link>
+            <Link
+              href="/reports/audit"
+              className={`px-6 py-2 text-sm md:text-xl lg:text-3xl font-bold uppercase border-b-4 transition-all duration-200 focus:outline-none ${
+                pathname === '/reports/audit' ? 'border-primary text-primary' : 'border-transparent text-inputBlack hover:border-primary'
+              }`}
+            >
+              Audit reports
+            </Link>
+          </div>
         </div>
         <Navigation />
       </div>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-20 justify-start items-start pt-10 my-5"
-      >
-        <div className="flex gap-20 justify-start">
-          <div className="flex flex-col gap-20">
-            <div className="flex gap-8 justify-between items-center">
-              <span className="font-bold text-3xl">FROM</span>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-10 justify-start items-start pt-10">
+        <div className="flex flex-col gap-10 justify-start">
+          <div className="flex flex-col">
+            <div className="flex gap-32 justify-between items-center">
+              <div className="font-bold text-3xl basis-80">From</div>
               <RecipeInput
                 id={FROM_DATE}
-                labelText={"DATE"}
+                labelText={"Date"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
-                containerStyles={""}
-                inputStyle={
-                  "placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"
-                }
+                containerStyles={''}
+                inputStyle={"placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"}
                 placeholder={false}
                 type="date"
               />
               <RecipeInput
                 id={FROM_TIME}
-                labelText={"TIME"}
+                labelText={"Time"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
-                containerStyles={""}
-                inputStyle={
-                  "placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"
-                }
+                containerStyles={''}
+                inputStyle={"placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"}
                 placeholder={false}
                 type="time"
               />
             </div>
           </div>
-          <div className="flex flex-col gap-20">
-            <div className="flex gap-8 justify-between items-center">
-              <span className="font-bold text-3xl">TO</span>
+          <div className="flex flex-col">
+            <div className="flex gap-32 justify-between items-center">
+              <div className="font-bold text-3xl basis-80">To</div>
               <RecipeInput
                 id={TO_DATE}
-                labelText={"DATE"}
+                labelText={"Date"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
-                containerStyles={""}
-                inputStyle={
-                  "placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"
-                }
-                labelStyles={"capitalize text-inputBlack"}
+                containerStyles={''}
+                inputStyle={"placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"}
+                labelStyles={'capitalize text-inputBlack'}
                 placeholder={false}
                 type="date"
               />
               <RecipeInput
                 id={TO_TIME}
-                labelText={"TIME"}
+                labelText={"Time"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
-                containerStyles={""}
-                inputStyle={
-                  "placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"
-                }
-                labelStyles={""}
+                containerStyles={''}
+                inputStyle={"placeholder-inputBlack text-inputBlack text-center outline-none text-xl px-8 py-3 shadow-[5px_5px_20px_1px_rgba(0,0,0,0.2)] rounded-lg mb-2 bg-[url('/images/bg.svg')]"}
+                labelStyles={''}
                 placeholder={false}
                 type="time"
               />
             </div>
           </div>
-        </div>
-        <div>
-          <div className="w-full flex justify-between items-center self-start gap-20">
-            <Dropdown
-              id={USERNAME}
-              labelText={"Username"}
-              register={register}
-              errors={errors}
-              containerStyles={"col-span-2"}
-              inputStyle={"w-48 lg:w-72 p-5"}
-              options={users}
-            />
-            <Dropdown
-              id={CATEGORY}
-              labelText={"Category"}
-              register={register}
-              errors={errors}
-              containerStyles={"col-span-2"}
-              inputStyle={"w-48 lg:w-72 p-5"}
-              options={categoryOptions}
-            />
-          </div>
+          <Dropdown
+            id={USERNAME}
+            labelText={"Username"}
+            register={register}
+            errors={errors}
+            options={users}
+            containerStyles={"col-span-2"}
+            inputStyle={"flex-1 p-5"}
+            labelStyles={'flex-shrink-0 mr-4 ml-0'}
+            specialStyles={"flex flex-row items-center justify-between gap-16"}
+          />
+          <Dropdown
+            id={CATEGORY}
+            labelText={"Category"}
+            register={register}
+            errors={errors}
+            options={categoryOptions}
+            containerStyles={"col-span-2"}
+            inputStyle={"flex-1 p-5"}
+            labelStyles={'flex-shrink-0 mr-4 ml-0'}
+            specialStyles={"flex flex-row items-center justify-between gap-20"}
+          />
         </div>
         <div className="flex justify-around items-center w-full">
           <div className="flex gap-8">
@@ -408,14 +414,14 @@ const AuditReports = () => {
             </button>
           </div>
           <div>
-            <Link href={"/reports/"}>
+            {/* <Link href={"/reports/"}>
               <Image
                 src={"/images/back_button.svg"}
                 width={100}
                 height={100}
                 alt="back button"
               />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </form>

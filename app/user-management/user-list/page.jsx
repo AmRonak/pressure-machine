@@ -102,7 +102,7 @@ const UserList = () => {
         </p>
         <Navigation />
       </div>
-      <div className="flex gap-10 mt-10 p-4 bg-gradient-to-r from-slate-200 to-blue-100">
+      <div className="flex gap-10 p-4 bg-gradient-to-r from-slate-200 to-blue-100">
         <button
           className="flex flex-col items-center disabled:opacity-60"
           onClick={handleEditClick}
@@ -178,7 +178,7 @@ const UserList = () => {
           </table>
         )
       }
-      <div className="flex">
+      <div className="flex justify-end">
         <Link href={'/user-management'}>
           <Image
             src={"/images/back_button.svg"}

@@ -13,7 +13,9 @@ const DeviceButton = ({
     status,
     loggedIn
   },
+  maxWidth=30,
 }) => {
+  console.log(maxWidth)
   const state = useAuthSelector();
   const [buttonClicked, setButtonClicked] = useState(false);
   let color = 'grey';
@@ -83,16 +85,20 @@ const DeviceButton = ({
       });
   };
 
-  const disabled = status === OFFLINE || status === undefined || status === null
-
+  const disabled = status === OFFLINE || status === undefined || status === null;
+  
   return (
-    <div className="flex flex-col items-center">
-      <Image
-        src={`/images/pressure-${color}.svg`}
-        width={250}
-        height={250}
-        alt={`device ${deviceId} button`}
-      />
+    <div className={`flex flex-col items-center justify-center`}>
+      <div className={`w-full h-auto`} style={{ maxWidth: `${maxWidth}%`, minHeight: '60%' }}>
+        <Image
+          src={`/images/pressure-${color}.svg`}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+          alt={`device ${deviceId} button`}
+        />
+      </div>
       <p className="text-2xl font-extrabold">
         {deviceId}
       </p>
@@ -114,5 +120,4 @@ const DeviceButton = ({
   );
 };
 
-export default DeviceButton
-;
+export default DeviceButton;

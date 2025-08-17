@@ -1,39 +1,37 @@
 "use client";
 
-import React from "react";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
-
+import React, { useCallback, useRef } from "react";
+import dynamic from "next/dynamic";
 import TestReport from "@/components/Report/TestReport";
 
-const page = () => {
-  const measurementData = Array.from({ length: 120 }, (_, index) => ({
-    id: index + 1,
-    value: "1234",
-  }));
+// Optionally memoize TestReport if it's a pure component
+// const MemoizedTestReport = React.memo(TestReport);
 
-  const rows = [];
-  for (let i = 0; i < measurementData.length; i += 7) {
-    rows.push(measurementData.slice(i, i + 7));
-  }
+const Page = () => {
+  const reportRef = useRef(null);
 
-  // Function to download the table as a PDF
-  const downloadPDF = async () => {
-    const element = document.getElementById("report-content");
-    const canvas = await html2canvas(element);
+  // Dynamically import heavy libraries only when needed
+  const downloadPDF = useCallback(async () => {
+    const [{ default: jsPDF }, html2canvas] = await Promise.all([
+      import("jspdf"),
+      import("html2canvas"),
+    ]);
+    const element = reportRef.current;
+    if (!element) return;
+    const canvas = await html2canvas.default(element);
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF("p", "mm", "a4");
-    const imgWidth = 190; // Width of the PDF page
+    const imgWidth = 190;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
     pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
     pdf.save("TestReport.pdf");
-  };
+  }, []);
 
   return (
     <>
       <div
         id="report-content"
+        ref={reportRef}
         className="container mx-auto font-sans mt-10 border-4 border-black"
       >
         <TestReport />
@@ -51,4 +49,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

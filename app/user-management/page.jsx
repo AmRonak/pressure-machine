@@ -96,13 +96,13 @@ const UserCreation = () => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-flow-row gap-y-10 mt-10"
+        className="grid grid-flow-row mt-10"
       >
-        <div className="grid grid-flow-col grid-cols-2 gap-28 gap-y-10">
-          <div className="grid grid-flow-row col-span-1 gap-20">
+        <div className="grid grid-flow-col grid-cols-2 gap-28 gap-y-5">
+          <div className="grid grid-flow-row col-span-1 gap-5">
             <RecipeInput
               id={USERNAME}
-              labelText={"USER NAME"}
+              labelText={"User Name"}
               register={register}
               errors={errors}
               containerStyles={""}
@@ -113,7 +113,7 @@ const UserCreation = () => {
             <div className="grid grid-cols-3 gap-14">
               <RecipeInput
                 id={PASSWORD}
-                labelText={"PASSWORD"}
+                labelText={"Password"}
                 placeholder="********"
                 register={register}
                 errors={errors}
@@ -124,7 +124,7 @@ const UserCreation = () => {
               />
               <RecipeInput
                 id={PIN}
-                labelText={"PIN"}
+                labelText={"Pin"}
                 placeholder="****"
                 register={register}
                 errors={errors}
@@ -137,7 +137,7 @@ const UserCreation = () => {
             <div className="grid grid-cols-3 gap-14">
               <RecipeInput
                 id={CONFIRM_PASSWORD}
-                labelText={"CONFIRM PASSWORD"}
+                labelText={"Confirm Password"}
                 placeholder="********"
                 register={register}
                 errors={errors}
@@ -148,7 +148,7 @@ const UserCreation = () => {
               />
               <RecipeInput
                 id={CONFIRM_PIN}
-                labelText={"CONFIRM PIN"}
+                labelText={"Confirm Pin"}
                 placeholder="****"
                 register={register}
                 errors={errors}
@@ -160,11 +160,11 @@ const UserCreation = () => {
               />
             </div>
           </div>
-          <div className="grid grid-flow-row col-span-1 gap-20">
+          <div className="grid grid-flow-row col-span-1 gap-5">
             <div className="grid grid-cols-3 gap-14">
               <Dropdown
                 id={USER_LEVEL}
-                labelText={"USER LEVEL"}
+                labelText={"User Level"}
                 register={register}
                 errors={errors}
                 containerStyles={"col-span-2"}
@@ -173,8 +173,8 @@ const UserCreation = () => {
               />
               <RecipeInput
                 id={AUTO_UNBLOCK_TIME}
-                labelText={"AUTO"}
-                labelText2={"UNBLOCK TIME"}
+                labelText={"Auto"}
+                labelText2={"Unblock Time"}
                 register={register}
                 errors={errors}
                 containerStyles={"col-span-1"}
@@ -186,8 +186,8 @@ const UserCreation = () => {
             <div className="grid grid-cols-2 gap-14">
               <RecipeInput
                 id={NO_OF_ATTEMPTS}
-                labelText={"NO. OF"}
-                labelText2={"ATTEMPTS"}
+                labelText={"No. Of"}
+                labelText2={"Attempts"}
                 register={register}
                 errors={errors}
                 inputStyle={"w-full rounded-4xl p-5"}
@@ -195,8 +195,8 @@ const UserCreation = () => {
               />
               <RecipeInput
                 id={AUTO_LOGOUT_TIME}
-                labelText={"AUTO"}
-                labelText2={"LOGOUT TIME"}
+                labelText={"Auto"}
+                labelText2={"Logout Time"}
                 register={register}
                 errors={errors}
                 containerStyles={"col-span-1"}
@@ -208,8 +208,8 @@ const UserCreation = () => {
             <div className="grid grid-cols-2 gap-14">
               <RecipeInput
                 id={PASSWORD_EXPIRY}
-                labelText={"PASSWORD"}
-                labelText2={"EXPIRY"}
+                labelText={"Password"}
+                labelText2={"Expiry"}
                 register={register}
                 errors={errors}
                 inputStyle={"w-full rounded-4xl p-5"}
@@ -217,8 +217,8 @@ const UserCreation = () => {
               />
               <RecipeInput
                 id={EXPIRY_DAYS_NOTIFICATION}
-                labelText={"EXPIRY"}
-                labelText2={"DAYS NOTIFICATION"}
+                labelText={"Expiry"}
+                labelText2={"Days Notification"}
                 register={register}
                 errors={errors}
                 inputStyle={"w-full rounded-4xl p-5"}
@@ -232,7 +232,7 @@ const UserCreation = () => {
           <div className="">
             <RecipeInput
               id="comments"
-              labelText={"COMMENT"}
+              labelText={"Comment"}
               register={register}
               validationSchema={{}}
               errors={errors}
@@ -240,36 +240,36 @@ const UserCreation = () => {
               containerStyles={"w-full"}
             />
           </div>
-          <div className="flex items-center justify-around gap-28 mb-8">
-            <button type="submit" className="block h-14">
+        </div>
+        <div className="flex items-center justify-between gap-28">
+          <button type="submit" className="block h-14">
+            <Image
+              src={"/images/create-btn.svg"}
+              width={130}
+              height={130}
+              alt={`create user button`}
+            />
+          </button>
+          <button className="block h-14 scale-125">
+            <Link href={"/user-management/permission"}>
               <Image
-                src={"/images/create-btn.svg"}
+                src={"/images/permissions-btn.svg"}
                 width={130}
                 height={130}
-                alt={`create user button`}
+                alt="permissions page link"
               />
-            </button>
-            <button className="block h-14 scale-125">
-              <Link href={"/user-management/permission"}>
-                <Image
-                  src={"/images/permissions-btn.svg"}
-                  width={130}
-                  height={130}
-                  alt="permissions page link"
-                />
-              </Link>
-            </button>
-            <button>
-              <Link href={"/user-management/user-list"}>
-                <Image
-                  src={"/images/back_button.svg"}
-                  width={100}
-                  height={100}
-                  alt="back button"
-                />
-              </Link>
-            </button>
-          </div>
+            </Link>
+          </button>
+          <button>
+            <Link href={"/user-management/user-list"}>
+              <Image
+                src={"/images/back_button.svg"}
+                width={100}
+                height={100}
+                alt="back button"
+              />
+            </Link>
+          </button>
         </div>
       </form>
     </div>

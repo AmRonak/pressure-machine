@@ -132,8 +132,8 @@ const ParameterSetting = () => {
         <Navigation />
       </div>
       <AxiosHCO isLoading={isLoading} isError={isError} errorMessage="Failed to load recipe data, please try sometimes later.">
-        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-20 justify-between py-10">
-          <div className="flex flex-col gap-20">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex gap-5 flex-col justify-between">
+          <div className="flex flex-col gap-5">
             <RecipeInput
               id={AREA_NAME}
               labelText={"Area Name"}
@@ -141,7 +141,7 @@ const ParameterSetting = () => {
               validationSchema={{}}
               errors={errors}
               containerStyles={'w-full'}
-              inputStyle={'w-full rounded-full p-5'}
+              inputStyle={'w-full'}
               labelStyles={'self-start ml-8'}
               placeholder={true}
             />
@@ -152,52 +152,69 @@ const ParameterSetting = () => {
               validationSchema={{}}
               errors={errors}
               containerStyles={'w-full'}
-              inputStyle={'w-full rounded-full p-5'}
+              inputStyle={'w-full'}
               labelStyles={'self-start ml-8'}
               placeholder={true}
             />
-            <div className="flex justify-between items-center">
-              <div className="flex justify-between items-center gap-36">
-                <RecipeInput
-                  id={BATCH_NO}
-                  labelText={"Batch No"}
-                  register={register}
-                  errors={errors}
-                  containerStyles={'w-48 lg:w-72'}
-                  inputStyle={'w-48 lg:w-72 p-5'}
-                  placeholder={true}
-                />
-                <Dropdown
-                  id={LEAK_TEST_STATUS}
-                  labelText={"Leak Test Status"}
-                  register={register}
-                  errors={errors}
-                  containerStyles={'col-span-2'}
-                  inputStyle={'w-48 lg:w-72 p-5'}
-                  options={leakTestStatusOptions}
-                />
-              </div>
+            <div className="flex justify-between items-center gap-36">
+              <RecipeInput
+                id={BATCH_NO}
+                labelText={"Batch No"}
+                register={register}
+                errors={errors}
+                containerStyles={'w-full'}
+                inputStyle={'w-full'}
+                placeholder={true}
+                labelStyles={'self-start ml-8'}
+              />
+              <Dropdown
+                id={LEAK_TEST_STATUS}
+                labelText={"Leak Test Status"}
+                register={register}
+                errors={errors}
+                containerStyles={'w-full'}
+                inputStyle={'w-full'}
+                labelStyles={' self-start ml-8'}
+                options={leakTestStatusOptions}
+              />
             </div>
             <RecipeInput
               id="printComment"
-              labelText={"COMMENT"}
+              labelText={"Comment"}
               register={register}
               validationSchema={{}}
               errors={errors}
               inputStyle={'w-full'}
               containerStyles={'w-full'}
+              labelStyles={' self-start ml-8'}
             />
           </div>
-          <div className="flex flex-col items-center self-end gap-4">
-            <Link href={'/parameter-settings/default-parameter'}>
+          <div className="flex items-center justify-between gap-28 w-full fixed bottom-10 left-0 right-0 px-16 py-10">
+            <div className="flex-1/2" />
+              <button
+                type="submit"
+                disabled={!isChanged}
+                className={`${!isChanged ? 'opacity-50' : 'opacity-100'}`}
+              >
                 <Image
-                  src={"/images/back_button.svg"}
-                  width={100}
-                  height={100}
-                  alt="back button"
+                  src={'/images/save-btn.svg'}
+                  width={130}
+                  height={130}
+                  alt={`save recipe button`}
                 />
-              </Link>
-            <button type="submit"  disabled={!isChanged} className={`flex flex-col items-center ${!isChanged ? 'opacity-50' : 'opacity-100'}`}>
+              </button>
+            <Link href={'/parameter-settings/default-parameter'}>
+              <Image
+                src={"/images/back_button.svg"}
+                width={100}
+                height={100}
+                alt="back button"
+              />
+            </Link>
+          </div>
+          {/* <div className="flex items-center justify-between gap-28 w-full fixed bottom-10 left-0 right-0 px-16 py-10">
+            <div className="flex-1/2" />
+            <button type="submit"  disabled={!isChanged} className={`${!isChanged ? 'opacity-50' : 'opacity-100'}`}>
               <Image
                 src={'/images/save-btn.svg'}
                 width={130}
@@ -205,7 +222,15 @@ const ParameterSetting = () => {
                 alt={`save recipe button`}
               />
             </button>
-          </div>
+            <Link href={'/parameter-settings/default-parameter'} className="absolute right-0">
+              <Image
+                src={"/images/back_button.svg"}
+                width={100}
+                height={100}
+                alt="back button"
+              />
+            </Link>
+          </div> */}
         </form>
       </AxiosHCO>
     </div>

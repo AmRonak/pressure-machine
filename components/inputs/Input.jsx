@@ -59,7 +59,7 @@ const Input = ({
           )}
         </div>
       )}
-      {errors && <span className="text-red-600">{errors[id]?.message}</span>}
+      {errors[id] && <span className="text-red-600 block">{errors[id]?.message}</span>}
     </>
   );
 };

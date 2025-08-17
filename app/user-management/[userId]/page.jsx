@@ -150,13 +150,13 @@ const UserModification = () => {
       {!isError && !isLoading && (
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="grid grid-flow-row gap-y-10 mt-10"
+          className="grid grid-flow-row mt-10"
         >
           <div className="grid grid-flow-col grid-cols-2 gap-28 gap-y-10">
-            <div className="grid grid-flow-row col-span-1 gap-20">
+            <div className="grid grid-flow-row col-span-1 gap-5">
               <RecipeInput
                 id={USERNAME}
-                labelText={"USER NAME"}
+                labelText={"Username"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
@@ -168,7 +168,7 @@ const UserModification = () => {
               <div className="grid grid-cols-3 gap-14">
                 <RecipeInput
                   id={PASSWORD}
-                  labelText={"PASSWORD"}
+                  labelText={"Password"}
                   placeholder="********"
                   register={register}
                   validationSchema={{}}
@@ -180,7 +180,7 @@ const UserModification = () => {
                 />
                 <RecipeInput
                   id={PIN}
-                  labelText={"PIN"}
+                  labelText={"Pin"}
                   placeholder="****"
                   register={register}
                   validationSchema={{}}
@@ -193,7 +193,7 @@ const UserModification = () => {
               <div className="grid grid-cols-3 gap-14">
                 <RecipeInput
                   id={CONFIRM_PASSWORD}
-                  labelText={"CONFIRM PASSWORD"}
+                  labelText={"Confirm Password"}
                   placeholder="********"
                   register={register}
                   errors={errors}
@@ -204,7 +204,7 @@ const UserModification = () => {
                 />
                 <RecipeInput
                   id={CONFIRM_PIN}
-                  labelText={"CONFIRM PIN"}
+                  labelText={"Confirm Pin"}
                   placeholder="****"
                   register={register}
                   errors={errors}
@@ -215,11 +215,11 @@ const UserModification = () => {
                 />
               </div>
             </div>
-            <div className="grid grid-flow-row col-span-1 gap-20">
+            <div className="grid grid-flow-row col-span-1 gap-5">
               <div className="grid grid-cols-3 gap-14">
                 <Dropdown
                   id={USER_LEVEL}
-                  labelText={"USER LEVEL"}
+                  labelText={"User Level"}
                   register={register}
                   errors={errors}
                   containerStyles={"col-span-2"}
@@ -228,8 +228,8 @@ const UserModification = () => {
                 />
                 <RecipeInput
                   id={AUTO_UNBLOCK_TIME}
-                  labelText={"AUTO"}
-                  labelText2={"UNBLOCK TIME"}
+                  labelText={"Auto"}
+                  labelText2={"Unblock Time"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -241,8 +241,8 @@ const UserModification = () => {
               <div className="grid grid-cols-2 gap-14">
                 <RecipeInput
                   id={NO_OF_ATTEMPTS}
-                  labelText={"NO. OF"}
-                  labelText2={"ATTEMPTS"}
+                  labelText={"No. Of"}
+                  labelText2={"Attempts"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -250,8 +250,8 @@ const UserModification = () => {
                 />
                 <RecipeInput
                   id={AUTO_LOGOUT_TIME}
-                  labelText={"AUTO"}
-                  labelText2={"LOGOUT TIME"}
+                  labelText={"Auto"}
+                  labelText2={"Logout Time"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -263,8 +263,8 @@ const UserModification = () => {
               <div className="grid grid-cols-2 gap-14">
                 <RecipeInput
                   id={PASSWORD_EXPIRY}
-                  labelText={"PASSWORD"}
-                  labelText2={"EXPIRY"}
+                  labelText={"Password"}
+                  labelText2={"Expiry"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -272,8 +272,8 @@ const UserModification = () => {
                 />
                 <RecipeInput
                   id={EXPIRY_DAYS_NOTIFICATION}
-                  labelText={"EXPIRY"}
-                  labelText2={"DAYS NOTIFICATION"}
+                  labelText={"Expiry"}
+                  labelText2={"Days Notification"}
                   register={register}
                   validationSchema={{}}
                   errors={errors}
@@ -287,7 +287,7 @@ const UserModification = () => {
             <div className="">
               <RecipeInput
                 id="comments"
-                labelText={"COMMENT"}
+                labelText={"Comments"}
                 register={register}
                 validationSchema={{}}
                 errors={errors}
@@ -295,26 +295,27 @@ const UserModification = () => {
                 containerStyles={"w-full"}
               />
             </div>
-            <div className="flex items-center justify-around gap-28 mb-8">
-              <button type="submit" className="block h-14">
+          </div>
+          <div className="flex items-center justify-between gap-28 w-full">
+            <div className="flex-1/2" />
+            <button type="submit" className="mx-auto">
+              <Image
+                src={"/images/update-btn.svg"}
+                width={130}
+                height={130}
+                alt={`update user button`}
+              />
+            </button>
+            <button>
+              <Link href={"/user-management/user-list"}>
                 <Image
-                  src={"/images/update-btn.svg"}
-                  width={130}
-                  height={130}
-                  alt={`update user button`}
+                  src={"/images/back_button.svg"}
+                  width={100}
+                  height={100}
+                  alt="back button"
                 />
-              </button>
-              <button>
-                <Link href={"/user-management/user-list"}>
-                  <Image
-                    src={"/images/back_button.svg"}
-                    width={100}
-                    height={100}
-                    alt="back button"
-                  />
-                </Link>
-              </button>
-            </div>
+              </Link>
+            </button>
           </div>
         </form>
       )}
