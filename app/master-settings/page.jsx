@@ -150,7 +150,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center text-nowrap"}
+              labelStyles={"text-nowrap"}
+              rightText='KPa'
             />
             <RecipeInput
               id={GASKET_PRESSURE_ALARM_TIME}
@@ -161,8 +162,9 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center text-nowrap"}
+              labelStyles={"text-nowrap"}
               textWrap={true}
+              rightText='sec'
             />
             <RecipeInput
               id={GLOVE_PRESSURE_ALARM_TIME}
@@ -173,7 +175,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center text-nowrap"}
+              labelStyles={"text-nowrap"}
+              rightText='sec'
             />
           </div>
           <div className="flex flex-col gap-10 flex-no-wrap">
@@ -185,7 +188,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center text-nowrap"}
+              labelStyles={"text-nowrap"}
+              rightText='Pa'
             />
             <RecipeInput
               id={PRESSURE_PURSUING_REPEAT_TIME}
@@ -196,7 +200,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center text-nowrap"}
+              labelStyles={"text-nowrap"}
+              rightText='sec'
             />
             <div className="flex items-center justify-center gap-4 mt-14">
               <button
@@ -225,7 +230,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center -mt-8 text-nowrap"}
+              labelStyles={"-mt-8 text-nowrap"}
+              rightText='Pa'
             />
             <RecipeInput
               id={VALVE_ON_TIME}
@@ -235,7 +241,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center mt-8 text-nowrap"}
+              labelStyles={"mt-8 text-nowrap"}
+              rightText='sec'
             />
             <RecipeInput
               id={VALVE_OFF_TIME}
@@ -245,7 +252,8 @@ const MasterSetting = () => {
               errors={errors}
               containerStyles={"w-full"}
               inputStyle={"w-full rounded-3xl p-5"}
-              labelStyles={"self-center mt-8 text-nowrap"}
+              labelStyles={"mt-8 text-nowrap"}
+              rightText='sec'
             />
           </div>
         </form>

@@ -95,7 +95,7 @@ const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, t
                     {department_Name}
                   </td>
                   <td className="text-black w-60 border-r-2 border-black p-1 py-[8px] font-bold">
-                    User Id
+                    User Name
                   </td>
                   <td className="text-black w-96 p-1 py-[8px]">{deviceid}</td>
                 </tr>
@@ -317,7 +317,7 @@ const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, t
           </p>
         </div>
 
-        <p className="text-black font-bold">{`Page ${currentPage+1} of ${totalPages}`}</p>
+        {/* <p className="text-black font-bold">{`Page ${currentPage+1} of ${totalPages}`}</p> */}
       </div>
     </div>
   );

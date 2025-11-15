@@ -11,6 +11,7 @@ const Input = ({
   placeholder = true,
   type = "text",
   isPin = false,
+  rightText,
 }) => {
   const placeholderValue =
     placeholder && typeof placeholder === "boolean" ? "ABC123" : placeholder;
@@ -18,14 +19,21 @@ const Input = ({
   return (
     <>
       {!(type === "password" || type === "loginPassword") && !isPin && (
-        <input
-          placeholder={placeholderValue}
-          id={id}
-          className={`bg-background-input ${inputStyles}`}
-          type={type}
-          autoComplete="off"
-          {...register(id, validationSchema)}
-        />
+        <div className="relative w-full">
+          <input
+            placeholder={placeholderValue}
+            id={id}
+            className={`bg-background-input ${inputStyles}`}
+            type={type}
+            autoComplete="off"
+            {...register(id, validationSchema)}
+          />
+          {rightText && (
+            <span className="absolute inset-y-0 right-3 flex items-center font-bold text-lg">
+              {rightText}
+            </span>
+          )}
+        </div>
       )}
       {(type === "password" || type === "loginPassword" || isPin) && (
         <div className="relative w-full">

@@ -17,12 +17,14 @@ const RecipeInput = ({
   placeholder=false,
   type,
   isPin,
+  rightText,
+  labelTextStyles
 }) => {
   return (
     <div className={specialStyles || `flex flex-col items-start justify-between ${containerStyles}`}>
       <Labels
         id = {id}
-        labelStyles={`text-base lg:text-2xl font-bold text-primary mb-2 text-center ml-2 ${textWrap && 'text-wrap'} ${labelStyles}`}
+        labelStyles={`text-base lg:text-2xl font-bold text-primary mb-2 text-center ml-2 ${textWrap && 'text-wrap'} ${labelStyles} ${labelTextStyles}`}
         labelText={labelText}
         labelText2={labelText2}
       />
@@ -35,6 +37,7 @@ const RecipeInput = ({
         placeholder={placeholder}
         type={type}
         isPin={isPin}
+        rightText={rightText}
       />
     </div>
   );

@@ -150,6 +150,7 @@ const Recipe = () => {
                   containerStyles={''}
                   inputStyle={'w-full'}
                   type={'Number'}
+                  rightText='sec'
                 />
                 <RecipeInput
                   id={TEST_TIME}
@@ -158,11 +159,13 @@ const Recipe = () => {
                   validationSchema={{}}
                   errors={errors}
                   containerStyles={''}
-                  inputStyle={'w-full mt-8'}
+                  inputStyle={'w-full'}
+                  labelTextStyles={'mb-8'}
                   type={'Number'}
+                  rightText='sec'
                 />
               </div>
-              <div className="grid grid-flow-row col-span-1 gap-5">
+              <div className="grid grid-flow-row col-span-1 gap-10">
                 <RecipeInput
                   id={INITIAL_PRESSURE}
                   labelText={"Initial Pressure"}
@@ -172,6 +175,7 @@ const Recipe = () => {
                   containerStyles={''}
                   inputStyle={'w-full'}
                   type={'Number'}
+                  rightText='Pa'
                 />
                 <RecipeInput
                   id={LEAK_PRESSURE}
@@ -184,9 +188,10 @@ const Recipe = () => {
                   inputStyle={'w-full'}
                   labelStyles={'text-nowrap'}
                   type={'Number'}
+                  rightText='Pa'
                 />
               </div>
-              <div className="grid grid-flow-row col-span-1 gap-5">
+              <div className="grid grid-flow-row col-span-1 gap-10">
                 <RecipeInput
                   id={SET_PRESSURE}
                   labelText={"Set Pressure"}
@@ -196,6 +201,7 @@ const Recipe = () => {
                   containerStyles={''}
                   inputStyle={'w-full'}
                   type={'Number'}
+                  rightText='Pa'
                 />
                 <RecipeInput
                   id={LOWER_PRESSURE}
@@ -207,6 +213,7 @@ const Recipe = () => {
                   labelStyles={'text-nowrap'}
                   inputStyle={'w-full'}
                   type={'Number'}
+                  rightText='Pa'
                 />
               </div>
             </div>
