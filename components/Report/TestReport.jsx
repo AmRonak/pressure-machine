@@ -28,7 +28,8 @@ const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, t
     leakTestStatus,
     serial_No,
     Leak_Test_Time,
-    userid
+    userid,
+    equipmentid,
   } = data;
 
   const rows = [];
@@ -133,7 +134,7 @@ const TestReport = ({ deviceid, starttesttime, endtesttime, data, currentPage, t
                     Equipment Id
                   </td>
                   <td className="text-black w-96 border-r-2 border-black p-1 py-[8px]">
-                    {deviceid}
+                    {equipmentid}
                   </td>
                   <td className="text-black w-60 border-r-2 border-black p-1 py-[8px] font-bold">
                     Total Test Time
